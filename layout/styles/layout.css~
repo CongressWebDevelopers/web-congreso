@@ -39,11 +39,11 @@ img{display:block; margin:0; padding:0; border:0;}
 div.wrapper{display:block; width:100%; margin:0; text-align:left;}
 div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, div.wrapper h6{margin:0 0 20px 0; padding:0 0 8px 0; font-size:20px; font-weight:normal; font-family:Georgia, "Times New Roman", Times, serif; border-bottom:1px dotted #DDDDDD;}
 .col1{color:#666666; background-color:#E3F1F9;}
-.col2{color:#FFFFFF; background-color:#ffab49;}
+.col2{color:#FFFFFF; background-color:#000000;}
 .col3, .col4, .col5{color:#666666; background-color:#FFFFFF;}
-.col6{color:#666666; background-color:#ffdbb0;}
-.col6 a{color:##666666; background-color:#ffdbb0;}
-.col7, .col7 a{color:##666666; background-color:#29313C;}
+.col6{color:#999999; background-color:#F3F3F3;}
+.col6 a{color:#2684B7; background-color:#F3F3F3;}
+.col7, .col7 a{color:#FFFFFF; background-color:#29313C;}
 
 /* ----------------------------------------------Generalise------------------------------------- */
 
@@ -62,29 +62,29 @@ div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, 
 /* ----------------------------------------------Topbar------------------------------------- */
 
 #topbar{z-index:1000;}
-#topbar #search{display:block; float:right; width:242px; height:36px; margin:0; padding:10px 0 0 17px; color:#FFFFFF; background-color:#ffab49; border-left:1px dotted #ff6c00; overflow:hidden;}
+#topbar #search{display:block; float:right; width:242px; height:36px; margin:0; padding:10px 0 0 17px; color:#FFFFFF; background-color:#000000; border-left:1px dotted #666666; overflow:hidden;}
 
 /* ----------------------------------------------Homepage Intro------------------------------------- */
 
-#intro{padding:2px 0 5px 0; font-size:16px; font-family:Georgia, "Times New Roman", Times, serif;}
-#intro .fl_left{display:block; float:left; width:515px; height:240px; margin:0; padding:30px; color:#FFFFFF; background-color:#ffab49;}
-#intro .fl_left h2{font-size:46px; margin:0 0 15px 0; padding:0; border:none; color:#FFFFFF; background-color:#;}
+#intro{padding:30px 0 5px 0; font-size:16px; font-family:Georgia, "Times New Roman", Times, serif;}
+#intro .fl_left{display:block; float:left; width:515px; height:240px; margin:0; padding:30px; color:#FFFFFF; background-color:#2684B7;}
+#intro .fl_left h2{font-size:46px; margin:0 0 15px 0; padding:0; border:none; color:#FFFFFF; background-color:#2684B7;}
 #intro .fl_left p{margin:0; padding:0; line-height:1.6em;}
 #intro .fl_left p.readmore{display:block; width:100%; margin:20px 0 0 0; padding:0; text-align:right; line-height:normal;}
-#intro .fl_left p.readmore a{padding:8px 15px; font-size:18px; color:#FFFFFF; background-color:#ff6c00;}
+#intro .fl_left p.readmore a{padding:8px 15px; font-size:18px; color:#FFFFFF; background-color:#1C5E82;}
 #intro .fl_right{float:right;}
 
 /* ----------------------------------------------Services------------------------------------- */
 
 #services ul, #services p, #services h2, #services img{margin:0; padding:0; list-style:none;}
-#services li{display:block; float:left; width:294px; height:180px; margin:0 9px 0 0; padding:10px; color:#666666; background-color: #ffdbb0;}
-#services li:hover, #services li:hover h2{color:#666666; background-color:#ffc784;}
+#services li{display:block; float:left; width:294px; height:180px; margin:0 9px 0 0; padding:10px; color:#666666; background-color:#EFEFEF;}
+#services li:hover, #services li:hover h2{color:#666666; background-color:#E5E5E5;}
 #services li.last{margin-right:0;}
 #services .fl_right{display:block; float:right; width:185px; padding:10px 0 0 0;}
-#services h2{margin:0 0 5px 0; padding:0 0 3px 0; font-size:14px; font-weight:bold; color:#666666; background-color:; border-bottom-color:#666666;}
+#services h2{margin:0 0 5px 0; padding:0 0 3px 0; font-size:14px; font-weight:bold; color:#666666; background-color:#EFEFEF; border-bottom-color:#666666;}
 #services p{margin:0; padding:0; line-height:1.6em;}
 #services p.readmore{display:block; width:100%; margin:15px 0 0 0; padding:0; text-align:right; line-height:normal;}
-#services p.readmore a{padding:8px 15px; font-weight:bold; color:#FFFFFF; background-color:#ff6c00;}
+#services p.readmore a{padding:8px 15px; font-weight:bold; color:#FFFFFF; background-color:#666666;}
 
 /* ----------------------------------------------BreadCrumb------------------------------------- */
 
