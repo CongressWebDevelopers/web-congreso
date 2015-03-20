@@ -41,9 +41,9 @@ div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, 
 .col1{color:#666666; background-color:#E3F1F9;}
 .col2{color:#FFFFFF; background-color:#ffab49;}
 .col3, .col4, .col5{color:#666666; background-color:#FFFFFF;}
-.col6{color:#999999; background-color:#F3F3F3;}
-.col6 a{color:#2684B7; background-color:#F3F3F3;}
-.col7, .col7 a{color:#FFFFFF; background-color:#29313C;}
+.col6{color:#666666; background-color:#ffdbb0;}
+.col6 a{color:##666666; background-color:#ffdbb0;}
+.col7, .col7 a{color:##666666; background-color:#29313C;}
 
 /* ----------------------------------------------Generalise------------------------------------- */
 
@@ -66,7 +66,7 @@ div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, 
 
 /* ----------------------------------------------Homepage Intro------------------------------------- */
 
-#intro{padding:30px 0 5px 0; font-size:16px; font-family:Georgia, "Times New Roman", Times, serif;}
+#intro{padding:2px 0 5px 0; font-size:16px; font-family:Georgia, "Times New Roman", Times, serif;}
 #intro .fl_left{display:block; float:left; width:515px; height:240px; margin:0; padding:30px; color:#FFFFFF; background-color:#ffab49;}
 #intro .fl_left h2{font-size:46px; margin:0 0 15px 0; padding:0; border:none; color:#FFFFFF; background-color:#;}
 #intro .fl_left p{margin:0; padding:0; line-height:1.6em;}
