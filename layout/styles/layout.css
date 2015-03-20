@@ -188,7 +188,9 @@ div.wrapper h6 {
     padding: 0;
     line-height: normal;
 }
-
+#header #logo p {
+    font-size: 12px;
+}
 #header #logo h1 {
     margin: 0 0 5px 0;
     padding: 0;
@@ -715,8 +717,6 @@ div.wrapper h6 {
     text-decoration: none;
     color: white;
 }
-
-
 
 #img_alhambra img{
     margin-left: 60px;

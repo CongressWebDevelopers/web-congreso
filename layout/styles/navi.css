@@ -15,7 +15,7 @@ File: Navigation CSS
     margin: 0;
     padding: 0;
     list-style: none;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: normal;
     color: #FFFFFF;
     background-color: #2E64A1;
@@ -120,11 +120,9 @@ File: Navigation CSS
     padding: 0 0 14px 0;
     font-size: 20px;
     font-weight: normal;
-/*    font-family: Georgia, "Times New Roman", Times, serif;*/
     color: #666666;
     background-color: #F9F9F9;
     line-height: normal;
-/*    border-bottom: 1px dotted #666666;*/
 }
 
 #column .subnav ul {
