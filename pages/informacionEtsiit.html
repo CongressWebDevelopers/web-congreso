@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <!--
 Template Name: BusinessToday
 Author: <a href="http://www.os-templates.com/">OS Templates</a>
@@ -7,66 +7,75 @@ Licence: Free to use under our free template licence terms
 Licence URI: http://www.os-templates.com/template-terms
 -->
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-<title>La ETSIIT </title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" href="../layout/styles/layout.css" type="text/css" />
+    <title>I Congreso de estudiantes Ingeniería Informática</title>
+    <meta content="text/html; charset=utf-8" http-equiv=Content-Type>
+    <link rel="stylesheet" href="../layout/styles/layout.css" type="text/css" />
 </head>
+
 <body id="top">
-<div class="wrapper col1">
-  <div id="header">
-    <div id="logo">
-      <h1><a href="../index.html">CEIIE</a></h1>
-      <p><strong>I Congreso de Estudiantes de Ingeniería
-Informática en España</strong></p>
+    <div class="wrapper col1">
+        <div id="header">
+            <div id="logo">
+                <h1><a href="#">CEIIE</a></h1>
+                <p><strong>I Congreso de Estudiantes de Ingeniería
+Informática en España</strong>
+                </p>
+            </div>
+            <div id="newsletter">
+                <p>Suscríbete y recibe todas las novedades.</p>
+                <form action="#" method="post">
+                    <fieldset>
+                        <legend>Suscribete</legend>
+                        <input type="text" value="Email&hellip;" onfocus="this.value=(this.value=='Email&hellip;')? '' : this.value ;" />
+                        <input type="submit" name="news_go" id="news_go" value="Sign Up" />
+                    </fieldset>
+                </form>
+            </div>
+            <br class="clear" />
+        </div>
     </div>
-    <div id="newsletter">
-      <p>Suscríbete y recibe todas las novedades.</p>
-      <form action="#" method="post">
-        <fieldset>
-          <legend>NewsLetter</legend>
-          <input type="text" value="Name&hellip;"  onfocus="this.value=(this.value=='Name&hellip;')? '' : this.value ;" />
-          <input type="text" value="Email&hellip;"  onfocus="this.value=(this.value=='Email&hellip;')? '' : this.value ;" />
-          <input type="submit" name="news_go" id="news_go" value="Sign Up" />
-        </fieldset>
-      </form>
+    <div class="wrapper col2">
+        <div id="topbar">
+             <div id="topnav">
+                <ul>
+                    <li><a href="programaPonencias.html">Programa</a>
+                    </li>
+                    <li><a href="patrocinadores.html">Patrocina</a>
+                    </li>
+                    <li><a href="inscribete.html">Inscripción</a>
+                    </li>
+                    <li><a href="#">Actividades</a>
+                        <ul>
+                            <li><a href="visitaAlhambra.html">Visita a la Alhambra</a>
+                            </li>
+                            <li><a href="visitaSierraNevada.html">Visita a Sierra Nevada</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Información</a>
+                        <ul>
+                            <li><a href="informacionCiudad.html">La ciudad</a>
+                            </li>
+                            <li><a href="informacionEtsiit.html">La ETSIIT</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div id="search">
+                <form action="#" method="post">
+                    <fieldset>
+                        <legend>Buscar</legend>
+                        <input type="text" value="Buscar&hellip;" onfocus="this.value=(this.value=='Buscar&hellip;')? '' : this.value ;" />
+                        <input type="submit" name="go" id="go" value="Search" />
+                    </fieldset>
+                </form>
+            </div>
+            <br class="clear" />
+        </div>
     </div>
-    <br class="clear" />
-  </div>
-</div>
-<div class="wrapper col2">
-  <div id="topbar">
-    <div id="topnav">
-      <ul>
-        <li><a href="programaPonencias.html">Programa</a></li>
-        <li><a href="patrocinadores.html">Patrocina</a></li>
-        <li><a href="incripcion.html">Inscripción</a></li>
-        <li><a href="#">Actividades</a>
-          <ul>
-            <li><a href="visitaAlhambra.html">Visita a la Alhambra</a></li>
-            <li><a href="visitaSierraNevada">Visita a Sierra Nevada</a></li>
-          </ul>
-        </li>
-        <li class="active"><a href="#">Información</a>
-          <ul>
-            <li><a href="informacionCiudad.html">La ciudad</a></li>
-            <li class="active"><a href="informacionEtsiit.html">La ETSIIT</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-    <div id="search">
-      <form action="#" method="post">
-        <fieldset>
-          <legend>Buscar</legend>
-          <input type="text" value="Buscar&hellip;"  onfocus="this.value=(this.value=='Buscar&hellip;')? '' : this.value ;" />
-          <input type="submit" name="go" id="go" value="Search" />
-        </fieldset>
-      </form>
-    </div>
-    <br class="clear" />
-  </div>
-</div>
 <div class="wrapper col3">
   <div id="breadcrumb">
     <ul>
@@ -84,9 +93,10 @@ Informática en España</strong></p>
   <div id="container">
     <h1>La ETSIIT</h1>
     
-    <div id="img_etsiit">
+    <div id="img_etsiit" class="fl_right" >
       <img alt="Imagen etsiit" src="../images/etsiit-1.jpg"/>
     </div>
+
 
     <p id="ejemplo">La ETSIIT (Escuela Técnica Superior de Ingeniería Informática), es un centro docente perteneciente a la Universidad pública de Granada (UGR) donde los estudiantes de Granada, o de otras ciudades o lugares, cursan los estudios de Grado en Ingeniería Informática y Grado en Ingeniería de Telecomunicaciones; en el marco del Espacio Europeo de Educación Superior (EEES) </p>
       
@@ -122,68 +132,47 @@ Informática en España</strong></p>
           <li> Fax: +34-958242801</li>
         </ul>            
     </div>
-    <div id="logo_etsiit">
-      <img alt="Logo etsiit" src="../images/logo_etsiit2.jpg"/>
-    </div>  
+ 
 </div>
-<div class="wrapper col6">
-  <div id="footer">
-    <div id="login">
-      <h2>Client Login !</h2>
-      <p>Clients can Login to their accounts here.</p>
-      <form action="#" method="post">
-        <fieldset>
-          <legend>Client Login</legend>
-          <div class="fl_left">
-            <input type="text" value="Enter email address&hellip;"  onfocus="this.value=(this.value=='Enter email address&hellip;')? '' : this.value ;" />
-            <input type="password" value="Enter password&hellip;"  onfocus="this.value=(this.value=='Enter password&hellip;')? '' : this.value ;" />
-          </div>
-          <div class="fl_right">
-            <input type="submit" name="login_go" id="login_go" value="&raquo;" />
-          </div>
-        </fieldset>
-      </form>
-      <p><a href="#">&raquo; Lost Your Password</a> | <a href="#">Create An Account &raquo;</a></p>
+    <div class="wrapper col6">
+        <div id="footer">
+            <div id="login">
+                <h2>Login organización</h2>
+                <p>Accede para ver los datos sobre organización.</p>
+                <form action="#" method="post">
+                    <fieldset>
+                        <legend>Solo organización</legend>
+                        <div class="fl_left">
+                            <input type="text" value="" placeholder="Introduce tu email" />
+                            <input type="password" value="" placeholder="Contraseña" />
+                        </div>
+                        <div class="fl_right">
+                            <input type="submit" name="login_go" id="login_go" value="Sign Up" />
+                        </div>
+                    </fieldset>
+                </form>
+                <p><a href="#">&raquo; No recuerdo la contraseña</a> | <a href="#">Crear una cuenta</a>
+                </p>
+            </div>
+            <div class="footbox-3">
+                <h2>Patrocinadores</h2>
+                <img class="imagen-patrocinador" src="../images/consejeria_educacion_cultura_y_deporte.jpg">
+                <img class="imagen-patrocinador" src="../images/osl.png">
+                <img class="imagen-patrocinador" src="../images/etsiit.jpeg">
+                <img class="imagen-patrocinador" src="../images/UGR.jpg">
+                
+            </div>
+            <br class="clear" />
+        </div>
     </div>
-    <div class="footbox">
-      <h2>Lacus interdum</h2>
-      <ul>
-        <li><a href="#">Praesent et eros</a></li>
-        <li><a href="#">Praesent et eros</a></li>
-        <li><a href="#">Lorem ipsum dolor</a></li>
-        <li><a href="#">Suspendisse in neque</a></li>
-        <li class="last"><a href="#">Praesent et eros</a></li>
-      </ul>
+    <div class="wrapper col7">
+        <div id="copyright">
+            <p class="fl_left">Copyright &copy; 2015 - All Rights Reserved - <a href="#">Congreso de Estudiantes de Ingeniería Informática de España</a>
+            </p>
+            <p class="fl_right">Ivan Ortega Alba | Jose</p>
+            <br class="clear" />
+        </div>
     </div>
-    <div class="footbox">
-      <h2>Lacus interdum</h2>
-      <ul>
-        <li><a href="#">Praesent et eros</a></li>
-        <li><a href="#">Praesent et eros</a></li>
-        <li><a href="#">Lorem ipsum dolor</a></li>
-        <li><a href="#">Suspendisse in neque</a></li>
-        <li class="last"><a href="#">Praesent et eros</a></li>
-      </ul>
-    </div>
-    <div class="footbox">
-      <h2>Lacus interdum</h2>
-      <ul>
-        <li><a href="#">Praesent et eros</a></li>
-        <li><a href="#">Praesent et eros</a></li>
-        <li><a href="#">Lorem ipsum dolor</a></li>
-        <li><a href="#">Suspendisse in neque</a></li>
-        <li class="last"><a href="#">Praesent et eros</a></li>
-      </ul>
-    </div>
-    <br class="clear" />
-  </div>
-</div>
-<div class="wrapper col7">
-  <div id="copyright">
-    <p class="fl_left">Copyright &copy; 2014 - All Rights Reserved - <a href="#">Domain Name</a></p>
-    <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
-    <br class="clear" />
-  </div>
-</div>
 </body>
+
 </html>

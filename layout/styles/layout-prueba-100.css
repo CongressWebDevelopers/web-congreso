@@ -144,8 +144,7 @@ div.wrapper h6 {
 
 .col6 a {
     color: ##666666;
-    background-color: none;
-    text-decoration-color: none;
+    background-color: #ffdbb0;
 }
 
 .col7,
@@ -165,7 +164,7 @@ div.wrapper h6 {
 #copyright {
     display: block;
     position: relative;
-    width:960px;
+    width: 100%;
     margin: 0 auto;
 }
 /* ----------------------------------------------Header------------------------------------- */
@@ -178,8 +177,8 @@ div.wrapper h6 {
 #header #logo {
     display: block;
     float: left;
-    width: 400px;
-    margin-top: 10px;
+    width: 50%;
+    margin: 0px 0px 0px 5%;
 }
 
 #header #logo h1,
@@ -202,14 +201,15 @@ div.wrapper h6 {
 
 #header #newsletter {
     float: right;
-    padding: 10px 10px 12px 10px;
+    padding: 20px 20px 22px 20px;
     color: white;
     background-color: #2E64A1;
     border:none;
+    margin:0px 20px 0px 20px;
 }
 
 #header #newsletter p {
-    margin: 0 0 8px 0;
+    margin: 0 0 10px 0;
 /*    font-family: Verdana, Arial, Helvetica, sans-serif;*/
 }
 /* ----------------------------------------------Topbar------------------------------------- */
@@ -240,7 +240,7 @@ div.wrapper h6 {
 #intro .fl_left {
     display: block;
     float: left;
-    width: 520px;
+    width: 50%;
     height: 240px;
     margin: 0;
     padding: 30px;
@@ -249,7 +249,7 @@ div.wrapper h6 {
 }
 
 #intro .fl_left h2 {
-    font-size: 46px;
+    font-size: 50px;
     margin: 0 0 15px 0;
     padding: 0;
     border: none;
@@ -273,7 +273,7 @@ div.wrapper h6 {
 }
 
 #intro .fl_left p.readmore a {
-    padding: 8px 15px;
+    padding: 10px 17px;
     font-size: 18px;
     color: #FFFFFF;
     background-color: #DD560E;
@@ -281,9 +281,10 @@ div.wrapper h6 {
 
 #intro .fl_right {
     float: right;
+    width: 45%;
 }
 #intro .imagen-intro{
-    width: 380px ;
+    width: 380px;
     height: 300px;
 }
 /* ----------------------------------------------Services------------------------------------- */
@@ -411,10 +412,7 @@ div.wrapper h6 {
     padding-bottom: 8px;
     border-bottom: 1px dotted #CCCCCC;
 }
-#container img{
-    max-width: 700px;
-    margin: 30px;
-}
+
 #content {
     display: block;
     float: left;
@@ -664,7 +662,6 @@ div.wrapper h6 {
     font-weight: normal;
     list-style: none;
     line-height: normal;
-    background-color: none;
 }
 
 #footer .footbox {
@@ -703,6 +700,7 @@ div.wrapper h6 {
     float: left;
     width: 300px;
 }
+
 /* ----------------------------------------------Copyright------------------------------------- */
 
 #copyright {
@@ -717,28 +715,3 @@ div.wrapper h6 {
 }
 
 
-
-#img_alhambra img{
-    margin-left: 60px;
-}
-
-#img_alhambra {
-    margin-left: 60px;
-    width: 700px;
-}
-
-#img_palacio {
-    margin-left: 70px;
-}
-
-#img_plano {
-    margin-left: 80px;
-}
-
-#img_ayuntamiento {
-    margin-left: 80px;
-}
-
-#img_sierra {
-    margin-left: 80px;
-}
