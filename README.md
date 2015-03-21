@@ -2,7 +2,8 @@
 ## Esta es una web, para acoger el I Congreso de Estudiantes de Ingeniería Informática en España
 Web con información acerca del CEIIE que comprenderá caracterísiticas como:
  * Mostrar información relevante acerca del congreso
- * 
+ * Mas...
+
 Autores: 
  * Ivan Ortega Alba
  * Jose Luis Fernandez Bueno
