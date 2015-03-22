@@ -1,9 +1,19 @@
 # web-congreso
 ## Esta es una web, para acoger el I Congreso de Estudiantes de Ingeniería Informática en España
 Web con información acerca del CEIIE que comprenderá caracterísiticas como:
- * Mostrar información relevante acerca del congreso
- * Mas...
-
+ * Muestre una presentación del Congreso en el inicio
+ * Ofrezca información a los potenciales patrocinadores: cómo patrocinar, cuanto cuesta
+y qué obtienen.
+- Qué tipo de cuotas de inscripción hay y su importe, por ejemplo:
+o Estudiante
+o Profesor
+o Invitado
+- Qué actividades extra habrá, p.ej:
+o Visita a la Alhambra
+o Visita a Sierra Nevada
+- El programa de ponencias (aún por definir)
+- Breve Información sobre la ciudad de Granada y cómo llegar
+- Breve información sobre la ETSIIT y cómo llegar.
 Autores: 
  * Ivan Ortega Alba
  * Jose Luis Fernandez Bueno
