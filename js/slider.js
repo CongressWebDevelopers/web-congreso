@@ -2,7 +2,6 @@ var ul;
 var li_items;
 var li_number;
 var slider_width = 0;
-var current = 0;
 var positions = [0];
 var actual_page_size = 0;
 var actual_procesed_size = 0;
@@ -25,15 +24,15 @@ function init() {
         actual_procesed_size += image_width;
     }
 
-    ul.style.width = parseInt(slider_width) + 'px';
+    ul.style.width = parseInt(actual_procesed_size) + 'px';
     setTimeout(slider(), 2000);
 }
 
 function slider() {
 
-    if (actual_position < positions.length) {
+    if (actual_position != positions.length) {
         ul.style.left = "-" + positions[actual_position] + "px";
-        actual_position++;
+        actual_position = actual_position + 1;
         setTimeout(slider(), 2000);
     } else {
         setTimeout(function() {
