@@ -1,4 +1,5 @@
 @charset "utf-8";
+
 /*
 Template Name: BusinessToday
 Author: <a href="http://www.os-templates.com/">OS Templates</a>
@@ -15,7 +16,6 @@ legend {
     padding: 0;
     border: none;
 }
-
 legend {
     display: none;
 }
@@ -27,13 +27,13 @@ legend {
     width: 155px;
     margin: 0 11px 0 0;
     padding: 5px;
-    color: WHITE;;
+    color: WHITE;
+    ;
     background-color: #4A7BB1;
     border: none;
-/*    font-family: Verdana, Arial, Helvetica, sans-serif;*/
+    /*    font-family: Verdana, Arial, Helvetica, sans-serif;*/
     font-size: 12px;
 }
-
 #header input#news_go {
     width: auto;
     height: auto;
@@ -55,11 +55,10 @@ legend {
     padding: 5px;
     color: WHITE;
     background-color: #4A7BB1;
-    border:None;
-/*    font-family: Verdana, Arial, Helvetica, sans-serif;*/
+    border: None;
+    /*    font-family: Verdana, Arial, Helvetica, sans-serif;*/
     font-size: 12px;
 }
-
 #topbar input#go {
     width: 68px;
     height: 26px;
@@ -78,25 +77,21 @@ legend {
     display: block;
     width: 100%;
 }
-
 #container #respond input {
     width: 170px;
     padding: 2px;
     border: 1px solid #CCCCCC;
     margin: 5px 5px 0 0;
 }
-
 #container #respond textarea {
     width: 98%;
     border: 1px solid #CCCCCC;
     padding: 2px;
     overflow: auto;
 }
-
 #container #respond p {
     margin: 5px 0;
 }
-
 #container #respond #submit,
 #container #respond #reset {
     margin: 0;
@@ -115,7 +110,6 @@ legend {
     padding: 10px 0 0 0;
     border: none;
 }
-
 #footer input {
     display: block;
     width: 218px;
@@ -127,7 +121,6 @@ legend {
     border: none;
     font-size: 12px;
 }
-
 #footer input#login_go {
     width: 68px;
     height: 26px;
