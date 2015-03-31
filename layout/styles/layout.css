@@ -604,7 +604,9 @@ div.wrapper h6 {
     float: right;
     width: 570px;
     margin: 0 0 0 30px;
-    padding: 0;
+    padding: 10;
+    overflow: hidden;
+    height: 170px;
 }
 /*
 #footer .footbox-3 img {

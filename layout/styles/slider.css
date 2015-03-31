@@ -24,21 +24,21 @@
 }
 */
 
-.image-slider-wrapper{
-    overflow: hidden;
-}
 
 #image_slider{
-    position: relative;
-    height: 200px;
-    padding:0;
+	position: relative;
+	overflow: hidden;
+	height: 280px;
+	padding:0;
+	left:0;
 }
-/*Pegamos todas las imagenes a la izquierda y seguida una tras otra*/
 #image_slider li{
-    max-width: 100%;
-    float:left;
-    list-style: none;
+	position:relative;
+	max-width: 100%;
+	float:left;
+	list-style: none;
+	left: 0;
 }
 #image_slider img{
-    height:100px;
+    height:120px;
 }
