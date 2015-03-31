@@ -36,7 +36,6 @@ function slider() {
         actual_position++;
         setTimeout(slider(), 2000);
     } else {
-        // after 2 seconds, call the goBack function to slide to the first image
         setTimeout(function() {
             ul.style.left = 0 + "px";
             actual_position = 0;
