@@ -90,18 +90,19 @@ function animateLeft(obj, from, to, speed) {
 **/
 
 var imagenes = document.getElementById("slideshow").getElementsByTagName("img");
-var timeBetweenImages = 2000;
+var timeBetweenImages = 3000;
+var timeWatchingImages = 1000;
 
 window.onload = function() {
     imagenes[i].style.visibility = 'visible';
-    setTimeout(function(){animateLeft(imagenes[i],0,400,0.5)},1000);
+    setTimeout(function(){animateLeft(imagenes[i],0,400,0.5)},timeWatchingImages);
     setInterval(function(){
-        if(i <= imagenes.length -2)
+        if(i <= imagenes.length - 2)
             i++;
         else
             i = 0;
         imagenes[i].style.visibility = 'visible';
-        setTimeout(function(){animateLeft(imagenes[i],0,400,0.5)},1000);
-    },3000)
+        setTimeout(function(){animateLeft(imagenes[i],0,400,0.5)},timeWatchingImages);
+    },timeBetweenImages)
 
 }
