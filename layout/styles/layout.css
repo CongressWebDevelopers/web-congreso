@@ -126,13 +126,13 @@ div.wrapper h6 {
     background-color: white;
 }
 .col6 a {
-    color: ##666666;
+    color: #666666;
     background-color: none;
     text-decoration-color: none;
 }
 .col7,
 .col7 a {
-    color: ##666666;
+    color: #666666;
     background-color: #2E64A1;
 }
 /* ----------------------------------------------Generalise------------------------------------- */
@@ -605,6 +605,14 @@ div.wrapper h6 {
     width: 570px;
     margin: 0 0 0 30px;
     padding: 10;
+    overflow: hidden;
+    height: 170px;
+}
+#footer .footbox-2 {
+    display: block;
+    float: right;
+    width: 380px;
+    margin: 0 0 0 30px;
     overflow: hidden;
     height: 170px;
 }
