@@ -10,24 +10,9 @@
     left:0;
     z-index:8;
     height: 100px;
+    background-color: white;
+    padding-right: 100%;
+    visibility: hidden;
 }
 
-#slideshow img .active {
-    z-index: 1000;
-    -webkit-transform: translate(100px,10);
-/*
-    -moz-transform: translate(100em,100);
-    -o-transform: translate(100em,100);
-    -ms-transform: translate(100em,100);
-*/
-}
 
-@keyframes slidein {
-  from {
-    margin-left: 0;
-  }
-  to {
-    margin-left: "80px";
-
-  }
-}

@@ -59,19 +59,42 @@
 //    setInterval("slider(imagenes)", 6000);
 //}
 
-var imagenes = document.getElementById("slideshow").getElementsByTagName("img");
+var imagenes = document.getElementById("slideshow").childNodes;
+//var i = 0;
+//
+//function cambiarClaseActiva(imagenes) {
+//    console.log(imagenes[i])
+//    imagenes[i].classList.add('active');
+//    if (i < imagenes.length) {
+//        i++;
+//        setTimeout(cambiarClaseActiva(imagenes))
+//    } else
+//        setTimeout(cambiarClaseActiva(imagenes));
+//}
+function animateLeft(obj, from, to) {
+    if (from >= to) {
+        obj.style.visibility = 'hidden';
+        return;
+    } else {
+        var box = obj;
+        obj.style.visibility = 'visible';
+        box.style.paddingLeft = from + "px";
+        setTimeout(function() {
+            animateLeft(obj, from + 1, to);
+        }, 25)
+    }
+}
 var i = 0;
 
-function cambiarClaseActiva(imagenes) {
-    console.log(imagenes[i])
-    imagenes[i].classList.add('active');
-    if (i < imagenes.length) {
-        i++;
-        setTimeout(cambiarClaseActiva(imagenes))
-    } else
-        setTimeout(cambiarClaseActiva(imagenes));
+function animateMe() {
+
+    animateLeft(imagenes[i], 0, 600);
+    for (j = 1; j < imagenes.length; j++) {
+        if(imagenes[i].tagName == "img")
+            setTimeout("setInterval(animateLeft(imagenes[j])),500", 500);
+    }
+
 }
 
-setInterval("cambiarClaseActiva(imagenes)", 6000);
 
-window.onload = cambiarClaseActiva(imagenes);
+window.onload = animateMe();
