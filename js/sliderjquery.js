@@ -61,7 +61,9 @@
 
 var imagenes = document.getElementById("slideshow").getElementsByTagName("img");
 var i = 0;
+
 function cambiarClaseActiva(imagenes) {
+    console.log(imagenes[i])
     imagenes[i].classList.add('active');
     if (i < imagenes.length) {
         i++;

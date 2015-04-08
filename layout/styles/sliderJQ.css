@@ -12,12 +12,14 @@
     height: 100px;
 }
 
-#slideshow img.active {
+#slideshow img .active {
     z-index: 1000;
-    -webkit-transform: translate(100em,100);
+    -webkit-transform: translate(100px,10);
+/*
     -moz-transform: translate(100em,100);
     -o-transform: translate(100em,100);
     -ms-transform: translate(100em,100);
+*/
 }
 
 @keyframes slidein {
