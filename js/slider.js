@@ -1,48 +1,108 @@
-var ul;
-var li_items;
-var li_number;
-var slider_width = 0;
-var positions = [0];
-var actual_page_size = 0;
-var actual_procesed_size = 0;
-var actual_position = 0;
+//$slider = $('#slideshow').css("width",$('#slideshow IMG.active').css("width"));
+//function slideSwitch() {
+//    var $active = $('#slideshow IMG.active');
+//    var $slider = $('#slideshow')
+//    if ( $active.length == 0 ) $active = $('#slideshow IMG:last');
+//
+//    var $next =  $active.next().length ? $active.next()
+//        : $('#slideshow IMG:first');
+//
+//    $active.addClass('last-active');
+//
+//    console.log($slider.css("width"));
+//    $next.css({opacity: 0.0})
+//        .addClass('active')
+//        .animate({opacity: 1.0}, 1000, function() {
+//
+//        $slider = $('#slideshow').css("width",$next.css("width"));
+//        .animate({width:$next.css("width")},500)
+//        $active.removeClass('active last-active');
+//        });
+//}
 
-function init() {
-    ul = document.getElementById('image_slider');
-    li_items = ul.children;
-    li_number = li_items.length;
-    slider_width = document.getElementById('patrocinadores').clientWidth;
+//var imagenes;
+//var tamano;
+//var i = 0;
+//var animacion = [];
+//
+//function movimientoIzq(idImagen) {
+//    marginleft = imagenes[idImagen].style.marginLeft
+//    marginleft.replace("px", "");
+//    marginleft = parseInt(marginleft);
+//    marginleft++;
+//    imagenes[idImagen].style.marginLeft = (marginleft.toString().concat("px"));
+//    console.log(imagenes[idImagen])
+//
+//}
+//
+//
+//function slider(imagenes) {
+//
+//    if (i < imagenes.length) {
+//        imagenes[i].style.zIndex = "10" + i;
+//        imagenes[i].style.marginLeft = "0px";
+//        idAnima = setInterval("movimientoIzq(i)", 10);
+//        animacion[0] = idAnima
+//        i += 2;
+//    }
+//    //    else
+//    //        for (img in imagenes)
+//    //            img.style.marginLeft = 0;
+//}
+//
+//function iniciarSlider(div) {
+//    imagenes = div.childNodes;
+//    tamano = div.style.width;
+//    i = 1;
+//    for (img = 1; img < imagenes.length; img += 2)
+//        imagenes[img].style.marginLeft = "0px";
+//    setInterval("slider(imagenes)", 6000);
+//}
 
-    for (i = 0; i < li_number; i++) {
-        image_width = li_items[i].childNodes[1].clientWidth;
-        if (image_width + actual_page_size < slider_width)
-            actual_page_size += image_width;
-        else {
-            positions.push(actual_procesed_size);
-            actual_page_size = 0;
-        }
-        actual_procesed_size += image_width;
-    }
 
-    ul.style.width = parseInt(actual_procesed_size) + 'px';
-    setTimeout(slider(), 2000);
-}
-
-function slider() {
-
-    if (actual_position != positions.length) {
-        ul.style.left = "-" + positions[actual_position] + "px";
-        actual_position = actual_position + 1;
-        setTimeout(slider(), 2000);
+//var i = 0;
+//
+//function cambiarClaseActiva(imagenes) {
+//    console.log(imagenes[i])
+//    imagenes[i].classList.add('active');
+//    if (i < imagenes.length) {
+//        i++;
+//        setTimeout(cambiarClaseActiva(imagenes))
+//    } else
+//        setTimeout(cambiarClaseActiva(imagenes));
+//}
+var i = 0;
+function animateLeft(obj, from, to, speed) {
+    if (from >= to) {
+        obj.style.visibility = 'hidden';
+        return;
     } else {
+        var box = obj;
+        box.style.paddingLeft = from + "px";
         setTimeout(function() {
-            ul.style.left = 0 + "px";
-            actual_position = 0;
-        }, 2000);
-        setTimeout(function() {
-            slider()
-        }, 4000);
+            animateLeft(imagenes[i], from + 1, to,speed);
+        }, speed)
     }
 }
 
-window.onload = init;
+/**
+ sbi -> Second between images
+**/
+
+var imagenes = document.getElementById("slideshow").getElementsByTagName("img");
+var timeBetweenImages = 3000;
+var timeWatchingImages = 1000;
+
+window.onload = function() {
+    imagenes[i].style.visibility = 'visible';
+    setTimeout(function(){animateLeft(imagenes[i],0,400,0.5)},timeWatchingImages);
+    setInterval(function(){
+        if(i <= imagenes.length - 2)
+            i++;
+        else
+            i = 0;
+        imagenes[i].style.visibility = 'visible';
+        setTimeout(function(){animateLeft(imagenes[i],0,400,0.5)},timeWatchingImages);
+    },timeBetweenImages)
+
+}
