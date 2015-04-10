@@ -12,6 +12,7 @@ Licence URI: http://www.os-templates.com/template-terms
     <title>I Congreso de estudiantes Ingeniería Informática</title>
     <meta content="text/html; charset=utf-8" http-equiv=Content-Type>
     <link rel="stylesheet" href="../layout/styles/layout.css" type="text/css" />
+    <script src="../js/formulario.js"></script>
 </head>
 
 <body id="top">
@@ -62,6 +63,7 @@ Informática en España</strong>
                             </li>
                         </ul>
                     </li>
+                    <li><a href="pages/contacto.html">Contacto</a>
                 </ul>
             </div>
             <div id="search">
@@ -84,68 +86,22 @@ Informática en España</strong>
                 <li><a href="#">Inicio</a>
                 </li>
                 <li>&#187;</li>
-                <li class="current"><a href="#">Patrocina</a>
+                <li class="current"><a href="#">Contáctanos</a>
                 </li>
             </ul>
         </div>
     </div>
     <div class="wrapper col5">
         <div id="container">
-            <h1>¡¡¡Patrocínanos!!!</h1>
-
-
-            <p>A continuación, detallamos los planes de patrocinio que ofertamos a las compañías que quieran patrocinar a este I Congreso de Estudiantes de Ingeniería Informática en España: </p>
-            <ul>
-                <li>Platino: 10.000€</li>
-                <li>Oro: 5.000€</li>
-                <li>Plata: 2.500€</li>
-                <li>Bronce: 1.000€</li>
-            </ul>
-            <table id="patrocinio" border="1">
-                <tr>
-                    <td>Nivel de Incripción</td>
-                    <td>Platino</td>
-                    <td>Oro</td>
-                    <td>Plata</td>
-                    <td>Bronce</td>
-                </tr>
-                <tr>
-                    <td>Logo promocional en material y web</td>
-                    <td>Si</td>
-                    <td>Si</td>
-                    <td>Si</td>
-                    <td>Si</td>
-                </tr>
-                <tr>
-                    <td>Nombramiento en la presentación</td>
-                    <td>Si</td>
-                    <td>Si</td>
-                    <td>Si</td>
-                    <td>Si</td>
-                </tr>
-                <tr>
-                    <td>Poster de la conferencia</td>
-                    <td>Si</td>
-                    <td>Si</td>
-                    <td>Si</td>
-                    <td>No</td>
-                </tr>
-                <tr>
-                    <td>Anuncios en soportes digitales</td>
-                    <td>Si</td>
-                    <td>Si</td>
-                    <td>No</td>
-                    <td>No</td>
-                </tr>
-                <tr>
-                    <td>Conferencia propia</td>
-                    <td>Si</td>
-                    <td>No</td>
-                    <td>No</td>
-                    <td>No</td>
-                </tr>
-            </table>
-            <p>Ésta es una oportunidad única para que las empresas del sector de la informática y las comunicaciones se puedan dar a conocer, y promocionar sus artículos más importantes. Se garantiza una amplia visibilidad y cobertura a los partners, ¡aprovecha esta oportunidad!</p>
+            <h1>¡¡¡Contáctanos!!!</h1>
+            <form id="contacto">
+                <p><input type="text" value="" placeholder="Introduce tu Nombre" /></p>
+                <p><input type="text" value="" placeholder="Introduce tus Apellidos" /></p>
+                <p><input type="text" id="email" value="" placeholder="Introduce tu Email" /></p>
+                <p><textarea rows="10" cols="40" placeholder="Introduce tu cuestión"></textarea></p>
+                <p><input type="submit" value="Enviar" onCLick="return validar()">
+                <input type="reset" value="Limpiar"></p>
+            </form>
             
         </div>
     <div class="wrapper col6">
