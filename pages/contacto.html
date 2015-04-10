@@ -12,7 +12,7 @@ Licence URI: http://www.os-templates.com/template-terms
     <title>I Congreso de estudiantes Ingeniería Informática</title>
     <meta content="text/html; charset=utf-8" http-equiv=Content-Type>
     <link rel="stylesheet" href="../layout/styles/layout.css" type="text/css" />
-    <script src="../js/formulario.js"></script>
+    <script type="text/javascript" src="../js/formulario.js"></script>
 </head>
 
 <body id="top">
@@ -63,7 +63,8 @@ Informática en España</strong>
                             </li>
                         </ul>
                     </li>
-                    <li><a href="pages/contacto.html">Contacto</a>
+                    <li><a href="contacto.html">Contacto</a>
+                    </li>
                 </ul>
             </div>
             <div id="search">
@@ -98,11 +99,10 @@ Informática en España</strong>
                 <p><input type="text" value="" placeholder="Introduce tu Nombre" /></p>
                 <p><input type="text" value="" placeholder="Introduce tus Apellidos" /></p>
                 <p><input type="text" id="email" value="" placeholder="Introduce tu Email" /></p>
-                <p><textarea rows="10" cols="40" placeholder="Introduce tu cuestión"></textarea></p>
+                <p><textarea rows="12" cols="55" placeholder="Introduce tu cuestión"></textarea></p>
                 <p><input type="submit" value="Enviar" onCLick="return validar()">
                 <input type="reset" value="Limpiar"></p>
             </form>
-            
         </div>
     <div class="wrapper col6">
         <div id="footer">
@@ -124,13 +124,16 @@ Informática en España</strong>
                 <p><a href="#">&raquo; No recuerdo la contraseña</a> | <a href="#">Crear una cuenta</a>
                 </p>
             </div>
-            <div class="footbox-3">
+            <div id="patrocinadores" class="footbox-2">
                 <h2>Patrocinadores</h2>
-                <img class="imagen-patrocinador" src="../images/consejeria_educacion_cultura_y_deporte.jpg">
-                <img class="imagen-patrocinador" src="../images/osl.png">
-                <img class="imagen-patrocinador" src="../images/etsiit.jpeg">
-                <img class="imagen-patrocinador" src="../images/UGR.jpg">
-                
+                <div id="slideshow">
+                    <img src="../images/consejeria_educacion_cultura_y_deporte.jpg">
+                    <img src="../images/fujitsu-logo.jpg" alt="" />
+                    <img src="../images/logo-indra_0.jpg" alt="" />
+                    <img src="../images/UGR.jpg" alt="" />
+                    <img src="../images/logo_etsiit.png">
+                    <img src="../images/HP-large.png">
+                </div>
             </div>
             <br class="clear" />
         </div>
@@ -139,10 +142,12 @@ Informática en España</strong>
         <div id="copyright">
             <p class="fl_left">Copyright &copy; 2015 - All Rights Reserved - <a href="#">Congreso de Estudiantes de Ingeniería Informática de España</a>
             </p>
-            <p class="fl_right">Ivan Ortega Alba | Jose</p>
+            <p class="fl_right">Ivan Ortega Alba | Jose Luis Fdez. Bueno</p>
             <br class="clear" />
         </div>
     </div>
+    <script type="text/javascript" src="../js/slider.js"></script>
+
 </body>
 
 </html>
