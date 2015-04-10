@@ -22,8 +22,16 @@ legend {
 form label{
     margin-right: 5px;
 }
-#contacto button{
+.btn-enviar {
 
+    margin: 0;
+    margin-right: 5px;
+    padding: 5px 20px 5px 20px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    background-color: #25A27C;
+    border-color: None;
+    border:none;
 }
 /* ----------------------------------------------Newsletter Form------------------------------------- */
 
@@ -141,13 +149,4 @@ form label{
     font-weight: bold;
 }
 
-.btn-enviar {
-   width: 68px;
-    height: 26px;
-    margin: 0;
-    padding: 4px 0;
-    text-transform: uppercase;
-    color: #FFFFFF;
-    background-color: #25A27C;
-    border-color: None;
-}
+
