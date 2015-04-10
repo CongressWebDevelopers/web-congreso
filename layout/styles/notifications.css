@@ -1,0 +1,18 @@
+div .error {
+    border: solid 1px #b90000;
+    padding: 10px;
+    background-color: rgba(255, 0, 0, 0.30);
+    color: #b90000;
+    text-emphasis: bold;
+    width: 50%;
+    margin: 0px 20px 20px 20px;
+}
+div .success {
+    border: solid 1px darkgreen;
+    padding: 10px;
+    background-color: rgba(0, 100, 0, 0.3);
+    color: darkgreen;
+    text-emphasis: bold;
+    width: 50%;
+    margin: 0px 20px 20px 20px;
+}
