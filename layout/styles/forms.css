@@ -19,6 +19,12 @@ legend {
 legend {
     display: none;
 }
+form label{
+    margin-right: 5px;
+}
+#contacto button{
+
+}
 /* ----------------------------------------------Newsletter Form------------------------------------- */
 
 #header input {
@@ -133,4 +139,15 @@ legend {
     border-color: None;
     cursor: pointer;
     font-weight: bold;
+}
+
+.btn-enviar {
+   width: 68px;
+    height: 26px;
+    margin: 0;
+    padding: 4px 0;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    background-color: #25A27C;
+    border-color: None;
 }
