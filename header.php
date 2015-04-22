@@ -25,7 +25,7 @@ Informática en España</strong>
         <div id="topbar">
             <div id="topnav">
                 <ul>
-                    <li><a href="pages/programaPonencias.html">Programa</a>
+                    <li><a href="index.php?page=programa">Programa</a>
                     </li>
                     <li><a href="pages/patrocinadores.html">Patrocina</a>
                     </li>
