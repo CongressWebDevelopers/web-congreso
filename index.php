@@ -8,10 +8,10 @@ if(isset($_GET['page']))
             require_once('./pages/programa.php');
             break;
         //Añadir el resto de opciones del menu
-        default:
+        default:    //Si se escribe una página erronea nos lleva al inicio
             require_once('contain.php');
     }
-else
+else    //Si no se introduce ninguna variable por get se llama al index
     require_once('contain.php');
 
 require_once('footer.php');
