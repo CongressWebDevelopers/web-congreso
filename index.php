@@ -1,6 +1,9 @@
 <?php
-    require_once('head.php');
-    require_once('header.php');
+require_once('head.php');
+require_once('header.php');
+if($_GET['page']=="programa")
+    require_once('./pages/programa.php')
+else
     require_once('contain.php');
-    require_once('footer.php');
+require_once('footer.php');
 ?>
