@@ -3,7 +3,7 @@
     <div class="wrapper col1">
         <div id="header">
             <div id="logo">
-                <h1><a href="#">CEIIE</a></h1>
+                <h1><a href="index.php">CEIIE</a></h1>
                 <p><strong>I Congreso de Estudiantes de Ingeniería
 Informática en España</strong>
                 </p>
@@ -27,27 +27,27 @@ Informática en España</strong>
                 <ul>
                     <li><a href="index.php?page=programa">Programa</a>
                     </li>
-                    <li><a href="pages/patrocinadores.html">Patrocina</a>
+                    <li><a href="index.php?page=patrocina">Patrocina</a>
                     </li>
-                    <li><a href="pages/inscribete.html">Inscripción</a>
+                    <li><a href="index.php?page=inscripcion">Inscripción</a>
                     </li>
                     <li><a href="#">Actividades</a>
                         <ul>
-                            <li><a href="pages/visitaAlhambra.html">Visita a la Alhambra</a>
+                            <li><a href="index.php?page=alhambra">Visita a la Alhambra</a>
                             </li>
-                            <li><a href="pages/visitaSierraNevada.html">Visita a Sierra Nevada</a>
+                            <li><a href="index.php?page=sierra_nevada">Visita a Sierra Nevada</a>
                             </li>
                         </ul>
                     </li>
                     <li><a href="#">Información</a>
                         <ul>
-                            <li><a href="pages/informacionCiudad.html">La ciudad</a>
+                            <li><a href="index.php?page=granada">La ciudad</a>
                             </li>
-                            <li><a href="pages/informacionEtsiit.html">La ETSIIT</a>
+                            <li><a href="index.php?page=etsiit">La ETSIIT</a>
                             </li>
                         </ul>
                     </li>
-                    <li><a href="pages/contacto.html">Contacto</a>
+                    <li><a href="index.php?page=contacto">Contacto</a>
                     </li>
                 </ul>
             </div>
