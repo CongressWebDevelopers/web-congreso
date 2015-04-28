@@ -49,3 +49,11 @@ table tbody tr.dark {
     color: #666666;
     background-color: #E8E8E8;
 }
+.resumen-ponencia {
+display: none;
+background-color: #fff;
+}
+
+.ponencia-tabla :hover {
+    cursor: pointer;
+}
