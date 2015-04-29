@@ -1,3 +1,8 @@
+<?php
+require_once("./modulos/lectorImagenes.php");
+$imagenes = getImagenesFichero("imagenes.txt");
+print_r($imagenes);
+?>
     <div class="wrapper col3">
         <div id="breadcrumb">
             <ul>
@@ -17,7 +22,7 @@
         <div id="container">
             <h1>Visita a la Alhambra</h1>
             <div id="img_alhambra">
-                <img alt="Imagen Alhambra" src="../images/alhambra.jpg" />
+                <img alt="Imagen Alhambra" src="images/alhambra.jpg" />
             </div>
 
             <p>
@@ -26,7 +31,7 @@
             <p>Desde este 1º Congreso de Ingeniería Informática, no queremos dejar pasar la oportunidad de hacer un tour guiado por la Alhambra y los jardines del Generalife.</p>
 
             <div id="img_palacio">
-                <img alt="Imagen palacio Carlos V" src="../images/palacio_carlosV.jpg" />
+                <img alt="Imagen palacio Carlos V" src="images/palacio_carlosV.jpg" />
             </div>
             <h3>Itinerario</h3>
             <p>Dicha visita se producirá el 22 de junio a las 10 de la mañana, y será gratuita para todos los inscritos en el congreso. La mejor manera para conocer en profundidad la Alhambra y el Generalife, es ir de la mano con un guia oficial del monumento.</p>
@@ -43,7 +48,9 @@
             </ul>
 
             <div id="img_plano">
-                <img alt="Plano Alhambra" src="../images/plano.jpg" />
+                <img alt="Plano Alhambra" src="images/plano.jpg" />
             </div>
+            <h3>Galería de imágenes</h3>
         </div>
+
     </div>
