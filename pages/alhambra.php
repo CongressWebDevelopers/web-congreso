@@ -1,8 +1,4 @@
-<?php
-require_once("./modulos/lectorImagenes.php");
-$imagenes = getImagenesFichero("imagenes.txt");
-print_r($imagenes);
-?>
+
     <div class="wrapper col3">
         <div id="breadcrumb">
             <ul>
@@ -50,7 +46,20 @@ print_r($imagenes);
             <div id="img_plano">
                 <img alt="Plano Alhambra" src="images/plano.jpg" />
             </div>
-            <h3>Galería de imágenes</h3>
+            <div class=".galeria">
+               <h3>Galería de imágenes</h3>
+<?php
+require_once("./modulos/lectorImagenes.php");
+$imagenes = getDescripcionActividad("imagenes.txt");
+$i = 0;
+foreach($imagenes as $img ){
+    $i++;
+    echo '
+                <img id="img-galeria-'. $i .'" alt="Imagenes Alhambra" class="imagen-galeria" src="images/'. $img.'"/>';
+}
+ ?>
+            </div>
+
         </div>
 
     </div>

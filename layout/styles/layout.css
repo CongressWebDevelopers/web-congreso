@@ -374,6 +374,10 @@ div.wrapper h6 {
     max-width: 700px;
     margin: 30px;
 }
+#container .imagen-galeria{
+    margin: 10px;
+    height: 200px;
+}
 #content {
     display: block;
     float: left;
