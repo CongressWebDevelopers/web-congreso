@@ -14,12 +14,16 @@ function getDescripcionActividad($ruta){
     $texto = array();
     $file = fopen($ruta, "r") or exit("Unable to open file!");
     //Output a line of the file until the end is reached
+    $i = -1;
     while(!feof($file)){
         $cadenaActual = fgets($file);
-        if(eregi('.jpg',$cadenaActual))
-            $imagenes[]=$cadenaActual;
+        if(eregi('.jpg',$cadenaActual)){
+            $i++;
+            $imagenes[$i]=$cadenaActual;
+        }else
+            $texto[$i] .= $cadenaActual;
     }
     fclose($file);
-    return $imagenes;
+    return array("imagenes" => $imagenes, "texto" => $texto) ;
 }
 ?>

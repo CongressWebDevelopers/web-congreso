@@ -17,9 +17,6 @@
     <div class="wrapper col5">
         <div id="container">
             <h1>Visita a la Alhambra</h1>
-            <div id="img_alhambra">
-                <img alt="Imagen Alhambra" src="images/alhambra.jpg" />
-            </div>
 
             <p>
                 La Alhambra representa todo el esplendor y el poder de la dinastía nazarí. Su toma se produjo el 2 de enero de 1492 con la entrada de los Reyes Católicos en la ciudad tras una guerra de 10 años. El primer sultán de la Alhambra fue Muhammad I o Al-Ahmar, el fundador de la dinastía nazarí, y el último sultán: Muhammad XII, más conocido como Boabdil.</p>
@@ -50,12 +47,12 @@
                <h3>Galería de imágenes</h3>
 <?php
 require_once("./modulos/lectorImagenes.php");
-$imagenes = getDescripcionActividad("imagenes.txt");
-$i = 0;
-foreach($imagenes as $img ){
+$descripcion = getDescripcionActividad("imagenes.txt");
+$i = -1;
+foreach($descripcion["imagenes"] as $img ){
     $i++;
-    echo '
-                <img id="img-galeria-'. $i .'" alt="Imagenes Alhambra" class="imagen-galeria" src="images/'. $img.'"/>';
+    echo '<img id="img-alambra-'. $i .'" alt="Imagenes Alhambra" class="" src="images/'. $img.'"/>';
+    if(isset($descripcion["texto"][$i])) echo '<p>' . $descripcion["texto"][$i] . '</p>';
 }
  ?>
             </div>
