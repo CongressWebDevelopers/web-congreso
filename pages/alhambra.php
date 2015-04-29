@@ -51,8 +51,10 @@ $descripcion = getDescripcionActividad("imagenes.txt");
 $i = -1;
 foreach($descripcion["imagenes"] as $img ){
     $i++;
-    echo '<img id="img-alambra-'. $i .'" alt="Imagenes Alhambra" class="" src="images/'. $img.'"/>';
-    if(isset($descripcion["texto"][$i])) echo '<p>' . $descripcion["texto"][$i] . '</p>';
+    $imgAling=($i%2)?"imgl":"imgr";
+    echo '<img id="img-alambra-'. $i .'" alt="Imagenes Alhambra" class="'. $imgAling .'" src="images/'. $img.'"/>';
+    if(isset($descripcion["texto"][$i])) echo '<p class="descripcion-imagen">' . $descripcion["texto"][$i] . '</p>';
+    echo '<hr class="clear">';
 }
  ?>
             </div>

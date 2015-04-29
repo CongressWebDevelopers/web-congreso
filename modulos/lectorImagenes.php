@@ -21,7 +21,7 @@ function getDescripcionActividad($ruta){
             $i++;
             $imagenes[$i]=$cadenaActual;
         }else
-            $texto[$i] .= $cadenaActual;
+            if(isset($texto[$i])) $texto[$i] .= $cadenaActual; else $texto[$i] = $cadenaActual;
     }
     fclose($file);
     return array("imagenes" => $imagenes, "texto" => $texto) ;
