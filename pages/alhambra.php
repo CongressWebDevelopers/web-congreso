@@ -1,3 +1,4 @@
+
     <div class="wrapper col3">
         <div id="breadcrumb">
             <ul>
@@ -16,9 +17,6 @@
     <div class="wrapper col5">
         <div id="container">
             <h1>Visita a la Alhambra</h1>
-            <div id="img_alhambra">
-                <img alt="Imagen Alhambra" src="../images/alhambra.jpg" />
-            </div>
 
             <p>
                 La Alhambra representa todo el esplendor y el poder de la dinastía nazarí. Su toma se produjo el 2 de enero de 1492 con la entrada de los Reyes Católicos en la ciudad tras una guerra de 10 años. El primer sultán de la Alhambra fue Muhammad I o Al-Ahmar, el fundador de la dinastía nazarí, y el último sultán: Muhammad XII, más conocido como Boabdil.</p>
@@ -26,7 +24,7 @@
             <p>Desde este 1º Congreso de Ingeniería Informática, no queremos dejar pasar la oportunidad de hacer un tour guiado por la Alhambra y los jardines del Generalife.</p>
 
             <div id="img_palacio">
-                <img alt="Imagen palacio Carlos V" src="../images/palacio_carlosV.jpg" />
+                <img alt="Imagen palacio Carlos V" src="images/palacio_carlosV.jpg" />
             </div>
             <h3>Itinerario</h3>
             <p>Dicha visita se producirá el 22 de junio a las 10 de la mañana, y será gratuita para todos los inscritos en el congreso. La mejor manera para conocer en profundidad la Alhambra y el Generalife, es ir de la mano con un guia oficial del monumento.</p>
@@ -43,7 +41,24 @@
             </ul>
 
             <div id="img_plano">
-                <img alt="Plano Alhambra" src="../images/plano.jpg" />
+                <img alt="Plano Alhambra" src="images/plano.jpg" />
             </div>
+            <div class=".galeria">
+               <h3>Galería de imágenes</h3>
+<?php
+require_once("./modulos/lectorImagenes.php");
+$descripcion = getDescripcionActividad("imagenes.txt");
+$i = -1;
+foreach($descripcion["imagenes"] as $img ){
+    $i++;
+    $imgAling=($i%2)?"imgl":"imgr";
+    echo '<img id="img-alambra-'. $i .'" alt="Imagenes Alhambra" class="'. $imgAling .'" src="images/'. $img.'"/>';
+    if(isset($descripcion["texto"][$i])) echo '<p class="descripcion-imagen">' . $descripcion["texto"][$i] . '</p>';
+    echo '<hr class="clear">';
+}
+ ?>
+            </div>
+
         </div>
+
     </div>
