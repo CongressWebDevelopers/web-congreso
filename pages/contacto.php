@@ -1,4 +1,7 @@
-<div class="wrapper col3">
+<?php
+require_once('./modulos/mail/mail.php');
+?>
+       <div class="wrapper col3">
         <div id="breadcrumb">
             <ul>
                 <li class="first">Tú estás aquí</li>
@@ -14,7 +17,7 @@
     <div class="wrapper col5">
         <div id="container">
             <h1>Formulario de contacto</h1>
-            <form id="contacto" onsubmit="return validar()">
+            <form id="contacto" onsubmit="return validar()" action="index.php?page=contacto" method="post" >
                 <fieldset>
                     <label for="nombre">Nombre y Apellidos</label>
                     <input id="nombre" name="nombre" type="text" value="" placeholder="Introduce tu Nombre" />
@@ -22,7 +25,6 @@
                         <label for="email">Email</label>
                         <input type="text" id="email" name="email" value="" placeholder="Introduce tu Email" />
                     </p>
-
                 </fieldset>
                 <fieldset>
                     <p>
@@ -32,9 +34,13 @@
                     <p>
                 </fieldset>
                 <div id="contacto-notification" class="" style="display:none">
-                    Mensaje de prueba
                 </div>
-                <input type="submit" value="Enviar" class="btn-enviar">
+                <?php
+                    if(isset($notificacion)){
+                ?>
+                       <div class="<?php echo $notificacionClass?>"><?php echo $notificacion ?></div>
+                       <?php }?>
+                <input type="submit" value="Enviar" name="enviar" class="btn-enviar">
                 <input type="reset" value="Limpiar" class="btn-enviar">
                 </p>
             </form>
