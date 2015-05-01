@@ -79,30 +79,34 @@ function animateLeft(obj, from, to, speed) {
     } else {
         var box = obj;
         box.style.paddingLeft = from + "px";
-        setTimeout(function() {
-            animateLeft(imagenes[i], from + 1, to,speed);
+        setTimeout(function () {
+            animateLeft(imagenes[i], from + 1, to, speed);
         }, speed)
     }
 }
 
 /**
  sbi -> Second between images
-**/
+ **/
 
 var imagenes = document.getElementById("slideshow").getElementsByTagName("img");
 var timeBetweenImages = 3000;
 var timeWatchingImages = 1000;
 
-window.onload = function() {
+window.onload = function () {
     imagenes[i].style.visibility = 'visible';
-    setTimeout(function(){animateLeft(imagenes[i],0,400,0.5)},timeWatchingImages);
-    setInterval(function(){
-        if(i <= imagenes.length - 2)
+    setTimeout(function () {
+        animateLeft(imagenes[i], 0, 400, 0.5)
+    }, timeWatchingImages);
+    setInterval(function () {
+        if (i <= imagenes.length - 2)
             i++;
         else
             i = 0;
         imagenes[i].style.visibility = 'visible';
-        setTimeout(function(){animateLeft(imagenes[i],0,400,0.5)},timeWatchingImages);
-    },timeBetweenImages)
+        setTimeout(function () {
+            animateLeft(imagenes[i], 0, 400, 0.5)
+        }, timeWatchingImages);
+    }, timeBetweenImages)
 
 }

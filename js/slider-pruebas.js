@@ -35,11 +35,11 @@ function slider() {
         actual_position = actual_position + 1;
         setTimeout(slider(), 2000);
     } else {
-        setTimeout(function() {
+        setTimeout(function () {
             ul.style.left = 0 + "px";
             actual_position = 0;
         }, 2000);
-        setTimeout(function() {
+        setTimeout(function () {
             slider()
         }, 4000);
     }

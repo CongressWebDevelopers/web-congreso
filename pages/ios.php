@@ -6,7 +6,7 @@
             <li><a href="#">Inicio</a>
             </li>
             <li>&#187;</li>
-	    <li><a href="#">Programa</a>
+            <li><a href="#">Programa</a>
             </li>
             <li>&#187;</li>
             <li class="current"><a href="#">Sistemas iOS/Mac</a>
@@ -16,7 +16,7 @@
 </div>
 <div class="wrapper col5">
     <div id="container">
-	<h1>Sistemas iOS/Mac</h1>
-	<p>Metodología Ágiles, son una serie de técnicas y metodologías de la Ingeniería del Software</p>
+        <h1>Sistemas iOS/Mac</h1>
+        <p>Metodología Ágiles, son una serie de técnicas y metodologías de la Ingeniería del Software</p>
     </div>
 </div>

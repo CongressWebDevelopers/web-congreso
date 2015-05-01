@@ -15,9 +15,9 @@
     <div id="container">
         <table border="1">
             <thead>
-                <th>Hora</th>
-                <th>Dia 1</th>
-                <th>Día 2</th>
+            <th>Hora</th>
+            <th>Dia 1</th>
+            <th>Día 2</th>
             </thead>
             <tbody>
                 <tr>
@@ -104,7 +104,7 @@
             </tbody>
         </table>
         <script>
-            $(".ponencia-tabla").click(function() {
+            $(".ponencia-tabla").click(function () {
                 $(this).children("div").toggle("slow");
             });
         </script>
