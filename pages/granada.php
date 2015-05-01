@@ -17,14 +17,14 @@
         <div id="container">
             <h1>Granada</h1>
             <div id="img_ayuntamiento">
-                <img alt="Imagen ayuntamiento" src="../images/ayuntamiento.jpg" />
+                <img alt="Imagen ayuntamiento" src="images/ayuntamiento.jpg" />
             </div>
             <p>Granada, capital de la provincia que lleva el mismo nombre, se sitúa al sureste de la península Ibérica, en la comunidad autónoma de Andalucía. Ha sido la tradiciona capital de la Alta Andalucía o Andalucía oriental que comprende las provincias de Jaén, Granada y Almería, en contraposición a la Baja Andalucía o Andalucía Occidental. Además de esta capitalidad tradicional, Granada ostenta la capitalidad judicial de Andalucía, siendo sede del Tribunal Superior de Justicia de esta comunidad autónoma.
             </p>
 
             <h3>Emparejes y Monumentos.</h3>
             <div id="img_capilla">
-                <img alt="Imagen de la Capilla Real" class="fl_right" src="../images/capilla_real.jpg" />
+                <img alt="Imagen de la Capilla Real" class="fl_right" src="simages/capilla_real.jpg" />
             </div>
             <p>Granada, como ciudad turística tiene muchos lugares y recobecos interesantes. Las zonas más interesantes de visitar son los siguientes:</p>
             <div id="lugares_granada">
@@ -64,7 +64,7 @@
             </div>
             <h3>Gastronomía.</h3>
             <div id="img_olla" class="fl_right">
-                <img alt="Imagen Olla San Antón" src="../images/olla_sanAnton.jpg" />
+                <img alt="Imagen Olla San Antón" src="images/olla_sanAnton.jpg" />
             </div>
             <p>La Gastronomía de Granada representa la tradición de la cocina arábigo-andaluza. Por un lado, la herencia árabe, que pervivió gracias a los moriscos y que se hace evidente en el uso de especias; y, por otro, la amplia variedad de materias primas con las que nos encontramos, determinada por las grandes diferencias climáticade las distintas comarcas granadina.</p>
             <p>La mezcla de la cultura musulmana y cristiana originaron suculentos platos, que son preparados a lo largo de toda la provincia, como el conejo al ajillo, el choto a la cortijera, la perdiz escabechada, el faisán con setas y el pollo alpujarreño.</p>

@@ -17,7 +17,7 @@
         <div id="container">
             <h1>Visita a Sierra Nevada </h1>
             <div id="img_sierra">
-                <img alt="Imagen Sierra Nevada" src="../images/sierra.jpg" />
+                <img alt="Imagen Sierra Nevada" src="images/sierra.jpg" />
             </div>
 
             <p>Enclavada en la parte central de la Cordillera Penibética, el macizo de Sierra Nevada constituye la más extensa de las áreas montañosas ibéricas dotadas de unidad estructural propia. Denominada por los árabes de la Edad Media como “Sierra del Sol”, alberga no sólo una de las floras mas valiosas de todo el continente europeo, sino que además esconde un rico patrimonio cultural e histórico acumulado durante siglos.</p>
@@ -25,7 +25,7 @@
             <p>Sierra Nevada ofrece una multitud de actividades, y rutas de alta y baja montaña, en todas las estaciones del año. De hecho, en buena temporada, incluso en verano se pueden encontrar pistas de esquí abiertas.</p>
 
             <div id="img_esqui" class="fl_right">
-                <img alt="Imagen esquiando" src="../images/esqui.jpg" />
+                <img alt="Imagen esquiando" src="images/esqui.jpg" />
             </div>
 
 
