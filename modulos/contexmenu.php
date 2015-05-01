@@ -1,3 +1,16 @@
+<?php 
+/**
+ * Este modulo es el encargado de mostrar el contexto de una sesión determinada del programa.
+ * Muestra las otras dos ponencias de la misma sesión.
+ * 
+ * Funcionamiento: Recoge por GET el ID de la sesión y del programa mostrado y excluye ese programa para mostrar
+ * los otros dos de esa sesión.
+ * 
+ * IMPRESCINDIBLE POR GET: 
+ *      int id_sesion
+ *      int id_programa
+ */
+?>
 
 <div class="wrapper col5"> <div id="container">
         <h6>Otros programas de la sesión: </h6>
