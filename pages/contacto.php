@@ -27,6 +27,10 @@ require_once('./modulos/mail/mail.php');
                     </p>
                 </fieldset>
                 <fieldset>
+                   <p>
+                        <label for="asunto">Asunto</label>
+                        <input type="text" id="asunto" name="asunto" value="" placeholder="Introduce el Asunto" />
+                    </p>
                     <p>
                         <label for="cuestion">Cuestión o información a solicitar</label>
                     </p>
