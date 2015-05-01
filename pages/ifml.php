@@ -5,8 +5,8 @@
             <li>&#187;</li>
             <li><a href="#">Inicio</a>
             </li>
-	    <li>&#187;</li>
-	    <li><a href="#">Programa</a>
+            <li>&#187;</li>
+            <li><a href="#">Programa</a>
             </li>
             <li>&#187;</li>
             <li class="current"><a href="#">IFML</a>
@@ -15,7 +15,7 @@
 </div>
 <div class="wrapper col5">
     <div id="container">
-	<h1>IFML</h1>
-	<p>IFML es un lenguaje para el modelado del contenido, de la interacción del usuario y del control del front-end de las aplicaciones 		software.</p>
+        <h1>IFML</h1>
+        <p>IFML es un lenguaje para el modelado del contenido, de la interacción del usuario y del control del front-end de las aplicaciones 		software.</p>
     </div>
 </div>

@@ -50,8 +50,8 @@ table tbody tr.dark {
     background-color: #E8E8E8;
 }
 .resumen-ponencia {
-display: none;
-background-color: #fff;
+    display: none;
+    background-color: #fff;
 }
 
 .ponencia-tabla :hover {

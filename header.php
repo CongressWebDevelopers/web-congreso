@@ -5,7 +5,7 @@
             <div id="logo">
                 <h1><a href="index.php">CEIIE</a></h1>
                 <p><strong>I Congreso de Estudiantes de Ingeniería
-Informática en España</strong>
+                        Informática en España</strong>
                 </p>
             </div>
             <div id="newsletter">

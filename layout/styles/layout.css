@@ -231,7 +231,6 @@ div.wrapper h6 {
     padding: 0;
     border: none;
     color: #FFFFFF;
-    background-color: #;
 }
 #intro .fl_left p {
     margin: 0;
@@ -302,7 +301,6 @@ div.wrapper h6 {
     font-size: 14px;
     font-weight: bold;
     color: white;
-    background-color: ;
     border-bottom: solid 1px #6DCDB0;
 }
 #services p {
@@ -609,7 +607,7 @@ div.wrapper h6 {
     float: right;
     width: 570px;
     margin: 0 0 0 30px;
-    padding: 10;
+    padding: 10px;
     overflow: hidden;
     height: 170px;
 }
@@ -628,8 +626,8 @@ div.wrapper h6 {
     margin: 5px 5px 5px 10px;
     padding: 0;
     height: 70px;
-*/
-}
+
+}*/
 #footer li {
     margin-bottom: 3px;
     line-height: 1.6em;

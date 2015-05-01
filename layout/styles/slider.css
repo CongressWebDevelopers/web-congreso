@@ -26,18 +26,18 @@
 
 
 #image_slider{
-	position: relative;
-	overflow: hidden;
-	height: 280px;
-	padding:0;
-	left:0;
+    position: relative;
+    overflow: hidden;
+    height: 280px;
+    padding:0;
+    left:0;
 }
 #image_slider li{
-	position:relative;
-	max-width: 100%;
-	float:left;
-	list-style: none;
-	left: 0;
+    position:relative;
+    max-width: 100%;
+    float:left;
+    list-style: none;
+    left: 0;
 }
 #image_slider img{
     height:120px;
