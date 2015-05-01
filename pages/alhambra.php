@@ -43,6 +43,7 @@
             <div id="img_plano">
                 <img alt="Plano Alhambra" src="images/plano.jpg" />
             </div>
+            <br class="clear">
             <div class=".galeria">
                <h3>Galería de imágenes</h3>
 <?php

@@ -41,6 +41,22 @@
                 <li>Caminata guiada hasta el Veleta</li>
                 <li>Traslado de vuelta a Granada</li>
             </ol>
+            <br class="clear">
+            <div class=".galeria">
+               <h3>Galería de imágenes</h3>
+<?php
+require_once("modulos/lectorImagenes.php");
+$descripcion = getDescripcionActividad("imagenes-sierra.txt");
+$i = -1;
+foreach($descripcion["imagenes"] as $img ){
+    $i++;
+    $imgAling=($i%2)?"imgl":"imgr";
+    echo '<img id="img-sierra-'. $i .'" alt="Imagenes Sierra Nevada" class="'. $imgAling .'" src="images/'. $img.'"/>';
+    if(isset($descripcion["texto"][$i])) echo '<p class="descripcion-imagen">' . $descripcion["texto"][$i] . '</p>';
+    echo '<hr class="clear">';
+}
+ ?>
+            </div>
         </div>
 
     </div>

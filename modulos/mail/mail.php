@@ -1,17 +1,19 @@
 <?php
     if(isset($_POST['enviar'])){
-        $DESTINATARIO='ivanortegaalba@gmail.com';
+        //Cuenta asociada a la persona de contacto del CEII
+        $DESTINATARIO='ivanortegaalba@correo.ugr.es';
+
         $para = $DESTINATARIO;
-        $titulo    = "Solicitud de contacto de " . $_POST['nombre'];
-        $mensaje   = $_POST['cuestion'];
-        $cabeceras = 'From: ' . $_POST['email'] . "\r\n" .
+        $titulo    = "[Mensaje de Web] " . $_POST['asunto'];
+        $mensaje   = $_POST['cuestion'] . "\n Saludos";
+        $cabeceras = 'From: CEII<' . $_POST['email'] . ">\r\n" .
             'Reply-To: ivanortegaalba@gmail.com' . "\r\n" .
             'X-Mailer: PHP/' . phpversion();
-
-        //$enviado = mail($para, $titulo, $mensaje);
-        $enviado=mail('ivanortegaalba@gmail.com', 'Mi título', 'Un mensaje');
-        echo $enviado;
-        if($enviado){
+        //Envio a la organización
+        $enviadoHost=mail($para, $titulo, $mensaje, $cabeceras);
+        //Envio de la copia al interesado
+        $enviadoCliente=mail($_POST['email'], $titulo, $mensaje, $cabeceras);
+        if($enviadoHost && $enviadoCliente){
             $notificacion="El mensaje ha sido enviado correctamente";
             $notificacionClass ="success";
         }else{
