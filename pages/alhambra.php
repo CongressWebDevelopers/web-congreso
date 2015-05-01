@@ -46,8 +46,8 @@
             <div class=".galeria">
                <h3>Galería de imágenes</h3>
 <?php
-require_once("./modulos/lectorImagenes.php");
-$descripcion = getDescripcionActividad("imagenes.txt");
+require_once("modulos/lectorImagenes.php");
+$descripcion = getDescripcionActividad("imagenes-alhambra.txt");
 $i = -1;
 foreach($descripcion["imagenes"] as $img ){
     $i++;

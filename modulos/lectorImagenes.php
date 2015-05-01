@@ -1,4 +1,5 @@
 <?php
+
 function getImagenesFichero($ruta){
     $imagenes = array();
     $file = fopen($ruta, "r") or exit("Unable to open file!");
@@ -9,6 +10,7 @@ function getImagenesFichero($ruta){
     fclose($file);
     return $imagenes;
 }
+
 function getDescripcionActividad($ruta){
     $imagenes = array();
     $texto = array();

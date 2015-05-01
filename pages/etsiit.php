@@ -16,7 +16,7 @@
     <h1>La ETSIIT</h1>
     
     <div id="img_etsiit" class="fl_right" >
-      <img alt="Imagen etsiit" src="../images/etsiit-1.jpg"/>
+      <img alt="Imagen etsiit" src="images/etsiit-1.jpg"/>
     </div>
 
 
