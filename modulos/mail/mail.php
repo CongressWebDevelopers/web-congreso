@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Modulo que manda dos correos al recibir la petición POST del formulario de contacto.
+ */
 if (isset($_POST['enviar'])) {
     //Cuenta asociada a la persona de contacto del CEIIE
     $DESTINATARIO = 'ivanortegaalba@me.com';
