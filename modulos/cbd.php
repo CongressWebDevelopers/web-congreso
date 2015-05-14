@@ -47,8 +47,10 @@ class ORM {
     function queryArray($query) {
         return mysql_fetch_array(query($query));
     }
-    
-    
+
+    function close() {
+        mysql_close($this->conexion);
+    }
 
 }
 
