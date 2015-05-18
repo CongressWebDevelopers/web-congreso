@@ -1,23 +1,27 @@
 <div class="wrapper col6">
     <div id="footer">
+        <?php if(!isset($_SESSION['usuario'])){?>
         <div id="login">
-            <h2>Login organización</h2>
-            <p>Accede para ver los datos sobre organización.</p>
-            <form action="#" method="post">
+            <h2>Login</h2>
+            <p>Accede y gestiona tu participación en el CEIIE.</p>
+            <form action="index.php" method="post">
                 <fieldset>
-                    <legend>Solo organización</legend>
                     <div class="fl_left">
-                        <input type="text" value="" placeholder="Introduce tu email" />
-                        <input type="password" value="" placeholder="Contraseña" />
+                        <input type="text" name="usuario" value="" placeholder="Introduce tu email" />
+                        <input type="password" name="password" value="" placeholder="Contraseña" />
                     </div>
                     <div class="fl_right">
-                        <input type="submit" name="login_go" id="login_go" value="Sign Up" />
+                        <input type="submit" class="btn-default" name="login" id="login_go" value="Sign In" />
                     </div>
                 </fieldset>
+                <div class="<?php if(isset($claseMensaje)) echo $claseMensaje;?>"><?php if(isset($mensaje))echo $mensaje;?></div>
             </form>
-            <p><a href="#">&raquo; No recuerdo la contraseña</a> | <a href="#">Crear una cuenta</a>
+            <p><a href="#">&raquo; No recuerdo la contraseña</a> | <a href="index.php?=registroUsuario">Crear una cuenta</a>
             </p>
         </div>
+        <?php }else{ ?>
+        <a href="index.php?page=inscripcion" id="inscribete" class="btn-grande">INSCRIBETE</a>
+        <?php } ?>
         <div id="patrocinadores" class="footbox-2">
             <h2>Patrocinadores</h2>
             <div id="slideshow">
