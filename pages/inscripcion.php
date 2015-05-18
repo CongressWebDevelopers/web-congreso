@@ -15,69 +15,56 @@
     <div id="container">
         <h1>¡¡¡Inscribete!!!</h1>
         <p>A continuación detallamos los precios de inscripción al congreso, para los distintos tipos de usuarios, así como para los que deseen hacer una preinscripción, o apuntarse directamente en la sede, al comienzo del congreso. Todas las inscripciones traen las mismas garantías y ventajas: Asistencias a las distintas conferencias, documentación, alojamiento y comida, actividades, cóctel de bienvenida, y cena de clausura.</p>
-        <table id="insciprcion" border="1">
-            <tr>
-                <td>Interesado</td>
-                <td>Preinscripción</td>
-                <td>En sede</td>
-            </tr>
-            <tr>
-                <td>Estudiantes</td>   
-                <td>200€</td>
-                <td>350€</td>
-            </tr>
-            <tr>
-                <td>Estudiante Posgrado</td>
-                <td>300€</td>
-                <td>450€</td>
-            </tr>
-            <tr>
-                <td>Colegiados</td>
-                <td>400€</td>
-                <td>550€</td>
-            </tr>
-            <tr>
-                <td>Colegiados Granada</td>
-                <td>300€</td>
-                <td>350€</td>
-            </tr>
-            <tr>
-                <td>Acompañante</td>
-                <td>200€</td>
-                <td>350€</td>
-            </tr>
-        </table>
+
+
+
+<?php
+
+$cuota=new ORM();
+$seleccion = 'SELECT * FROM Cuotas';
+$cuota->query($seleccion);
+$numFilas = $cuota->rows();
+
+if ($numFilas> 0){
+	echo '<center>';
+	echo '<table border=1>';
+	echo '<tr><th>Interesado</th><th>Descripción</th><th>Importe</th></tr>';
+	
+	// Añadimos a la tabla las filas de datos que haya devuelto la consulta
+	while($fila = $cuota->queryArray()){
+		echo "<tr><td>$fila[0] </td><td>$fila[1] </td><td>$fila[2] </td></tr>";
+	}
+	// Cerramos la tabla y quitamos el centrado de la misma
+	echo '</table>';
+	echo '</center>';
+}
+$cuota->close();
+  
+?>
         <p>A continuación detallamos los precios de las actividades opcionales, así si hay inscripción previa, o se abona en la sede en el momento de la actividad.</p>
-        <table id="talleres" border="1">
-            <tr>
-                <td>Visita / Taller</td>
-                <td>Preinscripción</td>
-                <td>En sede</td>
-            </tr>
-            <tr>
-                <td>Visita a la Alhambra</td>   
-                <td>30€</td>
-                <td>45€</td>
-            </tr>
-            <tr>
-                <td>Visita a Sierra Nevada</td>
-                <td>80€</td>
-                <td>100€</td>
-            </tr>
-            <tr>
-                <td>Torneo de Fútbol</td>
-                <td>20€</td>
-                <td>25€</td>
-            </tr>
-            <tr>
-                <td>Torneo de Padel</td>
-                <td>30€</td>
-                <td>35€</td>
-            </tr>
-            <tr>
-                <td>Competición de karts y Airsoft</td>
-                <td>60€</td>
-                <td>75€</td>
-            </tr>
-        </table>
+ 
+<?php
+
+$actividades=new ORM();
+$seleccion = 'SELECT * FROM Actividades';
+$actividades->query($seleccion);
+$numFilas2 = $actividades->rows();
+
+if($numFilas2> 0){
+	echo '<center>';
+	echo '<table border=1>';
+	echo '<tr><th>Actividad</th><th>Fecha</th><th>Descripción</th><th>Foto</th><th>Importe</th></tr>';
+	
+	// Añadimos a la tabla las filas de datos que haya devuelto la consulta
+	while($fila = $actividades->queryArray()){
+		echo "<tr><td>$fila[0] </td><td>$fila[1] </td><td>$fila[2] </td><td>$fila[3] </td><td>$fila[4] </td></tr>";
+	}
+	// Cerramos la tabla y quitamos el centrado de la misma
+	echo '</table>';
+	echo '</center>';
+}
+$actividades->close();
+  
+?>      
+        
     </div>
