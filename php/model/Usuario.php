@@ -13,4 +13,20 @@ class Usuario {
     private $password;
     private $rol;
 
+    public function __construct($email, $password, $rol) {
+        $this->nombreUsuario = $email;
+        $this->password = $password;
+        $this->rol = $rol;
+    }
+    
+    function getNombreUsuario(){
+        return $this->nombreUsuario;
+    }
+    function getPassword(){
+        $this->password;
+    }
+    function getRol(){
+        return $this->rol;
+    }
+
 }
