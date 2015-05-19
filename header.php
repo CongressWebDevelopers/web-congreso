@@ -8,16 +8,22 @@
                         Informática en España</strong>
                 </p>
             </div>
-            <div id="newsletter">
-                <p>Suscríbete y recibe todas las novedades.</p>
-                <form action="#" method="post">
-                    <fieldset>
-                        <legend>Suscribete</legend>
-                        <input type="text" placeholder="Introduce tu email..." />
-                        <input type="submit" name="news_go" id="news_go" value="Sign Up" />
-                    </fieldset>
-                </form>
-            </div>
+            <?php if (isset($_SESSION['usuario'])) { ?>
+            <div class="fl_right"><a href="index.php?page=inscripcion" id="inscribete" class="btn-grande btn-verde">INSCRIBETE</a></div>
+            <?php } else { ?>
+                <div id="newsletter">
+
+                    <p>Suscríbete y recibe todas las novedades.</p>
+                    <form action="#" method="post">
+                        <fieldset>
+                            <legend>Suscribete</legend>
+                            <input type="text" placeholder="Introduce tu email..." />
+                            <input type="submit" name="news_go" id="news_go" value="Sign Up" />
+                        </fieldset>
+                    </form>
+
+                </div>
+            <?php } ?>
             <br class="clear" />
         </div>
     </div>
@@ -49,9 +55,28 @@
                     </li>
                     <li><a href="index.php?page=contacto">Contacto</a>
                     </li>
+                    <?php if(isset($_SESSION['usuario'])) {?>
+                    <li id="nav-admin"><a href="#" class="color-admin">Administración</a>
+                        <ul>
+                            <li><a href="#">Inscribete</a>
+                            </li>
+                            <li><a href="#">Mi inscripción</a>
+                            </li>
+                            <li><a href="#">Lista de Inscritos</a>
+                            </li>
+                            <li><a href="#">Cuotas</a>
+                            </li>
+                            <li><a href="#">Actividades</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <?php }?>
                 </ul>
+                
             </div>
-            <div id="search">
+            
+            
+<!--            <div id="search">
                 <form action="#" method="post">
                     <fieldset>
                         <legend>Buscar</legend>
@@ -59,7 +84,7 @@
                         <input type="submit" name="go" id="go" value="Search" />
                     </fieldset>
                 </form>
-            </div>
+            </div>-->
             <br class="clear" />
         </div>
     </div>

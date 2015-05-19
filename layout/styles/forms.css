@@ -32,9 +32,6 @@ form label{
     border-color: None;
     border:none;
 }
-.btn-grande{
-
-}
 /* ----------------------------------------------Newsletter Form------------------------------------- */
 
 #header input {
@@ -172,6 +169,10 @@ a.btn-grande{
     text-transform: uppercase;
     background-color: #25A27C;
     cursor: pointer;
+}
+
+#header #inscrbete{
+    margin-top: 60px !important;
 }
 
 

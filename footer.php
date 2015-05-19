@@ -20,7 +20,7 @@
             </p>
         </div>
         <?php }else{ ?>
-        <a href="index.php?page=inscripcion" id="inscribete" class="btn-grande">INSCRIBETE</a>
+        <a href="index.php?page=inscripcion" id="inscribete" class="btn-grande btn-verde">INSCRIBETE</a>
         <?php } ?>
         <div id="patrocinadores" class="footbox-2">
             <h2>Patrocinadores</h2>

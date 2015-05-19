@@ -12,7 +12,7 @@ File: Layout CSS
 @import url("navi.css");
 @import url("forms.css");
 @import url("tables.css");
-@import url("sliderJQ.css");
+@import url("slider.css");
 @import url("notifications.css");
 @import url(http://fonts.googleapis.com/css?family=Raleway);
 
@@ -197,7 +197,7 @@ div.wrapper h6 {
 #topbar {
     z-index: 1000;
 }
-#topbar #search {
+/*#topbar #search {
     display: block;
     float: right;
     width: 242px;
@@ -207,7 +207,7 @@ div.wrapper h6 {
     color: #FFFFFF;
     background-color: #2E64A1;
     overflow: hidden;
-}
+}*/
 /* ----------------------------------------------Homepage Intro------------------------------------- */
 
 #intro {
@@ -669,4 +669,13 @@ div.wrapper h6 {
 }
 .descripcion-imagen{
     margin-top: 60px;
+}
+/*----------------ADMINISTRACION-----------*/
+
+#topnav li a.color-admin,  #topnav #nav-admin a, btn-verde, .btn-default {
+    background-color: #25A27C;
+}
+#topnav li a.color-admin:hover, #topnav #nav-admin a:hover,.btn-verde:hover, .btn-default:hover {
+    color: #02714F;
+    background-color: #6DCDB0;
 }
