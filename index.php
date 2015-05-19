@@ -1,6 +1,7 @@
 <?php
 include_once('head.php');
 include_once('php/funciones.php');
+include_once('php/login.php');
 include_once('header.php');
 
 $treePages = Array(
@@ -36,27 +37,22 @@ $treePages = Array(
     "registroUsuario" => 'pages/registroUsuario.php'
 );
 ?>
-
-<div class="wrapper col4">
-    <div id="container">
-        <?php
-        if (isset($_GET['page']) && $treePages[$_GET['page']]) {
-            if ($_GET['page'] != "programa") {
-                include_once $treePages[$_GET['page']];
-            } else {
-                if (isset($_GET['programa']) && isset($treePages['programa'][$_GET['programa']])) {
-                    include_once $treePages['programa'][$_GET['programa']];
-                    include_once 'modulos/contexmenu.php';
-                } else {
-                    include_once 'pages/programa.php';
-                }
-            }
+<?php
+if (isset($_GET['page']) && $treePages[$_GET['page']]) {
+    if ($_GET['page'] != "programa") {
+        include_once $treePages[$_GET['page']];
+    } else {
+        if (isset($_GET['programa']) && isset($treePages['programa'][$_GET['programa']])) {
+            include_once $treePages['programa'][$_GET['programa']];
+            include_once 'modulos/contexmenu.php';
         } else {
-            include_once 'contain.php';
+            include_once 'pages/programa.php';
         }
-        ?>
-    </div>
-</div>
+    }
+} else {
+    include_once 'contain.php';
+}
+?>
 
 <?php
 include_once('footer.php');
