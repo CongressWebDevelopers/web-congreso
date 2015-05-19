@@ -43,7 +43,7 @@ class ORM {
     }
 
     function queryArray($query) {
-        return mysql_fetch_array(query($query));
+        return mysql_fetch_array($this->query($query));
     }
 
     function close() {
