@@ -44,8 +44,8 @@ require_once('./modulos/mail/mail.php');
                 ?>
                 <div class="<?php echo $notificacionClass ?>"><?php echo $notificacion ?></div>
             <?php } ?>
-            <input type="submit" value="Enviar" name="enviar" class="btn-enviar">
-            <input type="reset" value="Limpiar" class="btn-enviar">
+            <input type="submit" value="Enviar" name="enviar" class="btn-default">
+            <input type="reset" value="Limpiar" class="btn-default">
             </p>
         </form>
     </div>

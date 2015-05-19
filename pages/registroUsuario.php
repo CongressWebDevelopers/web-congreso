@@ -1,21 +1,22 @@
 <?php
 include_once 'php/model/Usuario.php';
-include_once 'php/model/containers/contenedorUsuario.php';
+include_once 'php/model/containers/ContenedorUsuario.php';
 
 $cUsuario = new ContenedorUsuario();
 
 if (isset($_POST['enviar'])) {
     if ($_POST['password'] == $_POST['repite-password']) {
-        $usuario = new Usuario($_POST['email'], $_POST['password'], 2);
+        $usuario = new Usuario($_POST['email'], md5($_POST['password']), 2);
         $resultado = $cUsuario->insertarUsuario($usuario);
-        if($resultado){
-        $claseMensaje = "success";
-        $mensaje = "El registro ha sido satisfactorio";
-                } else{
-                    $claseMensaje = "error";
-        $mensaje = "No se ha creado correctamente:". mysql_error();
-                }
-    }else{
+        print_r($resultado);
+        if ($resultado) {
+            $claseMensaje = "success";
+            $mensaje = "El registro ha sido satisfactorio";
+        } else {
+            $claseMensaje = "error";
+            $mensaje = "No se ha creado correctamente:" . mysql_error();
+        }
+    } else {
         
     }
 }
@@ -35,7 +36,7 @@ if (isset($_POST['enviar'])) {
                     <input type="password" name="repite-password"/>
                 </p>
                 <div class="<?php echo $claseMensaje ?>"> <?php echo $mensaje ?></div>
-                <input type="submit" class="btn-enviar" name="enviar" value="Enviar">
+                <input type="submit" class="btn-default" name="enviar" value="Enviar">
             </fieldset>
         </form>
 

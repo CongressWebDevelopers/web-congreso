@@ -13,10 +13,10 @@ class Usuario {
     private $password;
     private $rol;
 
-    public function __construct($email, $password, $rol) {
-        $this->nombreUsuario = $email;
-        $this->password = $password;
-        $this->rol = $rol;
+    public function __construct($row) {
+        $this->nombreUsuario = $row['nombreUsuario'];
+        $this->password = $row['password'];
+        $this->rol = $row['rol'];
     }
     
     function getNombreUsuario(){
