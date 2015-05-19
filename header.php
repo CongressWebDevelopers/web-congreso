@@ -68,6 +68,8 @@
                             </li>
                             <li><a href="#">Actividades</a>
                             </li>
+                            <li><a href="index.php?page=logout">Logout</a>
+                            </li>
                         </ul>
                     </li>
                     <?php }?>

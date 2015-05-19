@@ -1,6 +1,10 @@
 <?php
+
 include_once 'php/model/containers/ContenedorUsuario.php';
-session_start();
+
+if (!isset($_SESSION['usuario'])) {
+    session_start();
+}
 if (isset($_POST['login'])) {
     $usuarioLogin = $_POST['usuario'];
     $passwordLogin = $_POST['password'];
@@ -9,14 +13,8 @@ if (isset($_POST['login'])) {
         session_start();
         $_SESSION['usuario'] = $usuarioActual;
         $usuario = $_SESSION['usuario'];
-    } else{
-        $mensajeSesion ="El usuario o la contraseña son incorrectos";
+    } else {
+        $mensajeSesion = "El usuario o la contraseña son incorrectos";
         $claseMensaje = "error";
     }
 }
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-

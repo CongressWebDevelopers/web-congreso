@@ -34,7 +34,8 @@ $treePages = Array(
     "etsiit" => 'pages/etsiit.php',
     "granada" => 'pages/granada.php',
     "contacto" => 'pages/contacto.php',
-    "registroUsuario" => 'pages/registroUsuario.php'
+    "registroUsuario" => 'pages/registroUsuario.php',
+    "logout" => 'php/logout.php'
 );
 ?>
 <?php
