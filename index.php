@@ -1,9 +1,12 @@
 <?php
+
 include_once('head.php');
 include_once('php/funciones.php');
 include_once('php/login.php');
 include_once('header.php');
 
+//Este array servirá de directorio de páginas para la variable GET page.
+//"valor variable page" => 'directorio.php'
 $treePages = Array(
     "programa" => Array(
         "agiles" => 'pages/programas/agiles.php',
@@ -35,10 +38,11 @@ $treePages = Array(
     "granada" => 'pages/granada.php',
     "contacto" => 'pages/contacto.php',
     "registroUsuario" => 'pages/registroUsuario.php',
+    "cuotas" => 'pages/cuotas.php',
+    "actividades" => 'pages/actividades.php',
     "logout" => 'php/logout.php'
 );
-?>
-<?php
+
 if (isset($_GET['page']) && $treePages[$_GET['page']]) {
     if ($_GET['page'] != "programa") {
         include_once $treePages[$_GET['page']];
@@ -53,8 +57,6 @@ if (isset($_GET['page']) && $treePages[$_GET['page']]) {
 } else {
     include_once 'contain.php';
 }
-?>
 
-<?php
 include_once('footer.php');
 ?>
