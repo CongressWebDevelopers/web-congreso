@@ -35,7 +35,7 @@ if (isset($_POST['enviar'])) {
                     <label for="repite-password">Repite Password</label>
                     <input type="password" name="repite-password"/>
                 </p>
-                <div class="<?php echo $claseMensaje ?>"> <?php echo $mensaje ?></div>
+                <div class="<?php if (isset($claseMensaje)) echo $claseMensaje ?>"> <?php if (isset($mensaje)) echo $mensaje ?></div>
                 <input type="submit" class="btn-default" name="enviar" value="Enviar">
             </fieldset>
         </form>

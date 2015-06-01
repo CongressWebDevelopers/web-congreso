@@ -9,7 +9,7 @@
                 </p>
             </div>
             <?php if (isset($_SESSION['usuario'])) { ?>
-            <div class="fl_right"><a href="index.php?page=inscripcion" id="inscribete" class="btn-grande btn-verde">INSCRIBETE</a></div>
+                <div class="fl_right"><a href="index.php?page=inscripcion" id="inscribete" class="btn-grande btn-verde">INSCRIBETE</a></div>
             <?php } else { ?>
                 <div id="newsletter">
 
@@ -55,38 +55,36 @@
                     </li>
                     <li><a href="index.php?page=contacto">Contacto</a>
                     </li>
-                    <?php if(isset($_SESSION['usuario'])) {?>
-                    <li id="nav-admin"><a href="#" class="color-admin">Administración</a>
-                        <ul>
-                            <li><a href="#">Inscribete</a>
-                            </li>
-                            <li><a href="#">Mi inscripción</a>
-                            </li>
-                            <li><a href="#">Lista de Inscritos</a>
-                            </li>
-                            <li><a href="#">Cuotas</a>
-                            </li>
-                            <li><a href="#">Actividades</a>
-                            </li>
-                            <li><a href="index.php?page=logout">Logout</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <?php }?>
+                    <?php if (isset($_SESSION['usuario'])) { ?>
+                        <li id="nav-admin"><a href="#" class="color-admin">Administración</a>
+                            <ul>
+                                <li><a href="index.php?page=inscripcion">Inscribete</a>
+                                </li>
+                                <li><a href="#">Mi inscripción</a>
+                                </li>
+                                <li><a href="#">Lista de Inscritos</a>
+                                </li>
+                                <li><a href="index.php?page=cuotas">Cuotas</a>
+                                </li>
+                                <li><a href="index.php?page=actividades">Actividades</a>
+                                </li>
+                                <li><a href="index.php?page=logout">Logout</a>
+                                </li>
+                            </ul>
+                        </li>
+                    <?php } ?>
                 </ul>
-                
+
             </div>
-            
-            
-<!--            <div id="search">
-                <form action="#" method="post">
-                    <fieldset>
-                        <legend>Buscar</legend>
-                        <input type="text"  />
-                        <input type="submit" name="go" id="go" value="Search" />
-                    </fieldset>
-                </form>
-            </div>-->
+            <!--            <div id="search">
+                            <form action="#" method="post">
+                                <fieldset>
+                                    <legend>Buscar</legend>
+                                    <input type="text"  />
+                                    <input type="submit" name="go" id="go" value="Search" />
+                                </fieldset>
+                            </form>
+                        </div>-->
             <br class="clear" />
         </div>
     </div>
