@@ -14,7 +14,7 @@
 <div class="wrapper col5">
     <div id="container">
         <h1>¡¡¡Inscribete!!!</h1>
-        <p>A continuación detallamos los precios de inscripción al congreso, para los distintos tipos de usuarios, así como para los que deseen hacer una preinscripción, o apuntarse directamente en la sede, al comienzo del congreso. Todas las inscripciones traen las mismas garantías y ventajas: Asistencias a las distintas conferencias, documentación, alojamiento y comida, actividades, cóctel de bienvenida, y cena de clausura.</p>
+<!--        <p>A continuación detallamos los precios de inscripción al congreso, para los distintos tipos de usuarios, así como para los que deseen hacer una preinscripción, o apuntarse directamente en la sede, al comienzo del congreso. Todas las inscripciones traen las mismas garantías y ventajas: Asistencias a las distintas conferencias, documentación, alojamiento y comida, actividades, cóctel de bienvenida, y cena de clausura.</p>
         <table id="insciprcion" border="1">
             <tr>
                 <td>Interesado</td>
@@ -79,5 +79,36 @@
                 <td>60€</td>
                 <td>75€</td>
             </tr>
-        </table>
+        </table>-->
+        <?php if (isset($_SESSION['usuario'])) { ?>
+            <form>
+                <h2>Datos de Inscripción</h2>
+                <fieldset>
+                    <label for="nombre">Nombre y Apellidos </label>
+                    <input type="text" id="nombre" name="nombre" placeholder="">
+                    <p><label for="centro">Centro de trabajo</label>
+                        <input type="text" id="centro" name="centro"></p>
+                    <p><label for="telefono">Teléfono de contacto</label>
+                        <input type="text" id="telefono" name="telefono"></p>
+                </fieldset>
+                <p><label for="cuota">Cuota de inscripción</label>
+                    <select id="cuota" name="cuota" required>
+                        <option>Cuota 1</option>
+                        <option>Cuota 2</option>
+                        <option>Cuota 3</option>
+                    </select>
+                </p>
+                <br>
+                <h2>Actividades</h2>
+                <p><fieldset id="actividades">
+                    <input type="checkbox" name="acividad" value="idActividad">Actividad1
+                    <input type="checkbox" name="acividad" value="idActividad">Actividad1
+                </fieldset></p>
+                <br>
+                <h2>Hotel</h2>
+                <div class="<?php if (isset($claseMensaje)) echo $claseMensaje ?>"> <?php if (isset($mensaje)) echo $mensaje ?></div>
+                <input type="submit" class="btn-default" name="enviar" value="Enviar"/>
+            </form>
+        <?php } ?>
     </div>
+</div>
