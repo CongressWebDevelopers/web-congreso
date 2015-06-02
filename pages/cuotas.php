@@ -42,17 +42,17 @@ if (true) { //Si es administrador
             foreach ($lCuotas as $c) {
                 ?>
                 <div id="cuota-<?php $c->getId() ?>" class="cuota">
-                    <p><strong>Denominación: </strong></p><p><?php echo $c->getDenominacion() ?></p>
+                    <p class="nombre-cuota"><?php echo $c->getDenominacion() ?></p>
                     <p><strong>Descripcion: </strong></p><p><?php echo $c->getDescripcion() ?></p>
-                    <p><strong>Importe: </strong><?php echo $c->getImporte() ?></p>
-                    <p><strong>Actividades: </strong></p><p><?php echo $c->getActividades()?></p>
+                    <p><strong>Importe: </strong><?php echo $c->getImporte() ?> €</p>
+                    <p><strong>Actividades incluidas: </strong></p><p><?php echo $c->getActividades()?></p>
                 </div>
                 <?php
             }
             ?>
 
         </div>
-        <br>
+        <br><br>
         <h2>Nueva Cuota</h2>
         <form action="index.php?page=cuotas" method="POST">
             <fieldset>
