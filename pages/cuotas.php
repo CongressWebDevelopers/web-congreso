@@ -1,3 +1,9 @@
+<?php
+if(isset($_POST['crear'])){
+    
+}
+?>
+
 <div class="wrapper col3">
     <div id="breadcrumb">
         <ul>

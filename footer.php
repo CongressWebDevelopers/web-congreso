@@ -1,27 +1,34 @@
 <div class="wrapper col6">
     <div id="footer">
-        <?php if(!isset($_SESSION['usuario'])){?>
-        <div id="login">
-            <h2>Login</h2>
-            <p>Accede y gestiona tu participación en el CEIIE.</p>
-            <form action="index.php" method="post">
-                <fieldset>
-                    <div class="fl_left">
-                        <input type="text" name="usuario" value="" placeholder="Introduce tu email" />
-                        <input type="password" name="password" value="" placeholder="Contraseña" />
-                    </div>
-                    <div class="fl_right">
-                        <input type="submit" class="btn-default" name="login" id="login_go" value="Sign In" />
-                    </div>
-                </fieldset>
-                <div class="<?php if(isset($claseMensaje)) echo $claseMensaje;?>"><?php if(isset($mensaje))echo $mensaje;?></div>
-            </form>
-            <p><a href="#">&raquo; No recuerdo la contraseña</a> | <a href="index.php?=registroUsuario">Crear una cuenta</a>
-            </p>
-        </div>
-        <?php }else{ ?>
-        <a href="index.php?page=inscripcion" id="inscribete" class="btn-grande btn-verde">INSCRIBETE</a>
-        <?php } ?>
+        <?php if (!isset($_SESSION['usuario'])) { ?>
+            <div id="login">
+                <h2>Login</h2>
+                <p>Accede y gestiona tu participación en el CEIIE.</p>
+                <form action="index.php" method="post">
+                    <fieldset>
+                        <div class="fl_left">
+                            <input type="text" name="usuario" value="" placeholder="Introduce tu email" />
+                            <input type="password" name="password" value="" placeholder="Contraseña" />
+                        </div>
+                        <div class="fl_right">
+                            <input type="submit" class="btn-default" name="login" id="login_go" value="Sign In" />
+                        </div>
+                    </fieldset>
+                    <div class="<?php if (isset($claseMensaje)) echo $claseMensaje; ?>"><?php if (isset($mensaje)) echo $mensaje; ?></div>
+                </form>
+                <p><a href="#">&raquo; No recuerdo la contraseña</a> | <a href="index.php?=registroUsuario">Crear una cuenta</a>
+                </p>
+            </div>
+            <?php
+        }else {
+            if ($_SESSION['inscrito']) {
+                ?>
+                <a href="index.php?page=mi-inscripcion" id="inscribete" class="btn-grande btn-verde">MI INSCRIPCIÓN</a>
+                <?php
+            } else {
+                ?>
+                <a href="index.php?page=inscripcion" id="inscribete" class="btn-grande btn-verde">INSCRIBETE</a>
+        <?php }} ?>
         <div id="patrocinadores" class="footbox-2">
             <h2>Patrocinadores</h2>
             <div id="slideshow">

@@ -8,11 +8,18 @@
                         Informática en España</strong>
                 </p>
             </div>
-            <?php if (isset($_SESSION['usuario'])) { ?>
-                <div class="fl_right"><a href="index.php?page=inscripcion" id="inscribete" class="btn-grande btn-verde">INSCRIBETE</a></div>
-            <?php } else { ?>
+            <?php
+            if (isset($_SESSION['usuario'])) {
+                if ($_SESSION['inscrito']) {
+                    ?>
+                    <a href="index.php?page=mi-inscripcion" id="inscribete" class="btn-grande btn-verde fl_right">MI INSCRIPCIÓN</a>
+                    <?php
+                } else {
+                    ?>
+                    <a href="index.php?page=inscripcion" id="inscribete" class="btn-grande btn-verde fl_right">INSCRIBETE</a>
+                <?php }
+            } else { ?>
                 <div id="newsletter">
-
                     <p>Suscríbete y recibe todas las novedades.</p>
                     <form action="#" method="post">
                         <fieldset>
@@ -23,7 +30,7 @@
                     </form>
 
                 </div>
-            <?php } ?>
+<?php } ?>
             <br class="clear" />
         </div>
     </div>
@@ -55,7 +62,7 @@
                     </li>
                     <li><a href="index.php?page=contacto">Contacto</a>
                     </li>
-                    <?php if (isset($_SESSION['usuario'])) { ?>
+<?php if (isset($_SESSION['usuario'])) { ?>
                         <li id="nav-admin"><a href="#" class="color-admin">Administración</a>
                             <ul>
                                 <li><a href="index.php?page=inscripcion">Inscribete</a>
@@ -72,7 +79,7 @@
                                 </li>
                             </ul>
                         </li>
-                    <?php } ?>
+<?php } ?>
                 </ul>
 
             </div>
