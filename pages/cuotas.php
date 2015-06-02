@@ -10,10 +10,10 @@ if (true) { //Si es administrador
         $cuota = new Cuota(
                 null, $_POST['denominacion'], $_POST['descripcion'], $_POST['importe'], $actividades);
         if ($cCuota->insertarCuota($cuota)) {
-            $mensaje = "La creación de la cuota ha sido satisfactoria";
+            $mensaje = "La cuota ha sido creada";
             $claseMensaje = "success";
         } else {
-            $mensaje = "No se ha podido realizar la inscripción";
+            $mensaje = "No se ha podido crear la cuota";
             $claseMensaje = "error";
         }
     }
@@ -41,11 +41,11 @@ if (true) { //Si es administrador
             $lCuotas = $cCuota->getAll();
             foreach ($lCuotas as $c) {
                 ?>
-                <div id="cuota-<?php $c->getId() ?>" class="cuota">
-                    <p class="nombre-cuota"><?php echo $c->getDenominacion() ?></p>
+                <div id="cuota-<?php $c->getId() ?>" class="cuota elemento-listado">
+                    <p class="titulo-elemento-listado"><?php echo $c->getDenominacion() ?></p>
                     <p><strong>Descripcion: </strong></p><p><?php echo $c->getDescripcion() ?></p>
                     <p><strong>Importe: </strong><?php echo $c->getImporte() ?> €</p>
-                    <p><strong>Actividades incluidas: </strong></p><p><?php echo $c->getActividades()?></p>
+                    <p><strong>Actividades incluidas: </strong></p><p><?php echo $c->getActividades() ?></p>
                 </div>
                 <?php
             }
@@ -57,18 +57,18 @@ if (true) { //Si es administrador
         <form action="index.php?page=cuotas" method="POST">
             <fieldset>
                 <p>
-                    <label for="denominacion">Denominación</label>
-                    <input type="text" name="denominacion" placeholder=""/>
+                    <label for="denominacion">Denominación * </label>
+                    <input type="text" name="denominacion" placeholder="" required/>
                 </p>
                 <br>
-                <p><label for="descripcion">Descripción</label></p>
-                <p><textarea rows="10" cols="50" id="descripcion" name="descripcion"></textarea></p>
+                <p><label for="descripcion">Descripción * </label></p>
+                <p><textarea rows="10" cols="50" id="descripcion" name="descripcion" required></textarea></p>
                 <p>
-                    <label for="importe">Importe (€)</label>
-                    <input type="number" name="importe"/>
+                    <label for="importe">Importe (€) * </label>
+                    <input type="number" name="importe" required/>
                 </p>
                 <br/>
-                <h2>Actividades incluidas</h2>
+                <h2>Actividades incluidas </h2>
                 <fieldset id="actividades">
                     <input type="checkbox" name="actividades[]" value="1"/>Actividad 1
                     <input type="checkbox" name="actividades[]" value="2"/>Actividad 2
