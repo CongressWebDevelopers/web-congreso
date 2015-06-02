@@ -10,20 +10,6 @@ include_once 'php/model/Inscripcion.php';
 
 class ContenedorInscripcion extends Contenedor {
 
-    function getInscripcionID($id) {
-        $resultRow = $this->orm->queryArray("SELECT * FROM inscripcion WHERE idInscripcion = " . $id);
-        $congresista = new Inscripcion($resultRow);
-        return $congresista;
-    }
-
-    function getAll() {
-        $congresistas = array();
-        $resultRow = $this->$orm->queryArray("SELECT * FROM inscripcion");
-        foreach ($resultRow as $congresista) {
-            $congresistas[] = new Inscripcion($congresista);
-        }
-    }
-
     function insertarInscripcion($inscripcion, $idUsuario) {
         $nombre = mysql_escape_string($inscripcion->getNombre());
         $centro = mysql_escape_string($inscripcion->getCentro());
@@ -40,7 +26,7 @@ class ContenedorInscripcion extends Contenedor {
     function estaInscrito($idUsuario) {
         $idUsuario = mysql_escape_string($idUsuario);
         $query = "SELECT idInscripcion from inscripcion WHERE idUsuario =" . $idUsuario;
-        $result = $this->orm->query($query);
+        $result = $this->orm->queryArray($query);
         $result = ($result) ? true : false;
         return $result;
     }

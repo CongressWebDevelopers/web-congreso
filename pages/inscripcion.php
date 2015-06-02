@@ -4,7 +4,6 @@ include_once 'php/model/containers/ContenedorInscripcion.php';
 
 $usuario = $_SESSION['usuario'];
 $cInscripcion = new ContenedorInscripcion();
-
 if ($_SESSION['inscrito']) {
     $mensajeInscrito = 'Ya se encuetra inscrito en el congreso <strong><a href="index.php?page=mi-inscripcion">Mi inscripcion</a></strong>';
     $claseMensajeInscrito = "success";
@@ -42,7 +41,6 @@ if ($_SESSION['inscrito']) {
         <div class="<?php if (isset($claseMensajeInscrito)) echo $claseMensajeInscrito ?>"> <?php if (isset($mensajeInscrito)) echo $mensajeInscrito ?></div>
 
         <?php if (isset($_SESSION['usuario']) && !$cInscripcion->estaInscrito($usuario->getId())) { ?>
-            <h1>¡¡¡Inscribete!!!</h1>
             <form action="index.php?page=inscripcion" method="POST">
                 <h2>Datos de Inscripción</h2>
                 <fieldset>

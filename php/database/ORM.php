@@ -35,7 +35,7 @@ class ORM {
     }
 
     function query($query) {
-        return $this->lastQuery = mysql_query($query, $this->conexion);
+        return mysql_query($query, $this->conexion);
     }
 
     function getLastQueryResult() {

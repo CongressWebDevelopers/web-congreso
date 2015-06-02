@@ -46,7 +46,6 @@ class Inscripcion {
     }
 
     function __construct10($id, $nombre, $centro, $telefono, $cuota, $actividades, $hotel, $fechaSalida, $fechaEntrada, $idUSuario) {
-        echo "este";
         $this->id = $id;
         $this->nombre = $nombre;
         $this->centro = $centro;

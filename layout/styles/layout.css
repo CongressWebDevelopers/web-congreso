@@ -679,3 +679,15 @@ div.wrapper h6 {
     color: #02714F;
     background-color: #6DCDB0;
 }
+/*--------CUOTAS---------*/
+.cuota{
+    padding:10px 5px 10px 30px;
+    border: 1px solid #25A27C;
+    margin-top:5px;
+}
+.cuota strong{
+    color: #02714F;
+    text-transform: uppercase;
+    padding-left:5px;
+    margin-right:5px;
+}
