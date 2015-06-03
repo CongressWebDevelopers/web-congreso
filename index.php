@@ -1,6 +1,7 @@
 <?php
 
 include_once('head.php');
+include_once 'php/config.php';
 include_once('php/funciones.php');
 include_once('php/login.php');
 include_once('header.php');

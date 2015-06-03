@@ -44,14 +44,14 @@ if ($_SESSION['inscrito']) {
             <form action="index.php?page=inscripcion" method="POST">
                 <h2>Datos de Inscripción</h2>
                 <fieldset>
-                    <label for="nombre">Nombre y Apellidos </label>
-                    <input type="text" id="nombre" name="nombre" placeholder="">
-                    <p><label for="centro">Centro de trabajo</label>
-                        <input type="text" id="centro" name="centro"></p>
-                    <p><label for="telefono">Teléfono de contacto</label>
-                        <input type="text" id="telefono" name="telefono"></p>
+                    <label for="nombre">Nombre y Apellidos * </label>
+                    <input type="text" id="nombre" name="nombre" placeholder="" required>
+                    <p><label for="centro">Centro de trabajo * </label>
+                        <input type="text" id="centro" name="centro" required></p>
+                    <p><label for="telefono">Teléfono de contacto * </label>
+                        <input type="text" id="telefono" name="telefono" required></p>
                 </fieldset>
-                <p><label for="cuota">Cuota de inscripción</label>
+                <p><label for="cuota">Cuota de inscripción * </label>
                     <select id="cuota" name="cuota" required>
                         <option value="1">Cuota 1</option>
                         <option value="2">Cuota 2</option>
@@ -70,14 +70,15 @@ if ($_SESSION['inscrito']) {
                 <input type="date" id="fechaSalida" name="fechaSalida"/>
                 <input type="date" id="fechaEntrada" name="fechaEntrada" />
                 <p>
-                    <select id="hotel" name="hotel" required>
+                    <select id="hotel" name="hotel" >
                         <option>Hotel 1</option>
                         <option>Hotel 2</option>
                         <option>hotel 3</option>
                     </select>
                 </p>
+                <br>
                 <div class="<?php if (isset($claseMensaje)) echo $claseMensaje ?>"> <?php if (isset($mensaje)) echo $mensaje ?></div>
-                <input type="submit" class="btn-default" name="crear" value="Crear"/>
+                <input type="submit" class="btn-default " name="crear" value="Crear"/>
             </form>
         <?php } ?>
     </div>
