@@ -679,9 +679,9 @@ div.wrapper h6 {
     color: #02714F;
     background-color: #6DCDB0;
 }
-/*--------CUOTAS---------*/
+/*--------LISTADOS---------*/
 .elemento-listado{
-    padding:10px 5px 10px 30px;
+    padding:10px 5px 40px 30px;
     border: 1px solid #DD560E;
     margin-top:5px;
 
@@ -700,4 +700,15 @@ div.wrapper h6 {
     margin: 0px ;
     border-bottom: 3px solid #DD560E;
     border-right: 1px solid #DD560E;
+}
+.foto-listado {
+}
+.foto-listado{
+    float:right;
+    display: block;
+    margin: 0;
+    padding: 15px 0px 0px 0px;
+    border: 0;
+    width: 200px;
+    border-radius:5px;
 }

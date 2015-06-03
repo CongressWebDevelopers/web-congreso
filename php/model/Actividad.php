@@ -46,15 +46,20 @@ class Actividad {
     }
 
     function getFecha() {
-        return $this->importe;
+        return $this->fecha;
+    }
+    function getFechaEU() {
+        return date("d-M-Y", strtotime($this->fecha));
     }
 
     function getHora() {
-        return $this->hora;
+        return date("H:i", strtotime($this->hora));
     }
-    function getImporte(){
+
+    function getImporte() {
         return $this->importe;
     }
+
     function getFoto() {
         return $this->foto;
     }
