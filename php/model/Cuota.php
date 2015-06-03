@@ -51,6 +51,10 @@ class Cuota {
         return $this->actividadesIncluidas;
     }
 
+    function setId($id) {
+        $this->idCuota = $id;
+    }
+
     function setDenominacion($denominacion) {
         $this->denominacion = $denominacion;
     }

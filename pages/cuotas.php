@@ -1,9 +1,10 @@
 <?php
-include_once 'php/model/Cuota.php';
 include_once 'php/model/containers/ContenedorCuota.php';
+include_once 'php/model/containers/ContenedorActividad.php';
 
 $usuario = $_SESSION['usuario'];
 $cCuota = new ContenedorCuota();
+$cActividad = new ContenedorActividad();
 if (true) { //Si es administrador
     if (isset($_POST['crear'])) {
         $actividades = $_POST['actividades'];
@@ -45,7 +46,18 @@ if (true) { //Si es administrador
                     <p class="titulo-elemento-listado"><?php echo $c->getDenominacion() ?></p>
                     <p><strong>Descripcion: </strong></p><p><?php echo $c->getDescripcion() ?></p>
                     <p><strong>Importe: </strong><?php echo $c->getImporte() ?> €</p>
-                    <p><strong>Actividades incluidas: </strong></p><p><?php echo $c->getActividades() ?></p>
+                    <div class="cuota elemento-listado">
+                        <p class="titulo-elemento-listado">Actividades incluidas:</p>
+                        <?php
+                        $lActividades = $cCuota->getActividadesCuota($c->getActividades());
+                        foreach ($lActividades as $a) {
+                            ?>
+                            <p><?php echo $a->getDenominacion() ?></p>
+                        <?php } ?>
+                    </div>
+
+
+
                 </div>
                 <?php
             }
@@ -70,8 +82,12 @@ if (true) { //Si es administrador
                 <br/>
                 <h2>Actividades incluidas </h2>
                 <fieldset id="actividades">
-                    <input type="checkbox" name="actividades[]" value="1"/>Actividad 1
-                    <input type="checkbox" name="actividades[]" value="2"/>Actividad 2
+                    <?php
+                    $lActividades = $cActividad->getAll();
+                    foreach ($lActividades as $a) {
+                        ?>
+                        <p><input type="checkbox" name="actividades[]" value="<?php echo $a->getId() ?>"/><?php echo $a->getDenominacion() ?></p>
+                    <?php } ?>
                 </fieldset>
                 <br/>
                 <div class="<?php if (isset($claseMensaje)) echo $claseMensaje ?>"> <?php if (isset($mensaje)) echo $mensaje ?></div>

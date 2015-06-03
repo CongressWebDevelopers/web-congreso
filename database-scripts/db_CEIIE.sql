@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 03-06-2015 a las 18:20:39
+-- Tiempo de generación: 03-06-2015 a las 19:27:55
 -- Versión del servidor: 5.6.21
 -- Versión de PHP: 5.6.3
 
@@ -51,9 +51,20 @@ INSERT INTO `actividad` (`idActividad`, `denominacion`, `descripcion`, `fecha`, 
 --
 
 CREATE TABLE IF NOT EXISTS `actividadcuota` (
-  `idCuota` int(11) DEFAULT NULL,
-  `idActividad` int(11) DEFAULT NULL
+  `idActividad` int(11) DEFAULT NULL,
+  `idCuota` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `actividadcuota`
+--
+
+INSERT INTO `actividadcuota` (`idActividad`, `idCuota`) VALUES
+(33, 1),
+(33, 17),
+(33, 18),
+(33, 19),
+(34, 19);
 
 -- --------------------------------------------------------
 
@@ -66,26 +77,18 @@ CREATE TABLE IF NOT EXISTS `cuota` (
   `denominacion` varchar(200) NOT NULL,
   `descripcion` text NOT NULL,
   `importe` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `cuota`
 --
 
 INSERT INTO `cuota` (`idCuota`, `denominacion`, `descripcion`, `importe`) VALUES
-(1, 'Cuota 1', 'lalalalala', 20),
-(2, 'Cuota 2', 'lelelele', 30),
-(3, 'Profesor', 'El ir al congreso en calidad de profesor, implica que eres docente de alguno de los centros de estudios superiores de IngenierÃ­a InformÃ¡tica.', 50),
-(4, 'Alumno', 'Ser alumno es lo que tiene', 50),
-(5, 'Alumno', 'Ser alumno es lo que tiene', 50),
-(6, 'Alumno', 'Ser alumno es lo que tiene', 50),
-(7, 'Alumno', 'Ser alumno es lo que tiene', 50),
-(8, 'Alumno', 'Ser alumno es lo que tiene', 50),
-(9, 'Alumno', 'Ser alumno es lo que tiene', 50),
-(10, 'Alumno', 'Ser alumno es lo que tiene', 50),
-(11, 'Alumno', 'Ser alumno es lo que tiene', 50),
-(12, 'Alumno', 'Ser alumno es lo que tiene', 50),
-(13, 'Alumno', 'Ser alumno es lo que tiene', 50);
+(15, 'Profesor', 'Profesorado', 50),
+(16, 'Profesor', 'Profesorado', 50),
+(17, 'Profesor', 'ssss', 50),
+(18, 'Profesor', 'ssss', 50),
+(19, 'Visita a la Alhambra', 'sss', 20);
 
 -- --------------------------------------------------------
 
@@ -140,12 +143,6 @@ ALTER TABLE `actividad`
  ADD PRIMARY KEY (`idActividad`);
 
 --
--- Indices de la tabla `actividadcuota`
---
-ALTER TABLE `actividadcuota`
- ADD KEY `idActividad_idx` (`idActividad`), ADD KEY `idCuota_idx` (`idCuota`);
-
---
 -- Indices de la tabla `cuota`
 --
 ALTER TABLE `cuota`
@@ -176,7 +173,7 @@ MODIFY `idActividad` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=35;
 -- AUTO_INCREMENT de la tabla `cuota`
 --
 ALTER TABLE `cuota`
-MODIFY `idCuota` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
+MODIFY `idCuota` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT de la tabla `Inscripcion`
 --
@@ -187,17 +184,6 @@ MODIFY `idInscripcion` int(11) NOT NULL AUTO_INCREMENT;
 --
 ALTER TABLE `usuario`
 MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
---
--- Restricciones para tablas volcadas
---
-
---
--- Filtros para la tabla `actividadcuota`
---
-ALTER TABLE `actividadcuota`
-ADD CONSTRAINT `idActividad` FOREIGN KEY (`idActividad`) REFERENCES `actividad` (`idActividad`) ON DELETE CASCADE ON UPDATE CASCADE,
-ADD CONSTRAINT `idCuota` FOREIGN KEY (`idCuota`) REFERENCES `cuota` (`idCuota`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

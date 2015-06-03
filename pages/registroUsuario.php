@@ -8,7 +8,6 @@ if (isset($_POST['enviar'])) {
     if ($_POST['password'] == $_POST['repite-password']) {
         $usuario = new Usuario($_POST['email'], md5($_POST['password']), 2);
         $resultado = $cUsuario->insertarUsuario($usuario);
-        print_r($resultado);
         if ($resultado) {
             $claseMensaje = "success";
             $mensaje = "El registro ha sido satisfactorio";
