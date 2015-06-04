@@ -12,7 +12,7 @@ class ContenedorActividad extends Contenedor {
     function getById($id) {
         $query = "SELECT * FROM actividad WHERE idActividad='" . $id . "'";
         $result = $this->orm->query($query);
-        
+
         if ($result) {
             $actividad = new Actividad(mysql_fetch_array($result));
         }
@@ -29,6 +29,18 @@ class ContenedorActividad extends Contenedor {
         return $actividades;
     }
 
+    function getAllIds() {
+        $idsActividades = Array();
+        $query = "SELECT idActividad FROM actividad";
+        $result = $this->orm->query($query);
+        if ($result) {
+            while ($r = mysql_fetch_array($result)) {
+                $idsActividades[] = $r[0];
+            }
+        }
+        return $idsActividades;
+    }
+
     function getListaActividadesId($listaId) {
         $lActividades = Array();
         foreach ($listaId as $id) {
@@ -42,6 +54,7 @@ class ContenedorActividad extends Contenedor {
         $descripcion = mysql_escape_string($actividad->getDescripcion());
         $query = "INSERT INTO actividad VALUES('','" . $nombre . "','" . $descripcion . "','" . $actividad->getFecha() . "','" . $actividad->getHora() . "','" . $actividad->getImporte() . "','" . $actividad->getFoto() . "')";
         return $this->orm->query($query);
+        
     }
 
 }

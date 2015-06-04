@@ -39,6 +39,12 @@ class ContenedorCuota extends Contenedor {
         }
         return $idsActividades;
     }
+    function getIdActividadesNoAsociadas($idCuota) {
+        $cActividad = new ContenedorActividad();
+        $idsActividades = Array();
+        $idsActividades = array_diff($cActividad->getAllIds(), $this->getIdActividadesAsociadas($idCuota));
+        return $idsActividades;
+    }
 
     function insertarCuota(Cuota $cuota) {
         $nombre = mysql_escape_string($cuota->getDenominacion());

@@ -14,10 +14,15 @@ class ContenedorInscripcion extends Contenedor {
         $nombre = mysql_escape_string($inscripcion->getNombre());
         $centro = mysql_escape_string($inscripcion->getCentro());
         $telefono = mysql_escape_string($inscripcion->getTelefono());
-        $query = "INSERT INTO inscripcion VALUES('','" . $nombre . "','" . $centro . "','" . $telefono . "','". $inscripcion->getCuota() . "','" . $inscripcion->getHotel() . "','" . $inscripcion->getFechaSalida() . "','" . $inscripcion->getFechaEntrada() . "','" . $idUsuario . "' )";
-        echo $query;
+        $query = "INSERT INTO inscripcion VALUES('','" . $nombre . "','" . $centro . "','" . $telefono . "','" . $inscripcion->getCuota() . "','" . $inscripcion->getHotel() . "','" . $inscripcion->getFechaSalida() . "','" . $inscripcion->getFechaEntrada() . "','" . $idUsuario . "' )";
         $result = $this->orm->query($query);
-        if($result)
+        $inscripcion->setId(mysql_insert_id());
+        $idInscripcion = $inscripcion->getId();
+        $actividadesAsociadas = $inscripcion->getActividades();
+        foreach ($actividadesAsociadas as $idAct) {
+            $this->addActividadInscripcion($idInscripcion, $idAct);
+        }
+        if ($result)
             return true;
         else
             echo mysql_error();
@@ -28,6 +33,13 @@ class ContenedorInscripcion extends Contenedor {
         $query = "SELECT idInscripcion from inscripcion WHERE idUsuario =" . $idUsuario;
         $result = $this->orm->queryArray($query);
         $result = ($result) ? true : false;
+        return $result;
+    }
+
+    function addActividadInscripcion($idInscripcion, $idActividad) {
+        $query = "INSERT INTO inscripcionactividad VALUES(" . $idInscripcion . "," . $idActividad . ")";
+        $result = $this->orm->query($query);
+        echo $query;
         return $result;
     }
 
