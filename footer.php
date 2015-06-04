@@ -16,7 +16,7 @@
                     </fieldset>
                     <div class="<?php if (isset($claseMensaje)) echo $claseMensaje; ?>"><?php if (isset($mensaje)) echo $mensaje; ?></div>
                 </form>
-                <p><a href="#">&raquo; No recuerdo la contraseña</a> | <a href="index.php?=registroUsuario">Crear una cuenta</a>
+                <p><a href="index.php?page=restablecer">&raquo; No recuerdo la contraseña</a> | <a href="index.php?=registroUsuario">Crear una cuenta</a>
                 </p>
             </div>
             <?php

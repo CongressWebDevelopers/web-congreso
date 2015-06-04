@@ -41,7 +41,8 @@ $treePages = Array(
     "registroUsuario" => 'pages/registroUsuario.php',
     "cuotas" => 'pages/cuotas.php',
     "actividades" => 'pages/actividades.php',
-    "logout" => 'php/logout.php'
+    "logout" => 'php/logout.php',
+    "restablecer" => 'pages/restablecer_pass.php'
 );
 
 if (isset($_GET['page']) && $treePages[$_GET['page']]) {
