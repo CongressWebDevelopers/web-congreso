@@ -255,8 +255,9 @@ div.wrapper h6 {
     float: right;
 }
 #intro .imagen-intro {
-    width: 380px;
+    width: 379px;
     height: 300px;
+    margin: 0px;
 }
 /* ----------------------------------------------Services------------------------------------- */
 
@@ -273,10 +274,9 @@ div.wrapper h6 {
     float: left;
     width: 294px;
     height: 180px;
-    margin: 0 0px 0 0;
+    margin: 0;
     padding: 8px 12px 8px 13px;
     color: white;
-    ;
     background-color: #25A27C;
     border-right: solid 1px #6DCDB0;
 }
