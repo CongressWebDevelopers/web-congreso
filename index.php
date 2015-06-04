@@ -1,10 +1,12 @@
 <?php
 
-include_once('head.php');
-include_once 'php/config.php';
-include_once('php/funciones.php');
-include_once('php/login.php');
-include_once('header.php');
+if (!isset($_GET['ajax']) OR ! $_GET['ajax']) {
+    include_once('head.php');
+    include_once 'php/config.php';
+    include_once('php/funciones.php');
+    include_once('php/login.php');
+    include_once('header.php');
+}
 
 //Este array servirá de directorio de páginas para la variable GET page.
 //"valor variable page" => 'directorio.php'
@@ -41,7 +43,10 @@ $treePages = Array(
     "registroUsuario" => 'pages/registroUsuario.php',
     "cuotas" => 'pages/cuotas.php',
     "actividades" => 'pages/actividades.php',
-    "logout" => 'php/logout.php'
+    "logout" => 'php/logout.php',
+    "ajax" => Array(
+        "actividades-ajax" => 'php/ajax/getActividadesCuota.php'
+    )
 );
 
 if (isset($_GET['page']) && $treePages[$_GET['page']]) {
@@ -55,9 +60,11 @@ if (isset($_GET['page']) && $treePages[$_GET['page']]) {
             include_once 'pages/programa.php';
         }
     }
+} else if ($_GET['ajax']) {
+    include_once $treePages['ajax'][$_GET['ajax']];
 } else {
     include_once 'contain.php';
 }
-
-include_once('footer.php');
+if (!isset($_GET['ajax']) OR ! $_GET['ajax'])
+    include_once('footer.php');
 ?>
