@@ -15,7 +15,6 @@ class ContenedorUsuario extends Contenedor {
         $password = $usuario->getPassword();
         $rol = mysql_escape_string($usuario->GetRol());
         $query = "INSERT INTO usuario VALUES ('','" . $nUsuario . "','" . $password . "'," . $rol . ")";
-        echo $query;
         return $this->orm->query($query);
     }
 

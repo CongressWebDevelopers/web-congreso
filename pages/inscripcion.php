@@ -3,10 +3,10 @@ include_once 'php/model/Usuario.php';
 include_once 'php/model/containers/ContenedorInscripcion.php';
 include_once 'php/model/containers/ContenedorCuota.php';
 
+
 if (isset($_SESSION['usuario'])) {
     $usuario = $_SESSION['usuario'];
 }
-
 $cInscripcion = new ContenedorInscripcion();
 $cCuota = new ContenedorCuota();
 if (isset($_SESSION['inscrito'])) {
@@ -86,6 +86,7 @@ if (isset($_SESSION['inscrito'])) {
                 </script>
                 <br>
                 <h2>Hotel</h2>
+                <a href="index.php?page=hoteles">Comprobar disponibilidad</a>
                 <p>Duración estancia:</p>
                 <input type="date" id="fechaSalida" name="fechaSalida"/>
                 <input type="date" id="fechaEntrada" name="fechaEntrada" />
