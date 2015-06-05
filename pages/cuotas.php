@@ -5,18 +5,16 @@ include_once 'php/model/containers/ContenedorActividad.php';
 $usuario = $_SESSION['usuario'];
 $cCuota = new ContenedorCuota();
 $cActividad = new ContenedorActividad();
-if (true) { //Si es administrador
-    if (isset($_POST['crear'])) {
-        $actividades = $_POST['actividades'];
-        $cuota = new Cuota(
-                null, $_POST['denominacion'], $_POST['descripcion'], $_POST['importe'], $actividades);
-        if ($cCuota->insertarCuota($cuota)) {
-            $mensaje = "La cuota ha sido creada";
-            $claseMensaje = "success";
-        } else {
-            $mensaje = "No se ha podido crear la cuota";
-            $claseMensaje = "error";
-        }
+if (isset($_POST['crear'])) {
+    $actividades = $_POST['actividades'];
+    $cuota = new Cuota(
+            null, $_POST['denominacion'], $_POST['descripcion'], $_POST['importe'], $actividades);
+    if ($cCuota->insertarCuota($cuota)) {
+        $mensaje = "La cuota ha sido modificada";
+        $claseMensaje = "success";
+    } else {
+        $mensaje = "No se ha podido modificar la cuota";
+        $claseMensaje = "error";
     }
 }
 ?>
@@ -43,7 +41,7 @@ if (true) { //Si es administrador
             foreach ($lCuotas as $c) {
                 ?>
                 <div id="cuota-<?php $c->getId() ?>" class="cuota elemento-listado">
-                    <p class="titulo-elemento-listado"><?php echo $c->getDenominacion() ?></p>
+                    <p class="titulo-elemento-listado"><?php echo $c->getDenominacion() ?><a class="btn-editar" href="index.php?page=editar-cuota&idCuota=<?php echo $c->getId()?>">editar</a></p>
                     <p><strong>Descripcion: </strong></p><p><?php echo $c->getDescripcion() ?></p>
                     <p><strong>Importe: </strong><?php echo $c->getImporte() ?> €</p>
                     <div class="cuota elemento-listado">

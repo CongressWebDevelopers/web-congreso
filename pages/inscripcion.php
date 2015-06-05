@@ -1,9 +1,11 @@
 <?php
 include_once 'php/model/Usuario.php';
 include_once 'php/model/containers/ContenedorInscripcion.php';
+include_once 'php/model/containers/ContenedorCuota.php';
 
 $usuario = $_SESSION['usuario'];
 $cInscripcion = new ContenedorInscripcion();
+$cCuota = new ContenedorCuota();
 if ($_SESSION['inscrito']) {
     $mensajeInscrito = 'Ya se encuetra inscrito en el congreso <strong><a href="index.php?page=mi-inscripcion">Mi inscripcion</a></strong>';
     $claseMensajeInscrito = "success";
@@ -11,13 +13,13 @@ if ($_SESSION['inscrito']) {
     if (isset($_POST['crear'])) {
         $actividades = $_POST['actividades'];
         $inscripcion = new Inscripcion(
-                null, $_POST['nombre'], $_POST['centro'], $_POST['telefono'], $_POST['cuota'], $actividades, $_POST['hotel'], $_POST['fechaSalida'], $_POST['fechaEntrada'], $usuario->getId());
-        if ($cInscripcion->insertarInscripcion($inscripcion, $usuario->getId())) {
-            $mensaje = "La inserción ha sido satisfactoria";
-            $claseMensaje = "success";
+                null, $_POST['nombre'], $_POST['centro'], $_POST['telefono'], $_POST['cuota'], $_POST['hotel'], $_POST['fechaSalida'], $_POST['fechaEntrada'], $usuario->getId());
+        if ($cInscripcion->insertarInscripcion($inscripcion, $usuario->getId(), $actividades)) {
+            $mensajeInscrito = 'La inscripción ha sido satisfactoria <a href="index.php?page=mi-inscripcion">Mi inscripcion</a>';
+            $claseMensajeInscrito = "success";
         } else {
-            $mensaje = "No se ha podido realizar la inscripción";
-            $claseMensaje = "error";
+            $mensajeInscrito = "No se ha podido realizar la inscripción";
+            $claseMensajeInscrito = "error";
         }
     }
 }
@@ -51,21 +53,37 @@ if ($_SESSION['inscrito']) {
                     <p><label for="telefono">Teléfono de contacto * </label>
                         <input type="text" id="telefono" name="telefono" required></p>
                 </fieldset>
-                <p><label for="cuota">Cuota de inscripción * </label>
-                    <select id="cuota" name="cuota" required>
-                        <option value="1">Cuota 1</option>
-                        <option value="2">Cuota 2</option>
-                        <option value="3">Cuota 3</option>
-                    </select>
+                <p><label>Cuota de inscripción * </label>
+                    <?php
+                    $lCuotas = $cCuota->getAll();
+                    foreach ($lCuotas as $c) {
+                        ?>
+                        <input type="radio" name="cuota" onchange="mostrarActividades(this.value)" value="<?php echo $c->getId() ?>"/> <?php echo $c->getDenominacion() ?> (<?php echo $c->getImporte() ?>€)
+                    <?php } ?>
                 </p>
                 <br>
-                <h2>Actividades</h2>
                 <fieldset id="actividades">
-                    <input type="checkbox" name="actividades[]" value="1"/>Actividad 1
-                    <input type="checkbox" name="actividades[]" value="2"/>Actividad 2
                 </fieldset>
+                <script>
+                    function mostrarActividades(idCuota) {
+                        if (idCuota.length == 0) {
+                            document.getElementById("actividades").innerHTML = "";
+                            return;
+                        } else {
+                            var xmlhttp = new XMLHttpRequest();
+                            xmlhttp.onreadystatechange = function () {
+                                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                                    document.getElementById("actividades").innerHTML = xmlhttp.responseText;
+                                }
+                            }
+                            xmlhttp.open("GET", "index.php?ajax=actividades-ajax&idCuota=" + idCuota, true);
+                            xmlhttp.send();
+                        }
+                    }
+                </script>
                 <br>
                 <h2>Hotel</h2>
+                <a href="index.php?page=hoteles">Comprobar disponibilidad</a>
                 <p>Duración estancia:</p>
                 <input type="date" id="fechaSalida" name="fechaSalida"/>
                 <input type="date" id="fechaEntrada" name="fechaEntrada" />

@@ -14,21 +14,12 @@
                             <input type="submit" class="btn-default" name="login" id="login_go" value="Sign In" />
                         </div>
                     </fieldset>
-                    <div class="<?php if (isset($claseMensaje)) echo $claseMensaje; ?>"><?php if (isset($mensaje)) echo $mensaje; ?></div>
+                    <div class="<?php if (isset($claseMensajeSesion)) echo $claseMensajeSesion; ?>"><?php if (isset($mensajeSesion)) echo $mensajeSesion; ?></div>
                 </form>
-                <p><a href="index.php?page=restablecer">&raquo; No recuerdo la contraseña</a> | <a href="index.php?=registroUsuario">Crear una cuenta</a>
+                <p><a href="index.php?page=restablecer">&raquo; No recuerdo la contraseña</a> | <a href="index.php?page=registroUsuario">Crear una cuenta</a>
                 </p>
             </div>
-            <?php
-        }else {
-            if ($_SESSION['inscrito']) {
-                ?>
-                <a href="index.php?page=mi-inscripcion" id="inscribete" class="btn-grande btn-verde">MI INSCRIPCIÓN</a>
-                <?php
-            } else {
-                ?>
-                <a href="index.php?page=inscripcion" id="inscribete" class="btn-grande btn-verde">INSCRIBETE</a>
-        <?php }} ?>
+            <?php } ?>
         <div id="patrocinadores" class="footbox-2">
             <h2>Patrocinadores</h2>
             <div id="slideshow">

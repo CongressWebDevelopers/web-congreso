@@ -17,7 +17,7 @@ try {
            
 			if ($numFilas> 0){
 			$respuesta = $hoteles->getLastQueryResult(); // guardamos en $respuesta el resultado de la consulta
-			//	echo json_encode($respuesta, true); // $respuesta será un array con los datos de nuestra respuesta.
+			echo json_encode($respuesta, true); // $respuesta será un array con los datos de nuestra respuesta.
 	
 			// Comprobamos que funciona la consulta
 			/*while($fila = $hoteles->queryArray()){
@@ -30,14 +30,15 @@ try {
             break;
             
         case 'POST':
-        
 			if (isset($_POST['reserva'])) {
 				$cantidad_reserva=1;
 				$id_reserva=$_POST['reserva'];
+				$entrada=$_POST['entrada'];
+				$salida=$_POST['salida'];
 				if (isset($_POST['cantidad']))
 					$cantidad_reserva= $_POST['cantidad']; // Si se especifíca una cantidad, reservamos ese número
-					$seleccion = "INSERT INTO agenda VALUES ($id_reservada, 0, 0, 1, $cantidad_reserva)";
-					$hoteles->query($seleccion); // ejecuta la inserción		
+				$seleccion = "INSERT INTO agenda VALUES ($id_reservada, $entrada, $salida, 1, $cantidad_reserva)"; // guardamos la reserva
+				$hoteles->query($seleccion); // ejecuta la inserción		
 			}
             break;   
     }

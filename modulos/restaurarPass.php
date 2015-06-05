@@ -9,14 +9,13 @@ include_once '../php/database/ORM.php';;
 if (isset($_POST['enviar'])) {
     // email del usuario
     $email = $_POST['email_restablecer'];
-   // $comprueba = "no";
 
     $comprobar_usuario = new ORM();
     $consulta = "SELECT password FROM usuario WHERE nombreUsuario='$email'";
     $resultado = $comprobar_usuario->query($consulta);
     
 	if ((mysql_num_rows($resultado))==0) {  
-		   //  $comprueba = "error, el usuario no está en nuestra base de datos";
+		$comprueba = "El usuario no está en nuestra base de datos";
 	}else{
 		$nueva_pass = md5(uniqid(mt_rand(), true)); // generamos clave aleatoria
 		$nueva_pass = substr($nueva_pass, 0, 6);
@@ -25,7 +24,7 @@ if (isset($_POST['enviar'])) {
 		$resultado2 = $comprobar_usuario->query($consulta2);
 	
 		if($resultado2) {
-			$comprueba = "SI";
+			$comprueba = "";
 			$email_destino = $email;
 			$asunto = "Nueva contraseña para CEIIE";
 			$mensaje_email = "Tu contraseña nueva es: $nueva_pass";
@@ -33,7 +32,7 @@ if (isset($_POST['enviar'])) {
 			// Cabeceras email
 			$cabeceras  = 'MIME-Version: 1.0' . "\r\n";
 			$cabeceras .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-			$cabeceras .= 'From: X <xx@x.com>' . "\r\n";
+			$cabeceras .= 'From: X <CEIIE@gmail.com>' . "\r\n";
 			
 			$enviadoCliente = mail($email_destino, $asunto, $mensaje_email, $cabeceras); // enviamos la nueva clave al usuario
 		}
@@ -44,7 +43,7 @@ if (isset($_POST['enviar'])) {
 		$notificacion = "El mensaje ha sido enviado correctamente";			
 		$notificacionClass = "success";
 	} else {
-		$notificacion = "Ha ocurrido un error en el envío del mensaje, $comprueba, $email, $nueva_pass";
+		$notificacion = "Ha ocurrido un error en el envío del mensaje. $comprueba";
 		$notificacionClass = "error";
 		}
 }

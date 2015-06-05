@@ -12,7 +12,7 @@ class Usuario {
     public $idUsuario;
     private $nombreUsuario;
     private $password;
-    private $rol;
+    private $rol; //
 
     public function __construct($row) {
         $this->idUsuario = $row['idUsuario'];

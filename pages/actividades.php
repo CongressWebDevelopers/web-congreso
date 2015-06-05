@@ -65,7 +65,7 @@ if (isset($_POST['crear'])) {
             foreach ($lActividades as $a) {
                 ?>
                 <div id="actividad-<?php $a->getId() ?>" class="actividades elemento-listado">
-                    <p class="titulo-elemento-listado"><?php echo $a->getDenominacion() ?>
+                    <p class="titulo-elemento-listado"><?php echo $a->getDenominacion() ?><?php if($_SESSION['rol']==ROL_ADMIN){?> <a class="btn-editar" href="index.php?page=editar-actividad&idActividad=<?php echo $a->getId()?>">editar</a><?php }?></p>
                     <img src="<?php echo DIR_FOTOS_ACT . $a->getFoto() ?>" class="foto-listado" alt="Foto de la actividad<?php $a->getId() ?>">
                     <p><strong>Descripcion: </strong></p><p><?php echo $a->getDescripcion() ?></p>
                     <p><strong>Fecha: </strong><?php echo $a->getFechaEU() ?></p>
