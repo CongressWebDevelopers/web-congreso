@@ -6,7 +6,6 @@ $cActividad = new ContenedorActividad();
 $actividad = $cActividad->getById($_GET['idActividad']);
 
 if (isset($_POST['modificar'])) {
-    var_dump($_FILES['foto']);
     if ($_FILES['foto']['name']!=="") {
         $subido = "true";
         $mensajeImagen = "";
@@ -35,7 +34,6 @@ if (isset($_POST['modificar'])) {
     }else{
         $foto = $actividad->getFoto();
     }
-    var_dump($foto);
     $actividad = new Actividad(
             $_GET['idActividad'], $_POST['denominacion'], $_POST['descripcion'], $_POST['fecha'], $_POST['hora'], $_POST['importe'], $foto);
     if ($cActividad->modificarActividad($actividad)) {

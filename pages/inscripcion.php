@@ -6,7 +6,6 @@ include_once 'php/model/containers/ContenedorCuota.php';
 $usuario = $_SESSION['usuario'];
 $cInscripcion = new ContenedorInscripcion();
 $cCuota = new ContenedorCuota();
-var_dump($_POST);
 if ($_SESSION['inscrito']) {
     $mensajeInscrito = 'Ya se encuetra inscrito en el congreso <strong><a href="index.php?page=mi-inscripcion">Mi inscripcion</a></strong>';
     $claseMensajeInscrito = "success";
