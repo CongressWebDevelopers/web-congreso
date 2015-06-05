@@ -1,6 +1,8 @@
 <?php
+include_once 'php/model/containers/ContenedorActividad.php';
 $usuario = $_SESSION['usuario'];
 $cInscripcion = new ContenedorInscripcion();
+$cActividad = new ContenedorActividad();
 $inscripcion = $cInscripcion->getInscripcionUsuario($usuario->getId());
 ?>
 <div class="wrapper col3">
@@ -18,16 +20,32 @@ $inscripcion = $cInscripcion->getInscripcionUsuario($usuario->getId());
 </div>
 <div class="wrapper col5">
     <div id="container">
-        <h2>Mi inscripción:</h2>
-        <p>Nombre: <?php echo $inscripcion->getNombre() ?></p>
-        <p>Email: <?php echo $usuario->getNombreUsuario() ?></p>
-        <p>Centro: <?php echo $inscripcion->getCentro() ?></p>
-        <p>Teléfono: <?php echo $inscripcion->getTelefono() ?></p>
-        <p>Cuota: <?php echo $inscripcion->getCuota() ?></p>
-        <p>Hotel: <?php echo $inscripcion->getHotel() ?></p>
-        <p>Fecha Entrada: <?php echo $inscripcion->getFechaEntrada() ?></p>
-        <p>Fecha de Salida: <?php echo $inscripcion->getFechaSalida() ?></p>
-        <p>Actividades: <?php print_r($inscripcion->getActividades())  ?></p>
+        <div class="elemento-listado">
+            <p class="titulo-elemento-listado">Mi inscripción:</p>
+        <p><strong>Nombre: </strong><?php echo $inscripcion->getNombre() ?></p>
+        <p><strong>Email: </strong><?php echo $usuario->getNombreUsuario() ?></p>
+        <p><strong>Centro: </strong><?php echo $inscripcion->getCentro() ?></p>
+        <p><strong>Teléfono: </strong><?php echo $inscripcion->getTelefono() ?></p>
+        <p><strong>Cuota: </strong><?php echo $inscripcion->getCuota() ?></p>
+        <p><strong>Hotel: </strong><?php echo $inscripcion->getHotel() ?></p>
+        <p><strong>Fecha Entrada: </strong><?php echo $inscripcion->getFechaEntrada() ?></p>
+        <p><strong>Fecha de Salida: </strong><?php echo $inscripcion->getFechaSalida() ?></p>
+        <?php
+        $lActividades = $cActividad->getListaActividadesId($inscripcion->getActividades());
+        foreach ($lActividades as $a) {
+            ?>
+            <div id="actividad-<?php $a->getId() ?>" class="actividades elemento-listado">
+                <p class="titulo-elemento-listado"><?php echo $a->getDenominacion() ?>
+                    <img src="<?php echo DIR_FOTOS_ACT . $a->getFoto() ?>" class="foto-listado" alt="Foto de la actividad<?php $a->getId() ?>">
+                <p><strong>Descripcion: </strong></p><p><?php echo $a->getDescripcion() ?></p>
+                <p><strong>Fecha: </strong><?php echo $a->getFechaEU() ?></p>
+                <p><strong>Hora: </strong><?php echo $a->getHora() ?> </p>
+                <p><strong>Importe: </strong><?php echo $a->getImporte() ?> €</p>
+            </div>
+            <?php
+        }
+        ?>
+        </div>
     </div>
 </div>
 

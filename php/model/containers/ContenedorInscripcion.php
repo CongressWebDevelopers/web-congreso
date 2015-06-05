@@ -14,9 +14,20 @@ class ContenedorInscripcion extends Contenedor {
         $query = "SELECT * FROM inscripcion WHERE idUsuario='" . $idUsuario . "'";
         $result = $this->orm->query($query);
         $inscripcion = new Inscripcion(mysql_fetch_array($result));
-        $actividadesAsociadas = $inscripcion->getActividades();
-        print_r($inscripcion);
+        $actividadesAsociadas = $this->getActividadesAsociadas($inscripcion->getId());
+        $inscripcion->setActividades($actividadesAsociadas);
         return $inscripcion;
+    }
+
+    function getActividadesAsociadas($idInscripcion) {
+        $query = "SELECT idActividad FROM inscripcionactividad WHERE idInscripcion='" . $idInscripcion . "'";
+        $result = $this->orm->query($query);
+        echo $query;
+        $idsActividades = Array();
+        while ($r = mysql_fetch_array($result)) {
+            $idsActividades[] = $r[0];
+        }
+        return $idsActividades;
     }
 
     function insertarInscripcion($inscripcion, $idUsuario, $actividadesAsociadas = null) {

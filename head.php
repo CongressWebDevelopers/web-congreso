@@ -15,5 +15,4 @@ Licence URI: http://www.os-templates.com/template-terms
         <link rel="stylesheet" href="layout/styles/layout.css" type="text/css" />
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <link href="images/favicon.ico" rel="icon" type="image/x-icon" />    
     </head>
