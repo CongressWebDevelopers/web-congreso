@@ -46,6 +46,7 @@ $treePages = Array(
     "mi-inscripcion" => 'pages/mi-inscripcion.php',
     "lista-inscritos" => 'pages/lista-inscritos.php',
     "editar-cuota" => 'pages/editar-cuota.php',
+    "editar-actividad" => 'pages/editar-actividad.php',
     "logout" => 'php/logout.php',
     "ajax" => Array(
         "actividades-ajax" => 'php/ajax/getActividadesCuota.php'

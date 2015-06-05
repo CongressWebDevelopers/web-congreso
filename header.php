@@ -46,13 +46,7 @@
                     </li>
                     <li><a href="index.php?page=inscripcion">Inscripción</a>
                     </li>
-                    <li><a href="#">Actividades</a>
-                        <ul>
-                            <li><a href="index.php?page=alhambra">Visita a la Alhambra</a>
-                            </li>
-                            <li><a href="index.php?page=sierra_nevada">Visita a Sierra Nevada</a>
-                            </li>
-                        </ul>
+                    <li><a href="index.php?page=actividades">Actividades</a>
                     </li>
                     <li><a href="#">Información</a>
                         <ul>

@@ -54,7 +54,15 @@ class ContenedorActividad extends Contenedor {
         $descripcion = mysql_escape_string($actividad->getDescripcion());
         $query = "INSERT INTO actividad VALUES('','" . $nombre . "','" . $descripcion . "','" . $actividad->getFecha() . "','" . $actividad->getHora() . "','" . $actividad->getImporte() . "','" . $actividad->getFoto() . "')";
         return $this->orm->query($query);
-        
+    }
+
+    function modificarActividad($actividad) {
+        $nombre = mysql_escape_string($actividad->getDenominacion());
+        $descripcion = mysql_escape_string($actividad->getDescripcion());
+        $query = "UPDATE actividad SET denominacion='" . $nombre . "',descripcion='" . $descripcion . "',fecha='" . $actividad->getFecha() . "',hora='" . $actividad->getHora() . "',importe='" . $actividad->getImporte() . "',foto='" . $actividad->getFoto() . "' WHERE idActividad='" . $actividad->getId() . "'";
+        echo $query;
+        $result = $this->orm->query($query);
+        return $result;
     }
 
 }
