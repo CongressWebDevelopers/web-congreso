@@ -6,7 +6,7 @@ $cUsuario = new ContenedorUsuario();
 
 if (isset($_POST['enviar'])) {
     if ($_POST['password'] == $_POST['repite-password']) {
-        $usuario = new Usuario($_POST['email'], md5($_POST['password']), 2);
+        $usuario = new Usuario($_POST['email'], md5($_POST['password']), ROL_USER);
         $resultado = $cUsuario->insertarUsuario($usuario);
         if ($resultado) {
             $claseMensaje = "success";

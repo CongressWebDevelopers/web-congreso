@@ -17,8 +17,9 @@ if (isset($_POST['login'])) {
         $cInscripcion = new ContenedorInscripcion();
         $_SESSION['usuario'] = $usuarioActual;
         $_SESSION['inscrito'] = $cInscripcion->estaInscrito($usuarioActual->getId());
+        $_SESSION['rol'] = $usuarioActual->getRol();
     } else {
         $mensajeSesion = "El usuario o la contraseña son incorrectos";
-        $claseMensaje = "error";
+        $claseMensajeSesion = "error";
     }
 }

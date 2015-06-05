@@ -10,7 +10,16 @@ include_once 'php/model/Inscripcion.php';
 
 class ContenedorInscripcion extends Contenedor {
 
-    function insertarInscripcion($inscripcion, $idUsuario) {
+    function getInscripcionUsuario($idUsuario) {
+        $query = "SELECT * FROM inscripcion WHERE idUsuario='" . $idUsuario . "'";
+        $result = $this->orm->query($query);
+        $inscripcion = new Inscripcion(mysql_fetch_array($result));
+        $actividadesAsociadas = $inscripcion->getActividades();
+        print_r($inscripcion);
+        return $inscripcion;
+    }
+
+    function insertarInscripcion($inscripcion, $idUsuario, $actividadesAsociadas = null) {
         $nombre = mysql_escape_string($inscripcion->getNombre());
         $centro = mysql_escape_string($inscripcion->getCentro());
         $telefono = mysql_escape_string($inscripcion->getTelefono());
@@ -18,7 +27,7 @@ class ContenedorInscripcion extends Contenedor {
         $result = $this->orm->query($query);
         $inscripcion->setId(mysql_insert_id());
         $idInscripcion = $inscripcion->getId();
-        $actividadesAsociadas = $inscripcion->getActividades();
+        $inscripcion->setActividades($actividadesAsociadas);
         foreach ($actividadesAsociadas as $idAct) {
             $this->addActividadInscripcion($idInscripcion, $idAct);
         }

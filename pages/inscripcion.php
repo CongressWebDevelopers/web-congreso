@@ -14,13 +14,13 @@ if ($_SESSION['inscrito']) {
     if (isset($_POST['crear'])) {
         $actividades = $_POST['actividades'];
         $inscripcion = new Inscripcion(
-                null, $_POST['nombre'], $_POST['centro'], $_POST['telefono'], $_POST['cuota'], $actividades, $_POST['hotel'], $_POST['fechaSalida'], $_POST['fechaEntrada'], $usuario->getId());
-        if ($cInscripcion->insertarInscripcion($inscripcion, $usuario->getId())) {
-            $mensaje = "La inserción ha sido satisfactoria";
-            $claseMensaje = "success";
+                null, $_POST['nombre'], $_POST['centro'], $_POST['telefono'], $_POST['cuota'], $_POST['hotel'], $_POST['fechaSalida'], $_POST['fechaEntrada'], $usuario->getId());
+        if ($cInscripcion->insertarInscripcion($inscripcion, $usuario->getId(), $actividades)) {
+            $mensajeInscrito = 'La inscripción ha sido satisfactoria <a href="index.php?page=mi-inscripcion">Mi inscripcion</a>';
+            $claseMensajeInscrito = "success";
         } else {
-            $mensaje = "No se ha podido realizar la inscripción";
-            $claseMensaje = "error";
+            $mensajeInscrito = "No se ha podido realizar la inscripción";
+            $claseMensajeInscrito = "error";
         }
     }
 }

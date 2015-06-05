@@ -42,16 +42,15 @@ class Inscripcion {
     //ahora declaro una serie de métodos constructores que aceptan diversos números de parámetros
 
     function __construct1($queryRow) {
-        $this->__construct9($queryRow[0], $queryRow[1], $queryRow[2], $queryRow[3], $queryRow[4], $queryRow[5], $queryRow[6], $queryRow[7]);
+        $this->__construct9($queryRow[0], $queryRow[1], $queryRow[2], $queryRow[3], $queryRow[4], $queryRow[5], $queryRow[6], $queryRow[7], $queryRow[8]);
     }
 
-    function __construct10($id, $nombre, $centro, $telefono, $cuota, $actividades, $hotel, $fechaSalida, $fechaEntrada, $idUSuario) {
+    function __construct9($id, $nombre, $centro, $telefono, $cuota, $hotel, $fechaSalida, $fechaEntrada, $idUSuario) {
         $this->id = $id;
         $this->nombre = $nombre;
         $this->centro = $centro;
         $this->telefono = $telefono;
         $this->cuota = $cuota;
-        $this->actividades = $actividades;
         $this->hotel = $hotel;
         $this->fechaSalida = $fechaSalida;
         $this->fechaEntrada = $fechaEntrada;

@@ -43,6 +43,7 @@ $treePages = Array(
     "registroUsuario" => 'pages/registroUsuario.php',
     "cuotas" => 'pages/cuotas.php',
     "actividades" => 'pages/actividades.php',
+    "mi-inscripcion" => 'pages/mi-inscripcion.php',
     "logout" => 'php/logout.php',
     "ajax" => Array(
         "actividades-ajax" => 'php/ajax/getActividadesCuota.php'
@@ -60,7 +61,7 @@ if (isset($_GET['page']) && $treePages[$_GET['page']]) {
             include_once 'pages/programa.php';
         }
     }
-} else if ($_GET['ajax']) {
+} else if (isset($_GET['ajax'])) {
     include_once $treePages['ajax'][$_GET['ajax']];
 } else {
     include_once 'contain.php';
