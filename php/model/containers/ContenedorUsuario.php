@@ -20,8 +20,8 @@ class ContenedorUsuario extends Contenedor {
 
     function getUsuarioById($id) {
         $id = mysql_escape_string($id);
-        $query = "SELECT * FROM usuario WHERE idUsuario=" . $id;
-        $resultado = $this->orm->queryArray($query);
+        $query = "SELECT * FROM usuario WHERE idUsuario='" . $id . "'";
+        $resultado = mysql_fetch_array($this->orm->query($query));
         ($resultado) ? $usuario = new Usuario($resultado) : $usuario = false;
         return $usuario;
     }

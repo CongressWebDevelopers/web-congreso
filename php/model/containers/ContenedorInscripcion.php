@@ -11,9 +11,16 @@ include_once 'php/model/containers/ContenedorActividad.php';
 
 class ContenedorInscripcion extends Contenedor {
 
+    function getById($idInscripcion) {
+        $query = "SELECT * FROM inscripcion WHERE idInscripcion='" . $idInscripcion . "'";
+        $result = $this->orm->query($query);
+        $inscripcion = new Inscripcion(mysql_fetch_array($result));
+        $actividadesAsociadas = $this->getActividadesAsociadas($inscripcion->getId());
+        $inscripcion->setActividades($actividadesAsociadas);
+        return $inscripcion;
+    }
+
     function getAll() {
-        $actividades = array();
-        $cActividad = new ContenedorActividad();
         $query = "SELECT * FROM inscripcion";
         $resultRow = $this->orm->query($query);
         while ($r = mysql_fetch_array($resultRow)) {

@@ -42,7 +42,7 @@ $cInscripcion = new ContenedorInscripcion();
                             <?php echo $i->getId() ?>
                         </td>
                         <td>
-                            <?php echo $i->getNombre() ?>
+                            <a href="index.php?page=mi-inscripcion&idInscripcion=<?php echo $i->getId()?>"><?php echo $i->getNombre() ?></a>
                         </td>
                         <td>
                             <?php echo $i->getTelefono() ?>

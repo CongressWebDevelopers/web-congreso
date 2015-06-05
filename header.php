@@ -75,7 +75,7 @@
                                     </li>
                                 <?php } ?>
                                 <?php if (isset($_SESSION['rol'])AND $_SESSION['rol'] == ROL_ADMIN) { ?>
-                                    <li><a href="#">Lista de Inscritos</a>
+                                    <li><a href="index.php?page=lista-inscritos">Lista de Inscritos</a>
                                     </li>
                                     <li><a href="index.php?page=cuotas">Cuotas</a>
                                     </li>
