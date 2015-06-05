@@ -7,8 +7,20 @@
  */
 include_once 'Contenedor.php';
 include_once 'php/model/Inscripcion.php';
+include_once 'php/model/containers/ContenedorActividad.php';
 
 class ContenedorInscripcion extends Contenedor {
+
+    function getAll() {
+        $actividades = array();
+        $cActividad = new ContenedorActividad();
+        $query = "SELECT * FROM inscripcion";
+        $resultRow = $this->orm->query($query);
+        while ($r = mysql_fetch_array($resultRow)) {
+            $inscripciones[] = new Inscripcion($r);
+        }
+        return $inscripciones;
+    }
 
     function getInscripcionUsuario($idUsuario) {
         $query = "SELECT * FROM inscripcion WHERE idUsuario='" . $idUsuario . "'";
@@ -22,7 +34,6 @@ class ContenedorInscripcion extends Contenedor {
     function getActividadesAsociadas($idInscripcion) {
         $query = "SELECT idActividad FROM inscripcionactividad WHERE idInscripcion='" . $idInscripcion . "'";
         $result = $this->orm->query($query);
-        echo $query;
         $idsActividades = Array();
         while ($r = mysql_fetch_array($result)) {
             $idsActividades[] = $r[0];
@@ -59,7 +70,6 @@ class ContenedorInscripcion extends Contenedor {
     function addActividadInscripcion($idInscripcion, $idActividad) {
         $query = "INSERT INTO inscripcionactividad VALUES(" . $idInscripcion . "," . $idActividad . ")";
         $result = $this->orm->query($query);
-        echo $query;
         return $result;
     }
 
