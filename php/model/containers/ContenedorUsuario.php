@@ -12,9 +12,10 @@ class ContenedorUsuario extends Contenedor {
 
     function insertarUsuario($usuario) {
         $nUsuario = mysql_escape_string($usuario->getNombreUsuario());
-        $password = mysql_escape_string($usuario->getPassword());
+        $password = $usuario->getPassword();
         $rol = mysql_escape_string($usuario->GetRol());
         $query = "INSERT INTO usuario VALUES ('','" . $nUsuario . "','" . $password . "'," . $rol . ")";
+        echo $query;
         return $this->orm->query($query);
     }
 
@@ -36,8 +37,8 @@ class ContenedorUsuario extends Contenedor {
 
     function comprobarLogin($nombreUsuario, $password) {
         $nombreUsuario = mysql_escape_string($nombreUsuario);
-        $password = mysql_escape_string(md5($password));
-        $query = "SELECT * FROM usuario WHERE nombreUsuario='" . $nombreUsuario . "' AND password= '" . $password . "'";
+        $password = mysql_escape_string($password);
+        $query = "SELECT * FROM usuario WHERE nombreUsuario='" . $nombreUsuario . "' AND password= '" . md5($password) . "'";
         $resultado = $this->orm->queryArray($query);
         ($resultado) ? $usuario = new Usuario($resultado) : $usuario = false;
         return $usuario;
