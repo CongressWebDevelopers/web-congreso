@@ -1,5 +1,11 @@
 
 <body id="top">
+	<?php
+if ($_POST['opcion_recordar']=="recordar")
+  echo "cookie creada";
+else
+  echo "no hay cookie";
+?>
     <div class="wrapper col1">
         <div id="header">
             <div id="logo">

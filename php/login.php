@@ -18,6 +18,9 @@ if (isset($_POST['login'])) {
         $_SESSION['usuario'] = $usuarioActual;
         $_SESSION['inscrito'] = $cInscripcion->estaInscrito($usuarioActual->getId());
         $_SESSION['rol'] = $usuarioActual->getRol();
+        if(isset($_POST['recordar']) && !empty($_POST['recordar'])){ // Si hemos seleccionado recordar, recordaremos la sesión por 10 hora
+			setcookie("$usuarioLogin", "passwordLogin", time()+36000, "/" , "localhost"); 
+}
     } else {
         $mensajeSesion = "El usuario o la contraseña son incorrectos";
         $claseMensajeSesion = "error";

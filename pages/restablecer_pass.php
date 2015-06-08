@@ -16,8 +16,8 @@ include_once('./modulos/restaurarPass.php');
 </div>
 <div class="wrapper col5">
     <div id="container">
-        <h1>Restablace tu contraseña:</h1>
-        <form id="restablecer" action="index.php?page=restablecer" method="post" >
+        <h3>Restablace tu contraseña:</h3>
+        <form id="restablecer" action="index.php?page=restablecer_pass" method="post" >
             <fieldset>
                 
                 <p>

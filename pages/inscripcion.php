@@ -3,10 +3,13 @@ include_once 'php/model/Usuario.php';
 include_once 'php/model/containers/ContenedorInscripcion.php';
 include_once 'php/model/containers/ContenedorCuota.php';
 
-$usuario = $_SESSION['usuario'];
+
+if (isset($_SESSION['usuario'])) {
+    $usuario = $_SESSION['usuario'];
+}
 $cInscripcion = new ContenedorInscripcion();
 $cCuota = new ContenedorCuota();
-if ($_SESSION['inscrito']) {
+if (isset($_SESSION['inscrito'])) {
     $mensajeInscrito = 'Ya se encuetra inscrito en el congreso <strong><a href="index.php?page=mi-inscripcion">Mi inscripcion</a></strong>';
     $claseMensajeInscrito = "success";
 } else {
@@ -98,6 +101,10 @@ if ($_SESSION['inscrito']) {
                 <div class="<?php if (isset($claseMensaje)) echo $claseMensaje ?>"> <?php if (isset($mensaje)) echo $mensaje ?></div>
                 <input type="submit" class="btn-default " name="crear" value="Crear"/>
             </form>
-        <?php } ?>
+        <?php
+        }else {
+            echo'<script language="javascript">window.location="index.php?page=registro-usuarioº"</script>;';
+        }
+        ?>
     </div>
 </div>

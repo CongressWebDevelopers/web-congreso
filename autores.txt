@@ -3,5 +3,5 @@ Ivan Ortegar Alba - https://github.com/ivanortegaalba
 Jose Luis Fernandez Bueno - https://github.com/jota-ele256
 
 Web:
-http://congresswebdevelopers.github.io/web-congreso/
+http://webcongreso-ivanortega.rhcloud.com/
 

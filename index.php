@@ -40,7 +40,7 @@ $treePages = Array(
     "etsiit" => 'pages/etsiit.php',
     "granada" => 'pages/granada.php',
     "contacto" => 'pages/contacto.php',
-    "registroUsuario" => 'pages/registroUsuario.php',
+    "registro-usuario" => 'pages/registro-usuario.php',
     "cuotas" => 'pages/cuotas.php',
     "actividades" => 'pages/actividades.php',
     "mi-inscripcion" => 'pages/mi-inscripcion.php',
@@ -48,7 +48,8 @@ $treePages = Array(
     "editar-cuota" => 'pages/editar-cuota.php',
     "editar-actividad" => 'pages/editar-actividad.php',
     "logout" => 'php/logout.php',
-    "restablecer" => 'pages/restablecer_pass.php',
+    "restablecer_pass" => 'pages/restablecer_pass.php',
+    "cambiar_pass" => 'pages/cambiar_pass.php',
     "hoteles" => 'pages/hoteles.php',
     "ajax" => Array(
         "actividades-ajax" => 'php/ajax/getActividadesCuota.php'
@@ -71,6 +72,7 @@ if (isset($_GET['page']) && $treePages[$_GET['page']]) {
 } else {
     include_once 'contain.php';
 }
-if (!isset($_GET['ajax']) OR ! $_GET['ajax'])
+if (!isset($_GET['ajax']) OR ! $_GET['ajax']) {
     include_once('footer.php');
+}
 ?>
