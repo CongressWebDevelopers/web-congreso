@@ -10,8 +10,7 @@
                             <input type="text" name="usuario" value="" placeholder="Introduce tu email" />
                             
                             <input type="password" name="password" value="" placeholder="Contraseña" />
-                            Recordar: <input type="radio" name="opcion_recordar" value="recordar">
-                            <!--Recordar:<input type="checkbox" name="recordar" id="recordar">-->
+                            Recordar:<input type="checkbox" name="recordar" id="recordar">
                         </div>
                         <div class="fl_right">
                             <input type="submit" class="btn-default" name="login" id="login_go" value="Sign In" />
