@@ -103,7 +103,7 @@ if (isset($_SESSION['inscrito'])) {
             </form>
         <?php
         }else {
-            echo'<script language="javascript">window.location="index.php?page=registro-usuarioº"</script>;';
+            echo'<script language="javascript">window.location="index.php?page=registro-usuario"</script>;';
         }
         ?>
     </div>
