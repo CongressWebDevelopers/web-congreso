@@ -6,6 +6,11 @@
  * and open the template in the editor.
  */
 
+if (isset($_COOKIE['User'])){
+	setcookie("User", "", -1);
+	setcookie("Pass", "", -1); 
+}
+
 if (isset($_SESSION['usuario'])) {
     session_unset();
     session_destroy();
