@@ -23,6 +23,7 @@ if (isset($_POST['enviar'])) {
 ?>
 <div class="wrapper col5">
     <div id="container">
+        <p> Has de estar registrado en la plataforma del CEIIE para poder hacer tu inscripción y la gestión de la misma.</p>
         <form action="index.php?page=registro-usuario" method="POST">
             <fieldset>
                 <p>

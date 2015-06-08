@@ -1,14 +1,16 @@
 <?php
 include_once 'php/model/containers/ContenedorActividad.php';
 
-$usuario = $_SESSION['usuario'];
+if (isset($_SESSION['usuario'])) {
+    $usuario = $_SESSION['usuario'];
+}
 $cActividad = new ContenedorActividad();
 
 
 if (isset($_POST['crear'])) {
 
     $subido = "true";
-    $mensajeImagen="";
+    $mensajeImagen = "";
     $uploadedfile_size = $_FILES['foto']['size'];
     if ($_FILES['foto']['size'] > 2000000) {
         $mensajeImagen = $mensajeImagen . "El archivo es mayor que 2MB, debes reduzcirlo antes de subirlo<BR>";
@@ -25,7 +27,7 @@ if (isset($_POST['crear'])) {
             $mensajeImagen = " Ha sido subido satisfactoriamente";
             $claseMensajeImagen = "success";
             $actividad = new Actividad(
-            null, $_POST['denominacion'], $_POST['descripcion'], $_POST['fecha'], $_POST['hora'], $_POST['importe'], $_FILES['foto']['name']);
+                    null, $_POST['denominacion'], $_POST['descripcion'], $_POST['fecha'], $_POST['hora'], $_POST['importe'], $_FILES['foto']['name']);
             if ($cActividad->insertarActividad($actividad)) {
                 $mensaje = "La actividad ha sido creada";
                 $claseMensaje = "success";
@@ -65,7 +67,7 @@ if (isset($_POST['crear'])) {
             foreach ($lActividades as $a) {
                 ?>
                 <div id="actividad-<?php $a->getId() ?>" class="actividades elemento-listado">
-                    <p class="titulo-elemento-listado"><?php echo $a->getDenominacion() ?><?php if($_SESSION['rol']==ROL_ADMIN){?> <a class="btn-editar" href="index.php?page=editar-actividad&idActividad=<?php echo $a->getId()?>">editar</a><?php }?></p>
+                    <p class="titulo-elemento-listado"><?php echo $a->getDenominacion() ?><?php if (isset($_SESSION['rol']) AND $_SESSION['rol'] == ROL_ADMIN) { ?> <a class="btn-editar" href="index.php?page=editar-actividad&idActividad=<?php echo $a->getId() ?>">editar</a><?php } ?></p>
                     <img src="<?php echo DIR_FOTOS_ACT . $a->getFoto() ?>" class="foto-listado" alt="Foto de la actividad<?php $a->getId() ?>">
                     <p><strong>Descripcion: </strong></p><p><?php echo $a->getDescripcion() ?></p>
                     <p><strong>Fecha: </strong><?php echo $a->getFechaEU() ?></p>
@@ -78,37 +80,39 @@ if (isset($_POST['crear'])) {
 
         </div>
         <br><br>
-        <h2>Nueva Actividad</h2>
-        <form action="index.php?page=actividades" method="POST" enctype="multipart/form-data">
-            <fieldset>
-                <p>
-                    <label for="denominacion">Denominación</label>
-                    <input type="text" name="denominacion" placeholder="" required/>
-                </p>                
-                <br>
-                <p><label for="descripcion">Descripción</label></p>
-                <p><textarea rows="10" cols="50" id="descripcion" name="descripcion" required></textarea></p>
-                <br>
-                <p>
-                    <label for="fecha">Fecha</label>
-                    <input type="date" name="fecha" required />
-                    <label for="hora">Hora</label>
-                    <input type="time" name="hora" required/>
-                </p>
-                <p>
-                    <label for="importe">Importe (€)</label>
-                    <input type="number" name="importe" required/>
-                </p>
+        <?php if (isset($_SESSION['rol']) AND $_SESSION['rol'] == ROL_ADMIN) { ?>
+            <h2>Nueva Actividad</h2>
+            <form action="index.php?page=actividades" method="POST" enctype="multipart/form-data">
                 <fieldset>
-                    <p><label for="foto">Foto</label></p>
-                    <input type="file" id="foto" name="foto">
-                    <div class="<?php if (isset($claseMensajeImagen)) echo $claseMensajeImagen ?>"> <?php if (isset($mensajeImagen)) echo $mensajeImagen ?></div>
+                    <p>
+                        <label for="denominacion">Denominación</label>
+                        <input type="text" name="denominacion" placeholder="" required/>
+                    </p>                
+                    <br>
+                    <p><label for="descripcion">Descripción</label></p>
+                    <p><textarea rows="10" cols="50" id="descripcion" name="descripcion" required></textarea></p>
+                    <br>
+                    <p>
+                        <label for="fecha">Fecha</label>
+                        <input type="date" name="fecha" required />
+                        <label for="hora">Hora</label>
+                        <input type="time" name="hora" required/>
+                    </p>
+                    <p>
+                        <label for="importe">Importe (€)</label>
+                        <input type="number" name="importe" required/>
+                    </p>
+                    <fieldset>
+                        <p><label for="foto">Foto</label></p>
+                        <input type="file" id="foto" name="foto">
+                        <div class="<?php if (isset($claseMensajeImagen)) echo $claseMensajeImagen ?>"> <?php if (isset($mensajeImagen)) echo $mensajeImagen ?></div>
+                    </fieldset>
+                    <br>
+                    <div class="<?php if (isset($claseMensaje)) echo $claseMensaje ?>"> <?php if (isset($mensaje)) echo $mensaje ?></div>
+                    <input type="submit" class="btn-default" name="crear" value="Crear">
                 </fieldset>
-                <br>
-                <div class="<?php if (isset($claseMensaje)) echo $claseMensaje ?>"> <?php if (isset($mensaje)) echo $mensaje ?></div>
-                <input type="submit" class="btn-default" name="crear" value="Crear">
-            </fieldset>
-        </form>
+            </form>
+            <?php } ?>
     </div>
 </div>
 
