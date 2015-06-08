@@ -35,7 +35,7 @@ class Api_hoteles{
 	
 	private function reserva(){
 		if($_SERVER['REQUEST_METHOD']=="POST"){
-			if(!isset($_REQUEST['cliente']) || $_REQUEST['id']) || !isset($_REQUEST['fecha_inicio']) || !isset($_REQUEST['fecha_fin']) || !isset($_REQUEST['tipo']) || !isset($_REQUEST['cantidad'])){
+			if(!isset($_REQUEST['cliente']) || $_REQUEST['id'] || !isset($_REQUEST['fecha_inicio']) || !isset($_REQUEST['fecha_fin']) || !isset($_REQUEST['tipo']) || !isset($_REQUEST['cantidad'])){
 				http_response_code(204); // ha llegado la solicitud pero no se ha ejecutado
 			}else{
 				$id = strtolower(trim(str_replace("/","",$_REQUEST['id'])));
@@ -51,7 +51,7 @@ class Api_hoteles{
 				$respuesta = $hoteles->getLastQueryResult(); // pasamos a respuesta el resultado de la inserción
 				
 				if($respuesta==true){   // comprobamos que se ha almacenado la reserva
-					$respuesta="Reserva realizada":
+					$respuesta="Reserva realizada";
 					http_response_code(200);
 					echo json_encode($respuesta);
 				}else{
@@ -62,7 +62,7 @@ class Api_hoteles{
 		}
 	}
 	
-
+}
 /*$method = $_SERVER['REQUEST_METHOD'];
 $resource = $_SERVER['REQUEST_URI'];
 
