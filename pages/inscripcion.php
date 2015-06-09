@@ -90,7 +90,7 @@ if (isset($_SESSION['inscrito'])) {
                             }
                         </script>
                         <br>
-<!--                        <h2>Hotel</h2>
+                        <h2>Hotel</h2>
                         <a href="#"onclick="mostrarHoteles()">Comprobar disponibilidad</a>
                         <p>Duración estancia:</p>
                         <input type="date" id="fechaEntrada" name="fechaEntrada" />
@@ -123,7 +123,7 @@ if (isset($_SESSION['inscrito'])) {
                                 xmlhttp.open("GET", "rest/API-rest.php", true);
                                 xmlhttp.send();
                             }
-                        </script>-->
+                        </script>
                         <br>
                         <div class="<?php if (isset($claseMensaje)) echo $claseMensaje ?>"> <?php if (isset($mensaje)) echo $mensaje ?></div>
                         <input type="submit" class="btn-default " name="crear" value="Crear"/>
