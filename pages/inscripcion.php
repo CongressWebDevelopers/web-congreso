@@ -45,7 +45,7 @@ if (isset($_SESSION['inscrito'])) {
     <div id="container">
         <div class="<?php if (isset($claseMensajeInscrito)) echo $claseMensajeInscrito ?>"> <?php if (isset($mensajeInscrito)) echo $mensajeInscrito ?></div>
 
-        <?php if (isset($_SESSION['usuario']) && !$cInscripcion->estaInscrito($usuario->getId())) { ?>
+        <?php if (isset($_SESSION['usuario']) AND ! $cInscripcion->estaInscrito($usuario->getId() AND $_SESSION['rol'] !== ROL_ADMIN)) { ?>
             <form action="index.php?page=inscripcion" method="POST">
                 <h2>Datos de Inscripción</h2>
                 <fieldset>
@@ -86,23 +86,47 @@ if (isset($_SESSION['inscrito'])) {
                 </script>
                 <br>
                 <h2>Hotel</h2>
-                <a href="index.php?page=hoteles">Comprobar disponibilidad</a>
+                <a href="#"onclick="mostrarHoteles()">Comprobar disponibilidad</a>
                 <p>Duración estancia:</p>
-                <input type="date" id="fechaSalida" name="fechaSalida"/>
                 <input type="date" id="fechaEntrada" name="fechaEntrada" />
-                <p>
-                    <select id="hotel" name="hotel" >
-                        <option>Hotel 1</option>
-                        <option>Hotel 2</option>
-                        <option>hotel 3</option>
-                    </select>
-                </p>
+                <input type="date" id="fechaSalida" name="fechaSalida"/>
+                <fieldset id="hoteles">
+
+                </fieldset>
+                <script>
+                    function mostrarHoteles() {
+                        var xmlhttp = new XMLHttpRequest();
+                        xmlhttp.onreadystatechange = function () {
+                            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                                var hotelesJson = JSON.parse(xmlhttp.responseText);
+                                var salida = "";
+                                var i = 0;
+                                console.log(hotelesJson);
+                                for (i; i < hotelesJson.length; i++) {
+                                    var h = hotelesJson[i];
+                                    salida += '<div id="' + h.idHotel + '" class="elemento-listado">\n\
+                                       <img class="foto-listado" src="' + h.foto + '"> \n\
+    <p class="titulo-elemento-listado">' + h.nombre + '</p>\n\
+                                        <p><strong>Descripcion: </strong>' + h.descripcion + '</p> \n\
+                                        <p><strong>Precio: </strong>' + h.precio_habitacion + ' €</p></div>';
+                                }
+                                document.getElementById("hoteles").innerHTML = salida;
+                            }
+
+                        }
+                        xmlhttp.open("GET", "rest/API-rest.php", true);
+                        xmlhttp.send();
+                    }
+
+                </script>
                 <br>
                 <div class="<?php if (isset($claseMensaje)) echo $claseMensaje ?>"> <?php if (isset($mensaje)) echo $mensaje ?></div>
                 <input type="submit" class="btn-default " name="crear" value="Crear"/>
             </form>
-        <?php
-        }else {
+            <?php
+        } else if (isset($_SESSION['rol']) AND $_SESSION['rol'] == ROL_ADMIN) {
+            echo'<script language="javascript">window.location="index.php?page=lista-inscritos"</script>;';
+        } else {
             echo'<script language="javascript">window.location="index.php?page=registro-usuario"</script>;';
         }
         ?>
