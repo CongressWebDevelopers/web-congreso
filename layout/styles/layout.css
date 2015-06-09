@@ -154,14 +154,14 @@ div.wrapper h6 {
 /* ----------------------------------------------Header------------------------------------- */
 
 #header {
-    padding: 30px 0;
+    padding: 10px 10px;
     /*    font-family: Georgia, "Times New Roman", Times, serif;*/
 }
 #header #logo {
     display: block;
     float: left;
     width: 400px;
-    margin-top: 10px;
+    margin: 20px 0% 20px 0%;
 }
 #header #logo h1,
 #header #logo p {
@@ -635,11 +635,9 @@ div.wrapper h6 {
 #footer .last {
     margin: 0;
 }
-#login {
-    display: block;
-    float: left;
-    width: 300px;
-}
+
+
+
 /* ----------------------------------------------Copyright------------------------------------- */
 
 #copyright {
@@ -701,8 +699,7 @@ div.wrapper h6 {
     border-bottom: 3px solid #DD560E;
     border-right: 1px solid #DD560E;
 }
-.foto-listado {
-}
+
 .foto-listado{
     float:right;
     display: block;
@@ -733,4 +730,17 @@ div.wrapper h6 {
     color: #FFFFFF;
     background-color: #DD560E;
     float:right;
+}
+p.titulo-elemento-listado > input[type="radio"]{
+    padding: 4px 7px 4px 7px;
+    margin: 0px;
+    color: #FFFFFF;
+    background-color: #DD560E;
+    float:right;
+}
+
+.btn-link{
+    color:black;
+    border-bottom: 3px solid #02714F;
+    border-right: 1px solid #02714F;
 }
