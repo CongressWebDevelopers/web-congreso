@@ -61,7 +61,7 @@
                         <li id="nav-admin"><a href="#" class="color-admin">Administración</a>
                             <ul>
                                 <?php
-                                if (isset($_SESSION['rol'])AND $_SESSION['rol'] == ROL_USER) {
+                                if (isset($_SESSION['rol']) AND $_SESSION['rol'] == ROL_USER) {
                                     if (!isset($_SESSION['inscrito'])) {
                                         ?>
                                         <li><a href="index.php?page=inscripcion">Inscribete</a>
@@ -69,7 +69,8 @@
                                     <?php } else { ?>
                                         <li><a href="index.php?page=mi-inscripcion">Mi inscripción</a>
                                         </li>
-                                    <?php }
+                                    <?php
+                                    }
                                 } else {
                                     ?>
                                     <li><a href="index.php?page=lista-inscritos">Lista de Inscritos</a>

@@ -20,6 +20,7 @@ if (isset($_SESSION['inscrito'])) {
         if ($cInscripcion->insertarInscripcion($inscripcion, $usuario->getId(), $actividades)) {
             $mensajeInscrito = 'La inscripción ha sido satisfactoria <a href="index.php?page=mi-inscripcion">Mi inscripcion</a>';
             $claseMensajeInscrito = "success";
+            $_SESSION['inscrito'] = true;
         } else {
             $mensajeInscrito = "No se ha podido realizar la inscripción";
             $claseMensajeInscrito = "error";
@@ -89,7 +90,7 @@ if (isset($_SESSION['inscrito'])) {
                             }
                         </script>
                         <br>
-                        <h2>Hotel</h2>
+<!--                        <h2>Hotel</h2>
                         <a href="#"onclick="mostrarHoteles()">Comprobar disponibilidad</a>
                         <p>Duración estancia:</p>
                         <input type="date" id="fechaEntrada" name="fechaEntrada" />
@@ -122,7 +123,7 @@ if (isset($_SESSION['inscrito'])) {
                                 xmlhttp.open("GET", "rest/API-rest.php", true);
                                 xmlhttp.send();
                             }
-                        </script>
+                        </script>-->
                         <br>
                         <div class="<?php if (isset($claseMensaje)) echo $claseMensaje ?>"> <?php if (isset($mensaje)) echo $mensaje ?></div>
                         <input type="submit" class="btn-default " name="crear" value="Crear"/>
