@@ -1,48 +1,48 @@
 <?php
-/**
- * Modulo que manda dos correos al recibir la petición POST del formulario de contacto.
- */
-if (isset($_POST['enviar'])) {
-    //Datos del interesado
-    $nombreInteresado = $_POST['nombre'];
-    $emailInteresado = $_POST['email'];
-    $asuntoInteresado = $_POST['asunto'];
-    $cuestionInteresado = $_POST['cuestion'];
-    
-    //Cuenta asociada a la persona de contacto del CEIIE
-    $HOST = 'ivanortegaalba@gmail.com';
 
-    //MENSAJE PARA EL CEII
-    $para = $HOST;
-    $titulo = "[Mensaje de Web] " . $asuntoInteresado;
-    $mensaje = "Nombre: " . $nombreInteresado . "\n\n" .
-            "Email: " . $emailInteresado . "\n\n" .
-            $_POST['cuestion'];
-    $cabeceras = 'From: Web CEIIE<' . $para . ">\r\n" .
-            'Reply-To:' . $nombreInteresado . '<' . $emailInteresado . ">\r\n" .
-            'X-Mailer: PHP/' . phpversion();
-    //Envio a la organización
-    $enviadoHost = mail($para, $titulo, $mensaje, $cabeceras);
+require_once 'PHPMailer-master/PHPMailerAutoload.php';
+date_default_timezone_set('Etc/UTC');
 
-    //COPIA PARA EL INTERESADO
-    $para = $emailInteresado;
-    $titulo = "[Copia de Mensaje de Web] " . $asuntoInteresado;
-    $mensaje = "Nombre: " . $nombreInteresado . "\n\n" .
-            "Email: " . $emailInteresado . "\n\n" .
-            $_POST['cuestion'] . "\n\n Gracias por contactar, le responderemos tan pronto como sea posible";
-    $cabeceras = 'From: CEIIE<' . $HOST . ">\r\n" .
-            'Reply-To:CEIIE<' . $HOST . ">\r\n" .
-            'X-Mailer: PHP/' . phpversion();
-    //Envio de la copia al interesado
-    $enviadoCliente = mail($para, $titulo, $mensaje, $cabeceras);
+require_once("PHPMailer-master/class.smtp.php"); // optional, gets called from within class.phpmailer.php if not already loaded
 
-    //Comprobación del envio
-    if ($enviadoHost && $enviadoCliente) {
-        $notificacion = "El mensaje ha sido enviado correctamente";
-        $notificacionClass = "success";
+function mailPHP($destinatario, $nombre, $asunto, $cuerpo) {
+
+    $mail = new PHPMailer;
+    $mail->isSMTP();                                      // Set mailer to use SMTP
+    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+    //Permitir el acceso al correo desde aplicacion no seguras desde
+    //https://www.google.com/settings/security/lesssecureapps
+    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+    $mail->Username = 'sibweb2014@gmail.com';                 // SMTP username
+    $mail->Password = 'antonioandres';                           // SMTP password
+    $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 587;                                    // TCP port to connect to
+    $mail->From = 'sibweb2014@gmail.com';
+    $mail->FromName = 'Congreso';
+    $mail->addAddress('sibweb2014@gmail.com', 'Antonio');     // Add a recipient
+    $mail->addAddress($destinatario, $nombre);     // Add a recipient
+    $mail->Subject = '[Mensaje de Web] Asunto' . $asunto;
+    // use wordwrap() if lines are longer than 70 characters
+    //$comment = wordwrap($comment,70)
+    $mail->Body = $cuerpo;
+
+
+    if (!$mail->send()) {
+        //echo "<script type='text/javascript'>alert('Message could not be sent');</script>";
+        echo 'Mensaje no ha podido ser enviado';
+        echo 'Mailer Error: ' . $mail->ErrorInfo;
     } else {
-        $notificacion = "Ha ocurrido un error en el envio del mensaje";
-        $notificacionClass = "error";
+        //echo "<script type='text/javascript'>alert('Message has been sent');</script>";
+        echo 'Mensaje ha sido enviado';
+    }
+
+
+
+//send the message, check for errors
+    if (!$mail->send()) {
+        var_dump($mail->ErrorInfo);
+        return false;
+    } else {
+        return true;
     }
 }
-?>
