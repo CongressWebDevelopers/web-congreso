@@ -1,4 +1,5 @@
 <?php
+seguridad();
 include_once 'php/model/containers/ContenedorInscripcion.php';
 include_once 'php/model/Inscripcion.php';
 $cInscripcion = new ContenedorInscripcion();

@@ -1,9 +1,13 @@
 <?php
+seguridad();
 include_once 'php/model/containers/ContenedorActividad.php';
 include_once 'php/model/containers/ContenedorUsuario.php';
 $cUsuario = new ContenedorUsuario();
-$usuario = $_SESSION['usuario'];
 $cInscripcion = new ContenedorInscripcion();
+$usuario = $_SESSION['usuario'];
+if (!$cInscripcion->estaInscrito($usuario->getId())) {
+    echo'<script language="javascript">window.location="index.php?page=inscripcion"</script>;';
+}
 $cActividad = new ContenedorActividad();
 if (isset($_GET['idInscripcion'])) {
     $inscripcion = $cInscripcion->getById($_GET['idInscripcion']);

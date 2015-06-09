@@ -1,4 +1,5 @@
 <?php
+seguridad();
 include_once 'php/model/containers/ContenedorActividad.php';
 
 $usuario = $_SESSION['usuario'];

@@ -15,10 +15,16 @@ function getBreadCrumb($nombre) {
                     </li>
                 <?php } ?>
                 <li>&#187;</li>
-                <li class="current"><a href="/index.php?="><?php echo $nombre[count($nombre)-1] ?></a>
+                <li class="current"><a href="/index.php?="><?php echo $nombre[count($nombre) - 1] ?></a>
                 </li>
             </ul>
         </div>
     </div><?php
+}
+
+function seguridad($logeado = true) {
+    if (!isset($_SESSION['usuario'])) {
+        echo'<script language="javascript">window.location="index.php?page=registro-usuario"</script>;';
+    }
 }
 ?>

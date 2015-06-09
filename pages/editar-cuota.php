@@ -1,4 +1,5 @@
 <?php
+seguridad();
 include_once 'php/model/containers/ContenedorCuota.php';
 include_once 'php/model/containers/ContenedorActividad.php';
 $cActividad = new ContenedorActividad();

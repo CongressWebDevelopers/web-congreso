@@ -31,12 +31,14 @@ if (isset($_POST['login'])) {
             session_start();
         $cInscripcion = new ContenedorInscripcion();
         $_SESSION['usuario'] = $usuarioActual;
-        $_SESSION['inscrito'] = $cInscripcion->estaInscrito($usuarioActual->getId());
+        if ($cInscripcion->estaInscrito($usuarioActual->getId())) {
+            $_SESSION['inscrito'] = true;
+        }
         $_SESSION['rol'] = $usuarioActual->getRol();
-        if(isset($_POST['recordar']) && !empty($_POST['recordar'])){ // Si hemos seleccionado recordar, recordaremos la sesión por 100 horas
-			setcookie("User", "$usuarioLogin", time()+360000, "/" , "");
-			setcookie("Pass", "$passwordLogin", time()+360000, "/" , ""); 
-		}
+        if (isset($_POST['recordar']) && !empty($_POST['recordar'])) { // Si hemos seleccionado recordar, recordaremos la sesión por 100 horas
+            setcookie("User", "$usuarioLogin", time() + 360000, "/", "");
+            setcookie("Pass", "$passwordLogin", time() + 360000, "/", "");
+        }
     } else {
         $mensajeSesion = "El usuario o la contraseña son incorrectos";
         $claseMensajeSesion = "error";
