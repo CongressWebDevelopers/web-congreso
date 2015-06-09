@@ -1,3 +1,19 @@
+<?php
+seguridad();
+include_once 'php/model/containers/ContenedorInscripcion.php';
+
+if (isset($_POST['hotel']) AND isset($_POST['fechaSalida']) AND isset($_POST['fechaEntrada'])) {
+    $inscripcion = getInscripcionUsuario($_SESSION['usuario']->getId());
+    if ($cInscripcion->reservarHotel($inscripcion->getId(), $_POST['hotel'], $_POST['fechaEntrada'], $_POST['fechaSalida'])) {
+        $mensajeReserva = "La reserva ha sido realizada";
+        $claseMensajeReserva = "error";
+    } else {
+        $mensajeReserva = "La reserva no se ha completado";
+        $claseMensajeReserva = "success";
+    }
+}
+?>
+
 <div class="wrapper col3">
     <div id="breadcrumb">
         <ul>
@@ -14,35 +30,70 @@
 <div class="wrapper col5">
     <div id="container">
         <h1>Obtener hoteles disponibles</h1>
-        <form id="hoteles"  action="rest/API-rest.php" method="get" >
-            <div id="contacto-notification" class="" style="display:none">
-            </div>
-            <div id="hoteles">
-            </div>
+        <form action="rest/API-rest.php" method="POST" >
+            <h2>Hotel</h2>
+            <a href="#"onclick="mostrarHoteles()">Comprobar disponibilidad</a>
+            <p>Duración estancia:</p>
+            <input type="date" id="fechaEntrada" name="fechaEntrada" min="01-06-2015" max="03-06-2015"/>
+            <input type="date" id="fechaSalida" name="fechaSalida" min="02-06-2015" max="03-06-2015"/>
+            <fieldset id="hoteles"></fieldset>
             <script>
-                    function mostrarHoteles() {
-                        if (idCuota.length == 0) {
-                            document.getElementById("hoteles").innerHTML = "";
-                            return;
-                        } else {
-                            var xmlhttp = new XMLHttpRequest();
-                            xmlhttp.onreadystatechange = function () {
-                                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                                    document.getElementById("hoteles").innerHTML = xmlhttp.responseText;
-                                }
-                            }
-                            xmlhttp.open("GET", "rest/API-hoteles.php", true);
-                            xmlhttp.send();
-                        }
+                function enviarReserva() {
+                    var xmlhttp = new XMLHttpRequest();
+                    var idHotel;
+                    var fechaEntrada = document.getElementById("fechaEntrada").value;
+                    var fechaSalida = document.getElementById("fechaSalida").value;
+                    var resultado = "ninguno";
+                    var porNombre = document.getElementsByName("idHotel");
+
+                    for (var i = 0; i < porNombre.length; i++)
+                    {
+                        if (porNombre[i].checked)
+                            idHotel = porNombre[i].value;
                     }
-                </script>
-            <?php
-            if (isset($notificacion)) {
-                ?>
-                <div class="<?php echo $notificacionClass ?>"><?php echo $notificacion ?></div>
-            <?php } ?>
-            <input type="submit" value="Obtener" name="obtener" class="btn-default">
-            </p>
+                    xmlhttp.onreadystatechange = function () {
+                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                            var salida = "";
+                            var i = 0;
+                            document.getElementById("mensajeReserva").innerHTML = salida;
+                        }
+                    };
+
+                    xmlhttp.open("POST", "rest/API-rest.php", true);
+                    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                    xmlhttp.send("idHotel=" + idHotel + "&fechaEntrada=" + fechaEntrada + "&fechaSalida=" + fechaSalida);
+                }
+            </script>
+            <script>
+                function mostrarHoteles() {
+                    var xmlhttp = new XMLHttpRequest();
+                    xmlhttp.onreadystatechange = function () {
+                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                            var hotelesJson = JSON.parse(xmlhttp.responseText);
+                            var salida = "";
+                            var i = 0;
+                            var j = 0;
+                            for (i; i < hotelesJson.length; i++) {
+                                var h = hotelesJson[i];
+                                salida += '<div id="' + h.idHotel + '" class="elemento-listado">\n\
+                                    <p class="titulo-elemento-listado">' + h.nombre + ' <input type="radio" name="idHotel" value = ' + h.idHotel + '></p>\n\
+                                    <img class="foto-listado" src="' + h.foto + '"> \n\
+                                    <p><strong>Descripcion: </strong>' + h.descripcion + '</p> \n\
+                                    <p><strong>Precio: </strong>' + h.precio_habitacion + ' €</p>\n\
+                                    <p><strong>Plazas disponibles: </strong>' + h.disponibles + '</p>\n\
+                                </div>';
+                            }
+                            document.getElementById("hoteles").innerHTML = salida;
+                        }
+                    };
+                    xmlhttp.open("GET", "rest/API-rest.php", true);
+                    xmlhttp.send();
+                }
+            </script>
+            <br>
+            <div id="mensajeReserva" class="<?php if (isset($claseMensaje)) echo $claseMensaje ?>"> <?php if (isset($mensaje)) echo $mensaje ?></div>
+            <br>
+            <p><a href="#" onclick="enviarReserva()" class="btn-verde btn-default btn-grande">Reservar</a></p>
         </form>
     </div>
 </div>
