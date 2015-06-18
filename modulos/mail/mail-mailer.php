@@ -10,8 +10,6 @@ function mailPHP($destinatario, $nombre, $asunto, $cuerpo) {
     $mail = new PHPMailer;
     $mail->isSMTP();                                      // Set mailer to use SMTP
     $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
-    //Permitir el acceso al correo desde aplicacion no seguras desde
-    //https://www.google.com/settings/security/lesssecureapps
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
     $mail->Username = 'sibweb2014@gmail.com';                 // SMTP username
     $mail->Password = 'antonioandres';                           // SMTP password
@@ -19,20 +17,22 @@ function mailPHP($destinatario, $nombre, $asunto, $cuerpo) {
     $mail->Port = 587;                                    // TCP port to connect to
     $mail->From = 'sibweb2014@gmail.com';
     $mail->FromName = 'Congreso';
-    $mail->addAddress('sibweb2014@gmail.com', 'Antonio');     // Add a recipient
+    $mail->addAddress('ivanortegaalba@gmail.com', 'Contacto de '.$nombre);     // Add a recipient
     $mail->addAddress($destinatario, $nombre);     // Add a recipient
-    $mail->Subject = '[Mensaje de Web] Asunto' . $asunto;
-    // use wordwrap() if lines are longer than 70 characters
-    //$comment = wordwrap($comment,70)
+    $mail->Subject = $asunto;
     $mail->Body = $cuerpo;
-
+    $mail->SMTPOptions = array(
+        'ssl' => array(
+            'verify_peer' => false,
+            'verify_peer_name' => false,
+            'allow_self_signed' => true
+        )
+    );
 
     if (!$mail->send()) {
-        //echo "<script type='text/javascript'>alert('Message could not be sent');</script>";
         echo 'Mensaje no ha podido ser enviado';
         echo 'Mailer Error: ' . $mail->ErrorInfo;
     } else {
-        //echo "<script type='text/javascript'>alert('Message has been sent');</script>";
         echo 'Mensaje ha sido enviado';
     }
 
@@ -40,7 +40,6 @@ function mailPHP($destinatario, $nombre, $asunto, $cuerpo) {
 
 //send the message, check for errors
     if (!$mail->send()) {
-        var_dump($mail->ErrorInfo);
         return false;
     } else {
         return true;
