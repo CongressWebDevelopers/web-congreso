@@ -738,6 +738,10 @@ p.titulo-elemento-listado > input[type="radio"]{
     background-color: #DD560E;
     float:right;
 }
+p.titulo-elemento-listado > input[type="checkbox"]{
+    padding: 4px 7px 4px 7px;
+    float:right;
+}
 
 .btn-link{
     color:black;

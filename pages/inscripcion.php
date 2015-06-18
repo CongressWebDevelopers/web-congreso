@@ -71,6 +71,7 @@ if (isset($_SESSION['inscrito'])) {
                         </p>
                         <br>
                         <fieldset id="actividades">
+                            <!--Se rellenará con las actividades recibidas por AJAX-->
                         </fieldset>
                         <script>
                             function mostrarActividades(idCuota) {
