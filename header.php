@@ -45,6 +45,8 @@
                     </li>
                     <li><a href="index.php?page=inscripcion">Inscripción</a>
                     </li>
+                    <li><a href="index.php?page=cuotas">Cuotas</a>
+                    </li>
                     <li><a href="index.php?page=actividades">Actividades</a>
                     </li>
                     <li><a href="#">Información</a>
@@ -69,7 +71,7 @@
                                     <?php } else { ?>
                                         <li><a href="index.php?page=mi-inscripcion">Mi inscripción</a>
                                         </li>
-                                    <?php
+                                        <?php
                                     }
                                 } else {
                                     ?>
@@ -79,12 +81,12 @@
                                     </li>
                                     <li><a href="index.php?page=actividades">Actividades</a>
                                     </li>
-    <?php } ?>
+                                <?php } ?>
                                 <li><a href="index.php?page=logout">Logout</a>
                                 </li>
                             </ul>
                         </li>
-<?php } ?>
+                    <?php } ?>
                 </ul>
             </div>
             <br class="clear" />

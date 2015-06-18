@@ -49,6 +49,7 @@ function rest_post($request) {
     $fechaEntrada = mysql_escape_string($_POST['fechaEntrada']);
     $fechaSalida = mysql_escape_string($_POST['fechaSalida']);
 
+    $orm->query("SET NAMES 'utf8'");
     $query = "INSERT INTO reservas VALUES (''," . $idHotel . ","
             . "'" . $fechaEntrada . "',"
             . "'" . $fechaSalida . "'"
