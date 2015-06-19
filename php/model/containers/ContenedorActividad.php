@@ -5,6 +5,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+include_once 'Contenedor.php';
 include_once 'php/model/Actividad.php';
 
 class ContenedorActividad extends Contenedor {
@@ -65,4 +66,11 @@ class ContenedorActividad extends Contenedor {
         return $result;
     }
 
+    function getPrecioTotal($idsActividades) {
+        $precio = 0;
+        foreach ($idsActividades as $id) {
+            $precio += $this->getById($id)->getImporte();
+        }
+        return $precio;
+    }
 }

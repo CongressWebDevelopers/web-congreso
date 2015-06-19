@@ -26,19 +26,24 @@ switch ($method) {
 
 function rest_put($request) {
     echo $request;
-    print_r($request);
 }
 
 function rest_get($request) {
     $orm = new ORM();
-    $query = "SELECT * FROM Hoteles";
-    $result = $orm->query($query);
-    $hoteles = Array();
-    while ($r = mysql_fetch_assoc($result)) {
-        $reservadas = $orm->query("SELECT count(*) FROM reservas WHERE idHotel = '" . $r['idHotel'] . "'");
-        $nDisponibles = $r['capacidad'] - $reservadas;
-        $r['disponibles'] = $nDisponibles;
-        $hoteles[] = $r;
+    if (isset($_GET['idHotel'])) {
+        $query = "SELECT * FROM Hoteles WHERE idHotel=" . $_GET['idHotel'];
+        $result = $orm->query($query);
+        $hoteles = mysql_fetch_assoc($result);
+    } else {
+        $query = "SELECT * FROM Hoteles";
+        $result = $orm->query($query);
+        $hoteles = Array();
+        while ($r = mysql_fetch_assoc($result)) {
+            $reservadas = $orm->query("SELECT count(*) FROM reservas WHERE idHotel = '" . $r['idHotel'] . "'");
+            $nDisponibles = $r['capacidad'] - $reservadas;
+            $r['disponibles'] = $nDisponibles;
+            $hoteles[] = $r;
+        }
     }
     echo json_encode($hoteles);
 }
