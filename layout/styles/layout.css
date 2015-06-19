@@ -12,7 +12,7 @@ File: Layout CSS
 @import url("navi.css");
 @import url("forms.css");
 @import url("tables.css");
-@import url("sliderJQ.css");
+@import url("slider.css");
 @import url("notifications.css");
 @import url(http://fonts.googleapis.com/css?family=Raleway);
 
@@ -128,8 +128,6 @@ div.wrapper h6 {
 }
 .col6 a {
     color: #666666;
-    background-color: none;
-    text-decoration-color: none;
 }
 .col7,
 .col7 a {
@@ -154,14 +152,14 @@ div.wrapper h6 {
 /* ----------------------------------------------Header------------------------------------- */
 
 #header {
-    padding: 30px 0;
+    padding: 10px 10px;
     /*    font-family: Georgia, "Times New Roman", Times, serif;*/
 }
 #header #logo {
     display: block;
     float: left;
     width: 400px;
-    margin-top: 10px;
+    margin: 20px 0% 20px 0%;
 }
 #header #logo h1,
 #header #logo p {
@@ -197,7 +195,7 @@ div.wrapper h6 {
 #topbar {
     z-index: 1000;
 }
-#topbar #search {
+/*#topbar #search {
     display: block;
     float: right;
     width: 242px;
@@ -207,7 +205,7 @@ div.wrapper h6 {
     color: #FFFFFF;
     background-color: #2E64A1;
     overflow: hidden;
-}
+}*/
 /* ----------------------------------------------Homepage Intro------------------------------------- */
 
 #intro {
@@ -255,8 +253,9 @@ div.wrapper h6 {
     float: right;
 }
 #intro .imagen-intro {
-    width: 380px;
+    width: 379px;
     height: 300px;
+    margin: 0px;
 }
 /* ----------------------------------------------Services------------------------------------- */
 
@@ -273,10 +272,9 @@ div.wrapper h6 {
     float: left;
     width: 294px;
     height: 180px;
-    margin: 0 0px 0 0;
+    margin: 0;
     padding: 8px 12px 8px 13px;
     color: white;
-    ;
     background-color: #25A27C;
     border-right: solid 1px #6DCDB0;
 }
@@ -635,11 +633,9 @@ div.wrapper h6 {
 #footer .last {
     margin: 0;
 }
-#login {
-    display: block;
-    float: left;
-    width: 300px;
-}
+
+
+
 /* ----------------------------------------------Copyright------------------------------------- */
 
 #copyright {
@@ -669,4 +665,192 @@ div.wrapper h6 {
 }
 .descripcion-imagen{
     margin-top: 60px;
+}
+/*----------------ADMINISTRACION-----------*/
+
+#topnav li a.color-admin,  #topnav #nav-admin a, btn-verde, .btn-default {
+    background-color: #25A27C;
+}
+#topnav li a.color-admin:hover, #topnav #nav-admin a:hover,.btn-verde:hover, .btn-default:hover {
+    color: #02714F;
+    background-color: #6DCDB0;
+}
+/*--------LISTADOS---------*/
+.elemento-listado{
+    padding:10px 5px 40px 30px;
+    border: 1px solid #DD560E;
+    margin-top:5px;
+
+}
+.elemento-listado strong{
+    color: #DD560E;
+    text-transform: uppercase;
+    padding-left:5px;
+    margin-right:5px;
+}
+.elemento-listado .titulo-elemento-listado{
+    background-color:#F67A38;
+    color:white;
+    text-align:center;
+    padding: 10px;
+    margin: 0px ;
+    border-bottom: 3px solid #DD560E;
+    border-right: 1px solid #DD560E;
+}
+
+.foto-listado{
+    float:right;
+    display: block;
+    margin: 0;
+    padding: 15px 0px 0px 0px;
+    border: 0;
+    width: 200px;
+    border-radius:5px;
+}
+.elemento-listado .elemento-listado{
+    padding:10px 5px 40px 30px;
+    border: 1px solid #02714F;
+    margin-top:5px;
+
+}
+.elemento-listado .elemento-listado .titulo-elemento-listado{
+    background-color:#25A27C;
+    color:white;
+    text-align:center;
+    padding: 10px;
+    margin: 0px ;
+    border-bottom: 3px solid #02714F;
+    border-right: 1px solid #02714F;
+}
+#container .elemento-listado .titulo-elemento-listado a{
+    padding: 4px 7px 4px 7px;
+    margin: 0px;
+    color: #FFFFFF;
+    background-color: #DD560E;
+    float:right;
+}
+p.titulo-elemento-listado > input[type="radio"]{
+    padding: 4px 7px 4px 7px;
+    margin: 0px;
+    color: #FFFFFF;
+    background-color: #DD560E;
+    float:right;
+}
+p.titulo-elemento-listado > input[type="checkbox"]{
+    padding: 4px 7px 4px 7px;
+    float:right;
+}
+p.titulo-elemento-listado > em {
+    float:left;
+    background-color:#DD560E;
+    padding: 5px 15px 5px 15px;
+    margin-top: -5px;
+}
+
+.btn-link{
+    color:black;
+    border-top: none;
+    border-left: none;
+    border-bottom: 3px solid #02714F;
+    border-right: 1px solid #02714F;
+}
+
+#precio-box{
+    padding:20px 30px 20px 30px;
+    font-size: 20px;
+    margin: 0px 200px 10px 10px;
+}
+
+#btn-inscripcion{
+    color:white;
+    padding:10px 30px 10px 30px;
+    background-color:#25A27C ;
+    border:none;
+    margin-right:10px;
+}
+
+/* ----------------------------------------------Login------------------------------------- */
+#footer input{
+    display: block; 
+    margin: 0 0 5px 0;
+    padding: 5px;
+    border: none;
+    font-size: 12px;
+}
+#login {
+    float: left;
+    display: block;
+    width: 400px;
+    margin: 10px 10px 10px 10px;
+    padding: 20px;
+    border: 1px solid #02714F;
+    background-color: #25A27C;
+    border-bottom: 3px solid #02714F;
+    border-right: 1px solid #02714F;
+
+}
+
+#login p:first-child{
+    background-color:#02714F;
+    display:none;
+}
+#login form input[type=text], #login form input[type=password], #login form input[type=checkbox]{
+    background-color: #02714F; 
+    color:white;
+    float:left;
+    display: block;
+    float: left;
+    width: 110px;
+    margin: 5px 11px 0px 0;
+    padding: 5px;
+    font-size: 12px;
+    color:white;
+    text-align:center;
+    padding: 5px;
+    margin: 5px 3px ;
+}
+#login a, #login label{
+    color: rgba(255,255,255,0.8);
+    margin-left:7px;
+}
+
+#login input::-webkit-input-placeholder {
+    color: rgba(255,255,255,0.7);
+}
+#login input.btn-default{
+    background-color:#02714F ;
+    border:none;
+    clear: both;
+    padding: 10px 20px 10px 20px;
+    margin-right:10px;
+    border-top: 2px solid rgba(255,255,255,0.7);
+    border-left: 1px solid rgba(255,255,255,0.7);
+
+
+}
+#login input.btn-default:hover{
+    background-color:#02714F;
+    border-bottom: 2px solid rgba(255,255,255,0.7);
+    border-right: 1px solid rgba(255,255,255,0.7);
+    border-top: none;
+    border-left: none;
+    color:white;
+}
+#login #recordar{
+    display:block;
+    float: left;
+}
+#recordar, #recordar label{
+    float: left;
+    margin-top: 3px;
+}
+
+#login .titulo-login{
+    background-color:#F67A38;
+    color:white;
+    text-align:center;
+    padding: 10px;
+    margin: 0px ;
+    border-bottom: 3px solid #DD560E;
+    border-right: 1px solid #DD560E;
 }

@@ -8,11 +8,11 @@
 
 define('DB_HOST', 'localhost');
 
-define('DB_USER', 'root');
+define('DB_USER', 'admin-congreso');
 
-define('DB_PASS', '');
+define('DB_PASS', 'congreso');
 
-define('DB_NAME', 'bd_congress');
+define('DB_NAME', 'db_CEIIE');
 
 ?>
 
