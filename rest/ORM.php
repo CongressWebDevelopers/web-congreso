@@ -25,16 +25,19 @@ class ORM {
     private $lastQuery = 'null';
 
     function ORM() {
+        
 	    $this->conexion = mysql_connect(DB_HOST, DB_USER, DB_PASS) or exit('No se pudo conectar con el servidor MySQL');
         $this->abreBD = mysql_select_db(DB_NAME, $this->conexion);
         if (!$this->abreBD) {
             die('No se pudo abrir la base de datos.Error: '.mysql_error());
         }
+        mysql_set_charset("utf8");
     }
 
     function query($query) {
         $query = mysql_real_escape_string($query ,$this->conexion); 
         $this->lastQuery = mysql_query($query, $this->conexion);
+        return $this->lastQuery;
     }
 
     function getLastQueryResult() {

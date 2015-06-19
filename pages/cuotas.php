@@ -1,4 +1,5 @@
 <?php
+seguridad();
 include_once 'php/model/containers/ContenedorCuota.php';
 include_once 'php/model/containers/ContenedorActividad.php';
 
@@ -66,6 +67,7 @@ if (isset($_POST['crear'])) {
 
             </div>
             <br><br>
+            <?php if (isset($_SESSION['rol']) AND $_SESSION['rol'] == ROL_ADMIN) {?>
             <h2>Nueva Cuota</h2>
             <form action="index.php?page=cuotas" method="POST">
                 <fieldset>
@@ -95,6 +97,7 @@ if (isset($_POST['crear'])) {
                 <input type="submit" class="btn-default" name="crear" value="Crear">
             </fieldset>
         </form>
+            <?php }?>
     </div>
 </div>
 

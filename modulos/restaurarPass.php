@@ -1,6 +1,6 @@
 <?php
 
-include_once '../php/database/ORM.php';;
+include_once 'php/database/ORM.php';
 
 /**
  * Modulo que genera una nueva contraseña y la envía por email al usuario

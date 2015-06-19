@@ -80,4 +80,17 @@ class ContenedorInscripcion extends Contenedor {
         return $result;
     }
 
+    function reservarHotel($idInscripcion, $idHotel, $fechaEntrada, $fechaSalida) {
+        $url = "rest/API-rest.php";
+        $data = json_encode(Array("idInscripcion" => $idInscripcion, "idHotel" => $idHotel, "fechaEntrada" => $fechaEntrada, "fechaSalida" => $fechaSalida));
+        if (http_post_data($url, $data)) {
+            $query = "UPDATE inscripcion SET(hotel='" . $idHotel . "',fechaSalida='" . $fechaSalida . "',fechaEntrada='" . $fechaEntrada . "') WHERE idInscripcion =" . $idInscripcion . "'";
+            $this->orm->query($query);
+            echo mysql_error();
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }

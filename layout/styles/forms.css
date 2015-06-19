@@ -37,8 +37,8 @@ form label{
 #header input {
     display: block;
     float: left;
-    width: 155px;
-    margin: 0 11px 0 0;
+    width: 110px;
+    margin: 5px 11px 0px 0;
     padding: 5px;
     color: WHITE;
     ;
@@ -47,16 +47,49 @@ form label{
     /*    font-family: Verdana, Arial, Helvetica, sans-serif;*/
     font-size: 12px;
 }
-#header input#news_go {
-    width: auto;
-    height: auto;
-    margin: 0;
-    padding: 4px;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #FFFFFF;
-    background-color: #25A27C;
-    cursor: pointer;
+#header input[type=submit]{
+    background-color:#F67A38;
+    color:white;
+    text-align:center;
+    padding: 10px;
+    margin: 0px ;
+    border-bottom: 3px solid #DD560E;
+    border-right: 1px solid #DD560E;
+}
+#header #login p{
+    margin: 0px;
+}
+#header #login #recordar{
+    display:block;
+    float: left;
+}
+#recordar, #recordar label{
+    float: left;
+    margin-top: 3px;
+}
+#login {
+    float: right;
+    display: block;
+    width: 400px;
+    margin: 0 0 0 0px;
+    padding: 5px;
+    border: 1px solid #02714F;
+}
+#login .titulo-login{
+    background-color:#F67A38;
+    color:white;
+    text-align:center;
+    padding: 10px;
+    margin: 0px ;
+    border-bottom: 3px solid #DD560E;
+    border-right: 1px solid #DD560E;
+}
+#login input[type=text] ,#login input[type=password] {
+    color:white;
+    text-align:center;
+    padding: 5px;
+    margin: 5px 3px ;
+
 }
 /* ----------------------------------------------Search Form------------------------------------- */
 
