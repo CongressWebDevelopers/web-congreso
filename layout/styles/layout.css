@@ -740,9 +740,17 @@ p.titulo-elemento-listado > input[type="checkbox"]{
     padding: 4px 7px 4px 7px;
     float:right;
 }
+p.titulo-elemento-listado > em {
+    float:left;
+    background-color:#DD560E;
+    padding: 5px 15px 5px 15px;
+    margin-top: -5px;
+}
 
 .btn-link{
     color:black;
+    border-top: none;
+    border-left: none;
     border-bottom: 3px solid #02714F;
     border-right: 1px solid #02714F;
 }

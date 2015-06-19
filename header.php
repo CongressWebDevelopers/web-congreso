@@ -8,6 +8,7 @@
                         Informática en España</strong>
                 </p>
             </div>
+            
             <br class="clear" />
         </div>
     </div>
@@ -56,8 +57,6 @@
                                     <li><a href="index.php?page=cuotas">Cuotas</a>
                                     </li>
                                     <li><a href="index.php?page=actividades">Actividades</a>
-                                    </li>
-                                    <li><a href="index.php?page=buscar_inscritos">Buscar Inscritos</a>
                                     </li>
                                 <?php } ?>
                                 <li><a href="index.php?page=logout">Logout</a>

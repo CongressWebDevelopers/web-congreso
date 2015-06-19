@@ -1,35 +1,27 @@
 <?php
 
-include_once '../database/ORM.php';
-
+include_once 'php/model/containers/ContenedorInscripcion.php';
 $patron = $_REQUEST['patron'];
+
+$cInscripcion = new ContenedorInscripcion();
 $response = '';
+$lInscripcion = $cInscripcion->buscarInscripciones($patron);
 
-$consulta = "SELECT * FROM Inscripcion WHERE nombre LIKE '".$patron."%'";
-
-//$conexion = new ORM();
-//$resultado = $conexion->query($consulta);
-
-$conexion = mysql_connect('localhost', 'admin-congreso', 'congreso');
-$abreBD = mysql_select_db('db_CEIIE', $conexion);       
-$resultado = mysql_query($consulta, $conexion);
-$num_filas = mysql_num_rows($resultado);
-
-if ($num_filas>0){
-	$response .= '<table id="lista-inscritos">';
-	$response .= '<tr><th>ID</th><th>Nombre</th><th>Centro</th><th>Teléfono</th><th>idCuota</th><th>idHotel</th><th>Salida</th><th>Entrada</th><th>idUsuario</th></tr>';
-		
-    while ($fila = mysql_fetch_array($resultado)){
-		$response .= '<tr><td>'.$fila[0].'</td><td>'.$fila[1].'</td><td>'.$fila[2].'</td><td>'.$fila[3].'</td><td>'.$fila[4].'</td><td>'.$fila[5].'</td><td>'.$fila[6].'</td><td>'.$fila[7].'</td><td>'.$fila[8].'</td></tr>';
+if ($lInscripcion){
+	$response .= '<center>';
+	$response .= '<table id="lista-inscritos" align="center">';
+	$response .= '<thead><tr><th>ID</th><th>Nombre</th><th>Teléfono</th></tr><thead>';
+        foreach ($lInscripcion as $i){
+		$response .= '<tr>'
+                        . '<td align="center">'.$i->getId().'</td>'
+                        . '<td align="center"><a href="index.php?page=mi-inscripcion&idInscripcion='.$i->getId().'">'.$i->getNombre().'</a> </td>'
+                        . '<td align="center">'.$i->getTelefono().'</td>'
+                        . '</tr>';
 	}
 	$response .= '</table>';
+	$response .= '</center>';
 }
 else{
 	$response .= '<p>Ninguna Coincidencia</p>';
 }
-
-//$conexion->close();
-
-mysql_close($conexion);
-
 echo $response;

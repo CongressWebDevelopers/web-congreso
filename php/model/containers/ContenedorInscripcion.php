@@ -93,4 +93,14 @@ class ContenedorInscripcion extends Contenedor {
         }
     }
 
+    function buscarInscripciones($patron) {
+        $query = "SELECT * FROM Inscripcion WHERE nombre LIKE '" . $patron . "%'";
+        $resultRow = $this->orm->query($query);
+        $inscripciones = Array();
+        while ($r = mysql_fetch_array($resultRow)) {
+            $inscripciones[] = new Inscripcion($r);
+        }
+        return $inscripciones;
+    }
+
 }

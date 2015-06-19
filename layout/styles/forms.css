@@ -55,39 +55,6 @@ form label{
     border-bottom: 3px solid #DD560E;
     border-right: 1px solid #DD560E;
 }
-#header #login p{
-    margin: 0px;
-}
-#header #login #recordar{
-    display:block;
-    float: left;
-}
-#recordar, #recordar label{
-    float: left;
-    margin-top: 3px;
-}
-#login {
-    float: right;
-    display: block;
-    width: 400px;
-    margin: 0 0 0 0px;
-    padding: 5px;
-    border: 1px solid #02714F;
-}
-#login .titulo-login{
-    background-color:#F67A38;
-    color:white;
-    text-align:center;
-    padding: 10px;
-    margin: 0px ;
-    border-bottom: 3px solid #DD560E;
-    border-right: 1px solid #DD560E;
-}
-#login input[type=text] ,#login input[type=password] {
-    color:white;
-    text-align:center;
-    padding: 5px;
-    margin: 5px 3px ;
 
 }
 
