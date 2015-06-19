@@ -30,7 +30,7 @@ $lActividadesNoInc = $cCuota->getActividadesCuota($cCuota->getIdActividadesNoAso
 $response .= '<div class="elemento-listado"><p class="titulo-elemento-listado"> Actividades que puedes añadir</p>';
 foreach ($lActividadesNoInc as $a) {
     $response.='<div id="actividad-'. $a->getId() . '" class="actividades elemento-listado">'
-            . '<p class="titulo-elemento-listado">' . $a->getDenominacion() . '<input type="checkbox" name="actividades[]" id="actividades" value="' . $a->getId() . '"></p> '
+            . '<p class="titulo-elemento-listado">' . $a->getDenominacion() . '<input type="checkbox" name="actividades[]" onchange="calcularTotal()" id="actividades" value="' . $a->getId() . '"></p> '
             . '<img src="files/actividades/' . $a->getFoto() .'" class="foto-listado" alt="Foto de la actividad'. $a->getId() . '">'
             . '<p><strong>Descripcion: </strong></p><p>' . $a->getDescripcion() .'</p> '
             . '<p><strong>Fecha: </strong>' . $a->getFechaEU() . '</p>'

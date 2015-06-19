@@ -54,7 +54,8 @@ $treePages = Array(
     "buscar_inscritos" => 'pages/buscar_inscritos.php',
     "ajax" => Array(
         "actividades-ajax" => 'php/ajax/getActividadesCuota.php',
-        "buscar_inscritos_ajax" => 'php/ajax/buscar_inscritos_ajax.php'
+        "buscar_inscritos_ajax" => 'php/ajax/buscar_inscritos_ajax.php',
+        "calcula-inscripcion-ajax" => 'php/ajax/calculaInscripcion.php'
     )
 );
 
