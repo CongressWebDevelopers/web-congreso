@@ -29,7 +29,6 @@ form label{
     text-transform: uppercase;
     color: #FFFFFF;
     background-color: #25A27C;
-    border-color: None;
     border:none;
 }
 /* ----------------------------------------------Newsletter Form------------------------------------- */
@@ -79,7 +78,6 @@ form label{
     text-transform: uppercase;
     color: #FFFFFF;
     background-color: #25A27C;
-    border-color: None;
     cursor: pointer;
     font-weight: bold;
 }
@@ -121,7 +119,6 @@ a.btn-grande{
     text-transform: uppercase;
     color: #FFFFFF;
     background-color: #25A27C;
-    border-color: None;
     cursor: pointer;
     width: 68px;
     height: 26px;

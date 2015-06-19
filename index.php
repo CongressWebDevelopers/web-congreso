@@ -52,7 +52,8 @@ $treePages = Array(
     "cambiar_pass" => 'pages/cambiar_pass.php',
     "hoteles" => 'pages/hoteles.php',
     "ajax" => Array(
-        "actividades-ajax" => 'php/ajax/getActividadesCuota.php'
+        "actividades-ajax" => 'php/ajax/getActividadesCuota.php',
+        "calcula-inscripcion-ajax" => 'php/ajax/calculaInscripcion.php'
     )
 );
 

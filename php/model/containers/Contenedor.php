@@ -1,5 +1,6 @@
 <?php
-include_once 'php/database/ORM.php';;
+include_once 'php/database/ORM.php';
+
 class Contenedor {
 
     protected $orm;

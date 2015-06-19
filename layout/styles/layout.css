@@ -740,6 +740,12 @@ p.titulo-elemento-listado > input[type="checkbox"]{
     padding: 4px 7px 4px 7px;
     float:right;
 }
+p.titulo-elemento-listado > em {
+    float:left;
+    background-color:#DD560E;
+    padding: 5px 15px 5px 15px;
+    margin-top: -5px;
+}
 
 .btn-link{
     color:black;
@@ -748,6 +754,21 @@ p.titulo-elemento-listado > input[type="checkbox"]{
     border-bottom: 3px solid #02714F;
     border-right: 1px solid #02714F;
 }
+
+#precio-box{
+    padding:20px 30px 20px 30px;
+    font-size: 20px;
+    margin: 0px 200px 10px 10px;
+}
+
+#btn-inscripcion{
+    color:white;
+    padding:10px 30px 10px 30px;
+    background-color:#25A27C ;
+    border:none;
+    margin-right:10px;
+}
+
 /* ----------------------------------------------Login------------------------------------- */
 #footer input{
     display: block; 
@@ -760,7 +781,7 @@ p.titulo-elemento-listado > input[type="checkbox"]{
     float: left;
     display: block;
     width: 400px;
-    margin: 10px 10px 10px 10px;px;
+    margin: 10px 10px 10px 10px;
     padding: 20px;
     border: 1px solid #02714F;
     background-color: #25A27C;
@@ -799,14 +820,13 @@ p.titulo-elemento-listado > input[type="checkbox"]{
 #login input.btn-default{
     background-color:#02714F ;
     border:none;
-    float:;
     clear: both;
     padding: 10px 20px 10px 20px;
     margin-right:10px;
     border-top: 2px solid rgba(255,255,255,0.7);
     border-left: 1px solid rgba(255,255,255,0.7);
-    
-        
+
+
 }
 #login input.btn-default:hover{
     background-color:#02714F;
