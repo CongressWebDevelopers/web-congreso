@@ -11,7 +11,8 @@ Licence URI: http://www.os-templates.com/template-terms
 
     <head>
         <title>I Congreso de estudiantes Ingeniería Informática</title>
-        <meta content="text/html; charset=utf-8" http-equiv=Content-Type>
-            <link rel="stylesheet" href="layout/styles/layout.css" type="text/css" />
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <meta content="text/html; charset=utf-8" http-equiv=Content-Type />
+        <link rel="stylesheet" href="layout/styles/layout.css" type="text/css" />
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     </head>

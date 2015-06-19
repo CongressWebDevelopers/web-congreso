@@ -36,7 +36,7 @@ $cInscripcion = new ContenedorInscripcion();
                         Nombre
                     </th>
                     <th>
-                        Telefono
+                        Teléfono
                     </th>
                 </tr>
             </thead>
@@ -63,10 +63,10 @@ $cInscripcion = new ContenedorInscripcion();
         <script>
             function buscador(){
 				var miBusqueda = document.getElementById("buscar").value;
-                if (miBusqueda.length==0){
-					document.getElementById("buscar_inscritos").innerHTML = "";
-					return;
-                }else{
+            //    if (miBusqueda.length==0){
+			//		document.getElementById("buscar_inscritos").innerHTML = "";
+		//			return;         
+            //    }else{
 					var xmlhttp = new XMLHttpRequest();
                     xmlhttp.onreadystatechange = function () {
 						if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -75,7 +75,7 @@ $cInscripcion = new ContenedorInscripcion();
                     }
                     xmlhttp.open("GET", "index.php?ajax=buscar_inscritos_ajax&patron=" + miBusqueda, true);
                     xmlhttp.send();
-                }
+               // }
             }
             </script>
         </form>

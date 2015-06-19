@@ -16,13 +16,15 @@ $resultado = mysql_query($consulta, $conexion);
 $num_filas = mysql_num_rows($resultado);
 
 if ($num_filas>0){
-	$response .= '<table id="lista-inscritos">';
-	$response .= '<tr><th>ID</th><th>Nombre</th><th>Centro</th><th>Teléfono</th><th>idCuota</th><th>idHotel</th><th>Salida</th><th>Entrada</th><th>idUsuario</th></tr>';
+	$response .= '<center>';
+	$response .= '<table id="lista-inscritos" ALIGN="CENTER">';
+	$response .= '<thead><tr><th>ID</th><th>Nombre</th><th>Teléfono</th></tr><thead>';
 		
     while ($fila = mysql_fetch_array($resultado)){
-		$response .= '<tr><td>'.$fila[0].'</td><td>'.$fila[1].'</td><td>'.$fila[2].'</td><td>'.$fila[3].'</td><td>'.$fila[4].'</td><td>'.$fila[5].'</td><td>'.$fila[6].'</td><td>'.$fila[7].'</td><td>'.$fila[8].'</td></tr>';
+		$response .= '<tr><td align="center">'.$fila[0].'</td><td align="center"><a href="index.php?page=mi-inscripcion&idInscripcion='.$fila[0].'">'.$fila[1].'</a> </td><td align="center">'.$fila[3].'</td></tr>';
 	}
 	$response .= '</table>';
+	$response .= '</center>';
 }
 else{
 	$response .= '<p>Ninguna Coincidencia</p>';

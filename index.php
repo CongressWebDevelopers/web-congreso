@@ -1,172 +1,81 @@
 <?php
 
-/*
- * ORM
- * Controla las conexiónes a BD y las distintas consultas mediante funciones.
- * Conectar con el servidor y seleccionar la base de datos
- * Ejecutar una instrucción de SQL
- * Procesar la información
- * Cerrar la conexión con el servidor
- */
+if (!isset($_GET['ajax']) OR ! $_GET['ajax']) {
+    include_once('head.php');
+    include_once 'php/config.php';
+    include_once('php/funciones.php');
+    include_once('php/login.php');
+    include_once('header.php');
+}
 
-/**
- * 
- * @param type $servidor String con el nombre del servidor a conectar
- * @param type $usuario String con el usuario del servidor a conectar
- * @param type $contrasena String con la contrasena del servidor a conectar
- * @return type id de conexión si ha sido satisfactorio y false si ha dado error.
- */
-include_once './php/database/configDB.php';
+//Este array servirá de directorio de páginas para la variable GET page.
+//"valor variable page" => 'directorio.php'
+$treePages = Array(
+    "programa" => Array(
+        "agiles" => 'pages/programas/agiles.php',
+        "ifml" => 'pages/programas/ifml.php',
+        "prince" => 'pages/programas/prince.php',
+        "windows" => 'pages/programas/windows.php',
+        "unix" => 'pages/programas/unix.php',
+        "ios" => 'pages/programas/ios.php',
+        "visualizacion" => 'pages/programas/visualizacion.php',
+        "digitalizacion" => 'pages/programas/digitalizacion.php',
+        "realidad_aumentada" => 'pages/programas/realidad_aumentada.php',
+        "paralela" => 'pages/programas/paralela.php',
+        "distribuidos" => 'pages/programas/distribuidos.php',
+        "tiempo_real" => 'pages/programas/tiempo_real.php',
+        "db_multidimensionales" => 'pages/programas/db_multidimensionales.php',
+        "db_oo" => 'pages/programas/db_oo.php',
+        "db_distribuidos" => 'pages/programas/db_distribuidos.php',
+        "haptica" => 'pages/programas/haptica.php',
+        "wereables" => 'pages/programas/wereables.php',
+        "realidad_virual" => 'pages/programas/realidad_virtual.php',
+        "procesadores" => 'pages/programas/procesadores.php',
+        "traductores" => 'pages/programas/traductores.php',
+        "habla" => 'pages/programas/habla.php'),
+    "patrocina" => 'pages/patrocina.php',
+    "inscripcion" => 'pages/inscripcion.php',
+    "alhambra" => 'pages/alhambra.php',
+    "sierra_nevada" => 'pages/sierra_nevada.php',
+    "etsiit" => 'pages/etsiit.php',
+    "granada" => 'pages/granada.php',
+    "contacto" => 'pages/contacto.php',
+    "registro-usuario" => 'pages/registro-usuario.php',
+    "cuotas" => 'pages/cuotas.php',
+    "actividades" => 'pages/actividades.php',
+    "mi-inscripcion" => 'pages/mi-inscripcion.php',
+    "lista-inscritos" => 'pages/lista-inscritos.php',
+    "editar-cuota" => 'pages/editar-cuota.php',
+    "editar-actividad" => 'pages/editar-actividad.php',
+    "logout" => 'php/logout.php',
+    "restablecer_pass" => 'pages/restablecer_pass.php',
+    "cambiar_pass" => 'pages/cambiar_pass.php',
+    "hoteles" => 'pages/hoteles.php',
+    "buscar_inscritos" => 'pages/buscar_inscritos.php',
+    "ajax" => Array(
+        "actividades-ajax" => 'php/ajax/getActividadesCuota.php',
+        "buscar_inscritos_ajax" => 'php/ajax/buscar_inscritos_ajax.php',
+        "calcula-inscripcion-ajax" => 'php/ajax/calculaInscripcion.php'
+    )
+);
 
-class ORM {
-
-    private $conexion;
-    private $abreBD;
-    private $lastQuery = 'null';
-
-    function ORM() {
-	    $this->conexion = mysql_connect(DB_HOST, DB_USER, DB_PASS) or exit('No se pudo conectar con el servidor MySQL');
-        $this->abreBD = mysql_select_db(DB_NAME, $this->conexion);
-        if (!$this->abreBD) {
-            die('No se pudo abrir la base de datos.Error: '.mysql_error());
+if (isset($_GET['page']) && $treePages[$_GET['page']]) {
+    if ($_GET['page'] != "programa") {
+        include_once $treePages[$_GET['page']];
+    } else {
+        if (isset($_GET['programa']) && isset($treePages['programa'][$_GET['programa']])) {
+            include_once $treePages['programa'][$_GET['programa']];
+            include_once 'modulos/contexmenu.php';
+        } else {
+            include_once 'pages/programa.php';
         }
     }
-
-    function query($query) {
-        $query = mysql_real_escape_string($query ,$this->conexion); 
-        $this->lastQuery = mysql_query($query, $this->conexion);
-    }
-
-    function getLastQueryResult() {
-        return $this->lastQuery;
-    }
-
-    function queryArray() {
-        return mysql_fetch_array($this->lastQuery);
-    }
-
-    function queryAssoc($query) {
-        return mysql_fetch_assoc(query($query));
-    }
-    
-    function rows() {
-        return mysql_num_rows($this->getLastQueryResult());
-    }
-
-    function close() {
-        mysql_close($this->conexion);
-    }
-
+} else if (isset($_GET['ajax'])) {
+    include_once $treePages['ajax'][$_GET['ajax']];
+} else {
+    include_once 'contain.php';
 }
-
-
-//include './php/database/ORM.php';
-
-require_once('head.php');
-require_once('header.php');
-
-if (isset($_GET['page'])) {
-    switch ($_GET['page']) {
-        case "programa":
-            if (isset($_GET['programa'])) {
-                switch ($_GET['programa']) {
-                    case "agiles":
-                        require_once('./pages/programas/agiles.php');
-                        break;
-                    case "ifml":
-                        require_once('./pages/programas/ifml.php');
-                        break;
-                    case "prince":
-                        require_once('./pages/programas/prince.php');
-                        break;
-                    case "windows":
-                        require_once('./pages/programas/windows.php');
-                        break;
-                    case "unix":
-                        require_once('./pages/programas/unix.php');
-                        break;
-                    case "ios":
-                        require_once('./pages/programas/ios.php');
-                        break;
-                    case "visualizacion":
-                        require_once('./pages/programas/visualizacion.php');
-                        break;
-                    case "digitalizacion":
-                        require_once('./pages/programas/digitalizacion.php');
-                        break;
-                    case "realidad_aumentada":
-                        require_once('./pages/programas/realidad_aumentada.php');
-                        break;
-                    case "paralela":
-                        require_once('./pages/programas/paralela.php');
-                        break;
-                    case "distribuidos":
-                        require_once('./pages/programas/distribuidos.php');
-                        break;
-                    case "tiempo_real":
-                        require_once('./pages/programas/tiempo_real.php');
-                        break;
-                    case "db_multidimensionales":
-                        require_once('./pages/programas/db_multidimensionales.php');
-                        break;
-                    case "db_oo":
-                        require_once('./pages/programas/db_oo.php');
-                        break;
-                    case "db_distribuidos":
-                        require_once('./pages/programas/db_distribuidos.php');
-                        break;
-                    case "haptica":
-                        require_once('./pages/programas/haptica.php');
-                        break;
-                    case "wearables":
-                        require_once('./pages/programas/wearables.php');
-                        break;
-                    case "realidad_virtual":
-                        require_once('./pages/programas/realidad_virtual.php');
-                        break;
-                    case "procesadores":
-                        require_once('./pages/programas/procesadores.php');
-                        break;
-                    case "traductores":
-                        require_once('./pages/programas/traductores.php');
-                        break;
-                    case "habla":
-                        require_once('./pages/programas/habla.php');
-                        break;
-                    default:    //Si se escribe una página erronea nos lleva al programa general
-                        require_once('./pages/programa.php');
-                }
-                require_once('./modulos/contexmenu.php');
-            } else    //Si no se introduce ninguna variable por get nos lleva al programa general
-                require_once('./pages/programa.php');
-            break;
-        case "patrocina":
-            require_once('./pages/patrocina.php');
-            break;
-        case "inscripcion":
-            require_once('./pages/inscripcion.php');
-            break;
-        case "alhambra":
-            require_once('./pages/alhambra.php');
-            break;
-        case "sierra_nevada":
-            require_once('./pages/sierra_nevada.php');
-            break;
-        case "etsiit":
-            require_once('./pages/etsiit.php');
-            break;
-        case "granada":
-            require_once('./pages/granada.php');
-            break;
-        case "contacto":
-            require_once('./pages/contacto.php');
-            break;
-        default:    //Si se escribe una página erronea nos lleva al inicio
-            require_once('contain.php');
-    }
-} else {    //Si no se introduce ninguna variable por get se llama al index
-    require_once('contain.php');
+if (!isset($_GET['ajax']) OR ! $_GET['ajax']) {
+    include_once('footer.php');
 }
-
-require_once('footer.php');
 ?>
