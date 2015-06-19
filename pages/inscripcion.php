@@ -51,7 +51,7 @@ if (isset($_SESSION['inscrito'])) {
                     echo'<script language="javascript">window.location="index.php?page=lista-inscritos"</script>;';
                 } else {
                     ?>
-        <form id="formulario-inscripcion"action="index.php?page=inscripcion" method="POST">
+                    <form id="formulario-inscripcion"action="index.php?page=inscripcion" method="POST">
                         <h2>Datos de Inscripción</h2>
                         <fieldset>
                             <label for="nombre">Nombre y Apellidos * </label>
