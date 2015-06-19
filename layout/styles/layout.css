@@ -128,8 +128,6 @@ div.wrapper h6 {
 }
 .col6 a {
     color: #666666;
-    background-color: none;
-    text-decoration-color: none;
 }
 .col7,
 .col7 a {
@@ -750,20 +748,45 @@ p.titulo-elemento-listado > input[type="checkbox"]{
     border-bottom: 3px solid #02714F;
     border-right: 1px solid #02714F;
 }
+/* ----------------------------------------------Login------------------------------------- */
+#footer input{
+    display: block; 
+    margin: 0 0 5px 0;
+    padding: 5px;
+    border: none;
+    font-size: 12px;
+}
+#login {
+    float: left;
+    display: block;
+    width: 400px;
+    margin: 10px 10px 10px 10px;px;
+    padding: 20px;
+    border: 1px solid #02714F;
+    background-color: #25A27C;
+    border-bottom: 3px solid #02714F;
+    border-right: 1px solid #02714F;
 
-#login  {
-    background-color: #F67A38;
-    border-bottom: 3px solid #DD560E;
-    border-right: 1px solid #DD560E;
 }
 
 #login p:first-child{
-    background-color:#DD560E;
+    background-color:#02714F;
     display:none;
 }
-#login form input{
-    background-color: #DD560E; 
+#login form input[type=text], #login form input[type=password], #login form input[type=checkbox]{
+    background-color: #02714F; 
     color:white;
+    float:left;
+    display: block;
+    float: left;
+    width: 110px;
+    margin: 5px 11px 0px 0;
+    padding: 5px;
+    font-size: 12px;
+    color:white;
+    text-align:center;
+    padding: 5px;
+    margin: 5px 3px ;
 }
 #login a, #login label{
     color: rgba(255,255,255,0.8);
@@ -774,6 +797,40 @@ p.titulo-elemento-listado > input[type="checkbox"]{
     color: rgba(255,255,255,0.7);
 }
 #login input.btn-default{
-    background-color:#DD560E;
+    background-color:#02714F ;
     border:none;
+    float:;
+    clear: both;
+    padding: 10px 20px 10px 20px;
+    margin-right:10px;
+    border-top: 2px solid rgba(255,255,255,0.7);
+    border-left: 1px solid rgba(255,255,255,0.7);
+    
+        
+}
+#login input.btn-default:hover{
+    background-color:#02714F;
+    border-bottom: 2px solid rgba(255,255,255,0.7);
+    border-right: 1px solid rgba(255,255,255,0.7);
+    border-top: none;
+    border-left: none;
+    color:white;
+}
+#login #recordar{
+    display:block;
+    float: left;
+}
+#recordar, #recordar label{
+    float: left;
+    margin-top: 3px;
+}
+
+#login .titulo-login{
+    background-color:#F67A38;
+    color:white;
+    text-align:center;
+    padding: 10px;
+    margin: 0px ;
+    border-bottom: 3px solid #DD560E;
+    border-right: 1px solid #DD560E;
 }
