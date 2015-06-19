@@ -745,6 +745,35 @@ p.titulo-elemento-listado > input[type="checkbox"]{
 
 .btn-link{
     color:black;
+    border-top: none;
+    border-left: none;
     border-bottom: 3px solid #02714F;
     border-right: 1px solid #02714F;
+}
+
+#login  {
+    background-color: #F67A38;
+    border-bottom: 3px solid #DD560E;
+    border-right: 1px solid #DD560E;
+}
+
+#login p:first-child{
+    background-color:#DD560E;
+    display:none;
+}
+#login form input{
+    background-color: #DD560E; 
+    color:white;
+}
+#login a, #login label{
+    color: rgba(255,255,255,0.8);
+    margin-left:7px;
+}
+
+#login input::-webkit-input-placeholder {
+    color: rgba(255,255,255,0.7);
+}
+#login input.btn-default{
+    background-color:#DD560E;
+    border:none;
 }
